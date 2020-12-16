@@ -1,13 +1,20 @@
 import './App.css';
-import Navbar from './components/navbar/Navbar.js'
+import Navbar from './components/navbar/Navbar.js';
+import CardList from './components/cardList/CardList';
 
-function App() {
+
+
+
+const App = () => {
+
   return (
     <div className="App">
-      <Navbar></Navbar>
-      Medium Clone
+      <Navbar/>
+      <CardList/>
     </div>
-  );
+  )
+  
 }
 
 export default App;
+
