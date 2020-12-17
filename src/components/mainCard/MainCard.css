@@ -1,28 +1,32 @@
-.card-container {
+.maincard-container {
     display: flex;
     flex-direction: column;
-    width: 33vw; 
+    width: 100%; 
 }
 
+.main-image{
+    width: 100%;
+}
 
-.text-container{
+.main-text-container{
     margin-right: 20px;
+    text-align: left;
 }
 
-.username{
+.main-username{
     font-size: smaller;
     padding-bottom: 8px;
 }
-.title{
+.main-title{
     font-weight:bolder;
     padding-bottom: 8px;
 
 }
-.date{
+.main-date{
     font-size: 13px;
     color: rgba(117, 117, 117, 1);
 }
 
-.image-container {
+.main-image-container {
     align-self: center;
 }

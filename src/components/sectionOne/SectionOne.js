@@ -9,12 +9,19 @@ import './SectionOneCard.css';
 const SectionOne = () => {
     return(
         <div className = 'sectionOneContainer'>
-            <MainCard/>
-            <CardList/>
-            <div>
+            <div className="mainCardSection">
+                <MainCard/>
+            </div>
+
+            <div className="cardListSection">
+                <CardList/>
+            </div>
+            
+            <div className="followTopicSection">
                 <FollowList/>
                 <TopicsList/>
             </div>
+
         </div>
     )
 }

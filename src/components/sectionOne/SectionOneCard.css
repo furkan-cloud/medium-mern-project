@@ -1,9 +1,26 @@
 .sectionOneContainer{
     display: flex;
-    justify-content: center;
-    gap: 10;
+    /* justify-content: center; */
+    /* gap: 20; */
+    border: 3px solid red;
+    
 }
-.sectionOneRight{
+
+.cardListSection{
+    width: 33%;
+    border: 1px solid purple;
+    padding: 16px;
+}
+
+.mainCardSection{
+    width: 33%;
+    padding: 16px;
+    border: 1px solid orange;
+}
+.followTopicSection{
     display: flex;
-    width: 33vw; 
+    width: 33%; 
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid cyan;
 }

@@ -1,11 +1,17 @@
 .card-container {
     display: flex;
-   
+    width: 100%;
+    border: 1px solid pink;
+    padding-bottom: 32px;
 }
 
+.card-image{
+    width: 100%;
+}
 
 .text-container{
     margin-right: 20px;
+    text-align: left;
 }
 
 .username{

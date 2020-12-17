@@ -6,7 +6,7 @@ const Avatar = ({firstName, lastName, profileImage, ...props}) => {
         <div className = 'avatarContainer'>
             <div>
                 <img className = 'avatarImage' src={profileImage} />
-                <p>{firstName + ' ' + lastName}</p>
+                <p style={{fontSize: 11}}>{firstName + ' ' + lastName}</p>
             </div>
         </div>
     )
