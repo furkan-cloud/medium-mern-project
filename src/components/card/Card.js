@@ -15,7 +15,7 @@ const Card = (props) => {
             </div>
 
             <div className="image-container">
-                <img src={props.imageUrl} alt='' width="100" height="100" /> 
+                <img className="card-image" src={props.imageUrl} alt=''/> 
             </div>
 
         </div>
@@ -25,7 +25,3 @@ const Card = (props) => {
 export default Card;
 
 
-{/* <div className="text-container">
-                <div className="title"> <span>Don’t Choose Your Main Programming Language Before Reading This </span> </div>
-                <div className="date"> <span>Dec 8·4 min read</span></div>
-</div>*/}

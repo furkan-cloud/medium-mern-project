@@ -1,0 +1,30 @@
+.trendingcard-container{
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+    border: 1px solid yellowgreen;
+   
+}
+
+.number-container{
+
+}
+
+.trendingtext-container{
+    text-align: left;
+}
+
+.trendingusername{
+    font-size: smaller;
+    padding-bottom: 8px;
+}
+.trendingtitle{
+    font-weight:bolder;
+    padding-bottom: 8px;
+
+}
+.trendingdate{
+    font-size: 13px;
+    color: rgba(117, 117, 117, 1);
+}
+

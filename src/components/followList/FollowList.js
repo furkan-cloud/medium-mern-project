@@ -40,6 +40,18 @@ const followList = [
         firstName: 'Hasan',
         lastName: 'Cihan'
     },
+    {
+        id: 7,
+        profileImage: 'https://miro.medium.com/fit/c/64/64/0*K3uWM5okU2grFlZ1.jpg',
+        firstName: 'Serkan',
+        lastName: 'Cihan'
+    },
+    {
+        id: 6,
+        profileImage: 'https://miro.medium.com/fit/c/64/64/0*K3uWM5okU2grFlZ1.jpg',
+        firstName: 'Yavuz',
+        lastName: 'Cihan'
+    },
 
 ]
 
