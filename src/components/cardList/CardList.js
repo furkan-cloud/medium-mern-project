@@ -6,7 +6,7 @@ import {cardContent} from '../../data/cardData';
   const CardList = () => {
       console.log(cardContent)
      return(
-        <div> 
+        <div className = 'cardListContainer'> 
             {cardContent.map((content,index)=>
                 <Card
                     userprofile={content.userprofile}

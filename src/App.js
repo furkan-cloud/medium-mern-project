@@ -1,20 +1,21 @@
 import './App.css';
 import Navbar from './components/navbar/Navbar.js';
-import CardList from './components/cardList/CardList';
+import FollowList from './components/followList/FollowList';
+import TopicsList from './components/topicsToFollow/TopicsList';
+import { BrowserRouter, Route } from 'react-router-dom'
+import MainCard from './components/mainCard/MainCard';
+import SectionOne from './components/sectionOne/SectionOne';
 
 
-
-
-const App = () => {
-
+function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <CardList/>
-    </div>
-  )
-  
+    <BrowserRouter>
+      <div className="App">
+        <Navbar/>
+        <SectionOne/>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
-

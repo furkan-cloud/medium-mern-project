@@ -1,0 +1,15 @@
+.topicCardContainer{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.button{
+    border: 1px solid #1a8917;
+    color: #1a8917;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background-color: white;
+}
