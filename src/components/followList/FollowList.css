@@ -1,0 +1,19 @@
+.followListContainer {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap;
+    width: 10vw;
+    height: 8vh; */
+
+}
+
+.followingHeader{
+    font-size: 0.75rem;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.avatarContainer {
+    display: flex;
+    gap: 15px;
+}

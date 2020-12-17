@@ -1,8 +1,9 @@
 .container {
     display: flex;
     justify-content: space-between;
-    border: 1px solid red;
-    margin: 40px 0;
+    margin-bottom: 40px;
+    /* border: 1px solid red; */
+    /* margin: 40px 0; */
 
 }
 
@@ -10,7 +11,7 @@
     display: flex;
     
     /* width: 400px; */
-    padding-left: 80px;
+    /* padding-left: 80px; */
     align-items: center;
     /* flex-direction: ; */
 }
@@ -27,7 +28,7 @@
     justify-content: center;
     align-items: center;
     /* flex-direction: ; */
-    padding-right: 80px;
+    /* padding-right: 80px; */
 }
 
 .navbarImage {

@@ -1,0 +1,9 @@
+.sectionOneContainer{
+    display: flex;
+    justify-content: center;
+    gap: 10;
+}
+.sectionOneRight{
+    display: flex;
+    width: 33vw; 
+}
