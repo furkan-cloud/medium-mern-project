@@ -1,0 +1,36 @@
+.readingcard-container{
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+    border: 1px solid yellowgreen;
+    padding: 32px;
+}
+
+.readingtext-container{
+    text-align: left;
+    margin-bottom: 24px;
+    padding:10px 20px;
+}
+
+.readingusername{
+    font-size: smaller;
+    padding: 8px 0px;
+    display: flex;
+    align-items: center;
+}
+.readingtitle{
+    font-weight:bolder;
+    padding-bottom: 8px;
+
+}
+.readingdate{
+    font-size: 13px;
+    color: rgba(117, 117, 117, 1);
+}
+
+.readingProfileImage{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}

@@ -19,7 +19,7 @@ const BigCard = (props) => {
                    <div className="date-icons">
                        <div className="big-card-date">{props.date}</div>
                        <div className="big-card-icons">
-                           <FontAwesomeIcon icon={["far","faBookmark"]} size="1x"/>
+                           <FontAwesomeIcon icon={faBookmark} size="1x" style={{paddingRight: 10}} />
                            <FontAwesomeIcon icon={faEllipsisH} size="1x"/>
                         </div>
                     </div> 

@@ -37,11 +37,22 @@
 .big-card-date{
     color: rgba(117, 117, 117, 1);
     font-size: 0.8rem;
-    padding-top: 8px;
+    border: 1px solid black;
+}
+
+.date-icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid red;
+    padding-top:8px;
 }
 
 .big-card-icons{
-    
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    /* padding:0px 10px; */
 }
 
 .big-card-image{

@@ -1,0 +1,8 @@
+.footer-container {
+
+/* display: inline; */
+width: 30%;
+display: flex;
+flex-wrap: wrap;
+
+}

@@ -1,6 +1,8 @@
 .sectionThreeContainer{
     display: flex;
     padding: 56px 0px 0px ;
+    justify-content: space-between;
+    border:1px solid purple
 }
 
 .bigCard-container{
@@ -8,5 +10,5 @@
 }
 
 .sectionThree-right{
-    width: 30%;
+   width: 30%
 }

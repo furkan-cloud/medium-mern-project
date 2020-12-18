@@ -9,7 +9,7 @@ const TrendingCard = (props) => {
 
       <div className="trendingtext-container">
         <div className="trendingusername">
-          <a href="">{props.userprofile}</a>
+          <a href="">{props.profileImage}</a>
           {props.username}
         </div>
         <div className="trendingtitle">{props.title}</div>
@@ -19,4 +19,4 @@ const TrendingCard = (props) => {
   );
 };
 
-export default TrendingCard;
+export default TrendingCard;  
