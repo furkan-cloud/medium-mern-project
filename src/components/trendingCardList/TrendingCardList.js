@@ -1,6 +1,6 @@
 import React from 'react';
 import TrendingCard from '../trendingCard/TrendingCard';
-import {cardContent} from '../../data/cardData';
+import {trendingCardContent} from '../../data/trendingCardData';
 import './TrendingCardList.css';
 
 
@@ -8,12 +8,12 @@ import './TrendingCardList.css';
     //   console.log(cardContent)
      return(
         <div className = 'TrendingCardListContainer'> 
-            {cardContent.map((content,index)=>
+            {trendingCardContent.map((trendingcontent,index)=>
                 <TrendingCard
-                    userprofile={content.userprofile}
-                    username={content.username}
-                    title={content.title}
-                    date={content.date}
+                    userprofile={trendingcontent.userprofile}
+                    username={trendingcontent.username}
+                    title={trendingcontent.title}
+                    date={trendingcontent.date}
                     key={index}
                 />
              

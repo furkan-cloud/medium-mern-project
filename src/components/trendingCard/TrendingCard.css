@@ -3,20 +3,27 @@
     flex-direction: row;
     width: 20vw;
     border: 1px solid yellowgreen;
-   
+    padding: 0px 14px;
+    margin-right: 25px;
 }
 
 .number-container{
-
+    font-size: 30px;
+    color: rgba(230, 230, 230, 1);
+    line-height: 36px;
+    font-weight: bold;
 }
 
 .trendingtext-container{
     text-align: left;
+    margin-bottom: 24px;
+    padding:0px 16px;
+
 }
 
 .trendingusername{
     font-size: smaller;
-    padding-bottom: 8px;
+    padding: 8px 0px;
 }
 .trendingtitle{
     font-weight:bolder;
