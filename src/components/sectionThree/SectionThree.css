@@ -1,0 +1,12 @@
+.sectionThreeContainer{
+    display: flex;
+    padding: 56px 0px 0px ;
+}
+
+.bigCard-container{
+    width: 60%;
+}
+
+.sectionThree-right{
+    width: 30%;
+}

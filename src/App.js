@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import MainCard from './components/mainCard/MainCard';
 import SectionOne from './components/sectionOne/SectionOne';
 import SectionTwo from './components/sectionTwo/SectionTwo';
+import SectionThree from './components/sectionThree/SectionThree';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Navbar/>
         <SectionOne/>
         <SectionTwo/>
+        <SectionThree/>
       </div>
     </BrowserRouter>
   );

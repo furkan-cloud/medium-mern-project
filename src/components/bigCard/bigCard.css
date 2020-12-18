@@ -1,0 +1,51 @@
+.bigcard-container{
+    display: flex;
+    border: 1px solid cyan;
+    text-align: left;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.big-link{
+    text-decoration: none;
+}
+
+.big-profileImage{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.big-username{
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+.big-card-title{
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: rgba(41, 41, 41, 1);
+    padding-bottom: 8px;
+}
+
+.big-card-desc {
+    color: rgba(117, 117, 117, 1);
+    font-size: 1rem;
+}
+
+.big-card-date{
+    color: rgba(117, 117, 117, 1);
+    font-size: 0.8rem;
+    padding-top: 8px;
+}
+
+.big-card-icons{
+    
+}
+
+.big-card-image{
+    width: 200px;
+    height: 133px;
+
+}
