@@ -1,5 +1,5 @@
 import React from 'react';
-import './BigCard.css';
+import "./bigCard.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
