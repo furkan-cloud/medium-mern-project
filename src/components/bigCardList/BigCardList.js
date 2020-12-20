@@ -1,5 +1,5 @@
 import React from 'react';
-import BigCard from '../bigCard/BigCard';
+import BigCard from '../bigCard/bigCard';
 import {bigCardContent} from '../../data/bigCardData';
 
 const BigCardList = () => {
