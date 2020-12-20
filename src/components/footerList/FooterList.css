@@ -1,8 +1,16 @@
 .footer-container {
 
 /* display: inline; */
-width: 30%;
+/* width: 30%; */
 display: flex;
 flex-wrap: wrap;
 
+}
+
+.footerAnchors{
+    text-decoration: none;
+    margin-right: 30px;
+    color: #757575;
+    font-weight: 400;
+    font-size: 0.85rem ;
 }

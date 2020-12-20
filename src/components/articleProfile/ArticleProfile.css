@@ -1,0 +1,30 @@
+.articleProfileContainer{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.articleProfileLink{
+    text-decoration: none;
+    display: flex;
+}
+
+.articleProfileImage{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.articleProfileUsername{
+    font-size: 0.85rem;
+    color: #1a8917;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.articleDate{
+    color: rgba(117, 117, 117, 1);
+    font-size: 0.85rem;
+    border: 1px solid black;
+}
