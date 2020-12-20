@@ -4,14 +4,14 @@ import "./FooterList.css";
 const FooterList = () => {
     return (
         <div className="footer-container">
-            <a href="#">Help</a>
-            <a href="#">Status</a>
-            <a href="#">Writers</a>
-            <a href="#">Blog</a>
-            <a href="#">Careers</a>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">About</a>
+            <a className = 'footerAnchors' href="#">Help</a>
+            <a className = 'footerAnchors' href="#">Status</a>
+            <a className = 'footerAnchors' href="#">Writers</a>
+            <a className = 'footerAnchors' href="#">Blog</a>
+            <a className = 'footerAnchors' href="#">Careers</a>
+            <a className = 'footerAnchors' href="#">Privacy</a>
+            <a className = 'footerAnchors' href="#">Terms</a>
+            <a className = 'footerAnchors' href="#">About</a>
         </div>
     );
 }
