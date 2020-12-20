@@ -54,3 +54,4 @@ const DetailSectionLeft = () => {
 };
 
 export default DetailSectionLeft;
+/*deneme*/
