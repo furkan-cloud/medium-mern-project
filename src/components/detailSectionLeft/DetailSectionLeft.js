@@ -19,8 +19,8 @@ const DetailSectionLeft = () => {
         <div className="line">
           <div>Written By</div>
           <div className="writer">Faruk Cihan</div>
-          <div className="button-container">
-            <button className="button">Following</button>
+          <div className="left-button-container">
+            <button className="left-button">Following</button>
           </div>
         </div>
         <hr />
