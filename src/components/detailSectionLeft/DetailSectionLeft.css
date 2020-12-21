@@ -35,12 +35,16 @@
     padding-top: 10px;
 }
 
-.button {
-    color: white;
-    background-color: green;
+.left-button {
+    border: 1px solid #1a8917;
+    color: #1a8917;
+    border-radius: 5px;
+    padding: 0px 20px;
+    background-color: white;
+    font-size: 15px;
    
 }
-.button-container {
+.left-button-container {
     padding-top: 10px;
     padding-bottom: 30px;
     
