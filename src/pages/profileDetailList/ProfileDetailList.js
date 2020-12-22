@@ -1,4 +1,5 @@
 import ArticleDetailCard from "../../components/articleDetailCard/ArticleDetailCard"
+import './ProfileDetailList.css'
 
 const articleContent = [
 {
@@ -24,7 +25,13 @@ const articleContent = [
 
 const ProfileDetailList = () => {
     return(
-        <div>
+        <div className="profileDetailListContainer">
+
+            <div className="profileDetailImageContainer">
+                <img className="profileDetailImage" src={articleContent[0].profileImage} />
+            </div>
+
+            <div className="profileDetailArticleContainer">
              {articleContent.map((content,index)=>
             <ArticleDetailCard
                 date= {content.date}
@@ -34,6 +41,10 @@ const ProfileDetailList = () => {
                 readTime={content.readTime}
             />
             )}
+
+            </div>
+   
+
         </div>
        
     )

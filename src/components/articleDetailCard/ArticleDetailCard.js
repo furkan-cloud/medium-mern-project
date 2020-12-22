@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './ArticleDetailCard.css'
 
 import {
     faBookmark,
@@ -17,7 +18,7 @@ const ArticleDetailCard = (props) => {
             <h1>
                 {props.title}
             </h1>
-            <img src={props.imageUrl} />
+            <img className="articleDetailImage" src={props.imageUrl} />
             <p>
                 {props.articleText}
             </p>
