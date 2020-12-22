@@ -22,5 +22,8 @@
     "multer": "^1.4.2",
     "multer-storage-cloudinary": "^4.0.0",
     "slugify": "^1.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }

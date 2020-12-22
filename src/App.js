@@ -6,6 +6,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/homePage/Home';
 import ArticleDetails from './pages/articleDetail/ArticleDetails';
 import ProfileDetailList from './pages/profileDetailList/ProfileDetailList';
+import RegisterForm from './components/registerForm/RegisterForm';
+import UserContext from "./context/UserContext"
+import Main from './pages/mainPage/Main';
 
 
 // const fetchArticles = async ()
@@ -20,18 +23,22 @@ import ProfileDetailList from './pages/profileDetailList/ProfileDetailList';
 // };
 
 
-function App() {
+function App(){
+  const [userData, setUserData] = useState({user: null, token: null})
+
   return (
     <BrowserRouter>
+      <UserContext.Provider value={{userData, setUserData}}>
       <div className="App">
         <Navbar />
         <Switch>
           <Route path='/profileDetail' component={ProfileDetailList} exact />
           <Route path='/articleDetails' component={ArticleDetails} exact />
-          <Route path='/' component={Home} />
-          
+          <Route path='/home' component={Home} exact />      
+          <Route path='/' component={Main} />      
         </Switch>
       </div>
+      </UserContext.Provider>
     </BrowserRouter>
   );
 }
