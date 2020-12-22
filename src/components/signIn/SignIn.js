@@ -19,7 +19,6 @@ const SignInForm = () => {
         const signResponse = await axios.post("http://localhost:5000/api/auth/login", newUser)
         setUserData({user: signResponse.data.user, token: signResponse.data.access_token})
         localStorage.setItem("token", signResponse.data.access_token)
-        history.push("/home")
     }
 
     return(

@@ -31,7 +31,7 @@ function App(){
       let token = localStorage.getItem("token")
       if (token){
         const userResponse = await axios.get("http://localhost:5000/api/auth/user", {headers: {"x-auth-token": token}})
-        console.log(userResponse.data)
+        setUserData({user: userResponse.data.user, token})
       }
     }
     userCheck()
@@ -45,9 +45,8 @@ function App(){
         <Navbar />
         <Switch>
           <Route path='/profileDetail' component={ProfileDetailList} exact />
-          <Route path='/articleDetails' component={ArticleDetails} exact />
-          <Route path='/home' component={Home} exact />      
-          <Route path='/' component={Main} />      
+          <Route path='/articleDetails' component={ArticleDetails} exact />    
+          <Route path='/' component={userData.user ? Home : Main} />      
         </Switch>
       </div>
       </UserContext.Provider>
