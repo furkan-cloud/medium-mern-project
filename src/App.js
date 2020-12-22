@@ -9,6 +9,7 @@ import ProfileDetailList from './pages/profileDetailList/ProfileDetailList';
 import RegisterForm from './components/registerForm/RegisterForm';
 import UserContext from "./context/UserContext"
 import Main from './pages/mainPage/Main';
+import Header from "./components/headers/Header"
 
 
 // const fetchArticles = async ()
