@@ -1,34 +1,30 @@
 import React, {useState, useContext} from "react";
+import {useHistory} from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../context/UserContext"
 
 const SignInForm = () => {
     const {userData, setUserData} = useContext(UserContext)
-    const [firstName, setFirstName] = useState("")
-    const [lastName, setlastName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const history = useHistory()
  
     const handleOnClick = async(e) =>{
         e.preventDefault()
-        const newUser = {
-            firstName,
-            lastName,
+        const newUser = {  
             email,
             password
         }
 
-        const signResponse = await axios.post("http://localhost:5000/api/auth/sign", newUser)
+        const signResponse = await axios.post("http://localhost:5000/api/auth/login", newUser)
         setUserData({user: signResponse.data.user, token: signResponse.data.access_token})
+        localStorage.setItem("token", signResponse.data.access_token)
+        history.push("/home")
     }
 
     return(
         <div>
             <form>
-                <label>FirstName</label>
-                <input type = "text" name = "firstName" onChange = {(e) => setFirstName(e.target.value)} />
-                <label>LastName</label>
-                <input type = "text" name = "lastName" onChange={(e) => setlastName(e.target.value)} />
                 <label>Email</label>
                 <input type = "email" name = "email" onChange={(e) => setEmail(e.target.value)} />
                 <label>Password</label>

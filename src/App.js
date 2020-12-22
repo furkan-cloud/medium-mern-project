@@ -26,6 +26,18 @@ import Main from './pages/mainPage/Main';
 function App(){
   const [userData, setUserData] = useState({user: null, token: null})
 
+  useEffect(() =>{
+    const userCheck = async() =>{
+      let token = localStorage.getItem("token")
+      if (token){
+        const userResponse = await axios.get("http://localhost:5000/api/auth/user", {headers: {"x-auth-token": token}})
+        console.log(userResponse.data)
+      }
+    }
+    userCheck()
+  },[userData])
+
+
   return (
     <BrowserRouter>
       <UserContext.Provider value={{userData, setUserData}}>

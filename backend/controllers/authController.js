@@ -98,7 +98,7 @@ const logout = asyncErrorWrapper(async (req, res, next) => {
     });
 });
 const currentUser = asyncErrorWrapper(async (req, res, next) => {
-  const user = await User.findById(req.user._id).select("-password");
+  const user = await User.findById(req.user.id).select("-password");
   if (!user) {
     return next(new CustomError("User does not exist", 400));
   }
