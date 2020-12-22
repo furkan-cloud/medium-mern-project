@@ -15,8 +15,7 @@ const BigCardList = () => {
                   description={content.description}
                   date={content.date}
                   key={index}
-              />
-           
+              />           
           )}  
       </div>
       
