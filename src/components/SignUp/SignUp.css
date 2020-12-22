@@ -1,0 +1,90 @@
+.containerc01 {
+    width: 80%;
+    height: 85vh;
+    margin: 70px auto;
+    display: flex;
+    border-radius: 10px;
+    background: #3A36E4; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #3A36E4,
+      #ACC3FD
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #3A36E4,
+      #ACC3FD
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  h1 {
+    font-size: 55px;
+    letter-spacing: 2px;
+    font-family: "Nerko One", cursive;
+  }
+  .brand-boxc01 {
+    flex: 1 50%;
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+  }
+  .magic-formc01 {
+    flex: 1 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 70px;
+    font-size: 23px;
+    color: #3F3F40;
+    background: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .inputc01 {
+    padding: 4px 6px;
+    font-size: 16px;
+    width: 80%;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+  }
+  input:focus {
+    border-color: #185A9D;
+    outline: none;
+  }
+  .input-feedbackc01 {
+    color: red;
+    margin-top: 0.25rem;
+    font-size: 15px;
+  }
+  .checkboxc01 {
+    display: flex;
+    align-items: center;
+  }
+  .checkbox-labelc01 {
+    display: inline;
+    font-size: 12px;
+  }
+  button {
+    max-width: 150px;
+    margin: 20px 0;
+    padding: 8px 12px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #185A9D;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+  }
+  .topMarginc01 {
+    margin-top: 1rem;
+  }
