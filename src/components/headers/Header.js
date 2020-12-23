@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "./Header.css";
 import {Link, Router, Route} from 'react-router-dom';
 import SignUp from '../SignUp/SignUp';
+import UserContext from "../../context/UserContext"
+
 function Header(props) {
-    console.log(props)
+    const {modalIsOpen, openModal, closeModal} = useContext(UserContext);
+    console.log(modalIsOpen);
+    //console.log(props)
     return (
         <div className = "containere01">
+            <SignUp 
+                modalIsOpen = {modalIsOpen}
+                closeModal = {closeModal}
+            />
         <div className="headerContainere01">
             <div className="contentLefte01">
                 <img className="imagee01" src="https://miro.medium.com/max/8978/1*s986xIGqhfsN8U--09_AdA.png" alt="kırık"/>
@@ -19,7 +27,7 @@ function Header(props) {
                 <a href="#">Membership</a>
                 <a href="#">Write</a>
                 <a href="#">Sign In</a> */}
-                <button type="button" className="buttonFirste01">Get Started</button>
+                <button onClick = {() => openModal()} type="button" className="buttonFirste01">Get Started</button>
             </div>
         </div>
         <div className="footerContainere01">

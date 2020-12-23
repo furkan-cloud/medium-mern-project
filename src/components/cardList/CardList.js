@@ -4,7 +4,7 @@ import {cardContent} from '../../data/cardData';
 
 
   const CardList = () => {
-      console.log(cardContent)
+      //console.log(cardContent)
      return(
         <div className = 'cardListContainer'> 
             {cardContent.map((content,index)=>

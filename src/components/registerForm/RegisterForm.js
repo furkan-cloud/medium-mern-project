@@ -1,6 +1,7 @@
 import React, {useState, useContext} from "react";
 import axios from "axios";
 import UserContext from "../../context/UserContext"
+import './RegisterForm.css';
 
 const RegisterForm = () => {
     const {userData, setUserData} = useContext(UserContext)
@@ -24,8 +25,8 @@ const RegisterForm = () => {
     }
 
     return(
-        <div>
-            <form>
+        <div className = 'registerFormContainer'>
+            <form className = 'registerForm'>
                 <label>FirstName</label>
                 <input type = "text" name = "firstName" onChange = {(e) => setFirstName(e.target.value)} />
                 <label>LastName</label>

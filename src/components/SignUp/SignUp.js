@@ -3,15 +3,13 @@ import * as Yup from "yup";
 import "./SignUp.css";
 import React from "react";
 import Modal from "react-modal";
-function SignUp() {
+import RegisterForm from "../registerForm/RegisterForm";
+
+
+function SignUp({modalIsOpen, closeModal}) {
   var subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  function openModal() {
-    setIsOpen(true);
-  }
-  function closeModal() {
-    setIsOpen(false);
-  }
+  //console.log(modalIsOpen);
+
   return (
     <div style={{ display: "flex" }}>
       {/* <button onClick={openModal}>Open Modal</button> */}
@@ -21,11 +19,8 @@ function SignUp() {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className="containerc01">
-          {/* <div className="brand-box">
-        <h1>Magic Form</h1>
-        <p>Build forms in React , without the tears </p>
-      </div> */}
+        <RegisterForm/>
+        {/* <div className="containerc01">
           <div className="magic-formc01">
             <Formik
               initialValues={{
@@ -105,7 +100,7 @@ function SignUp() {
               )}
             </Formik>
           </div>
-        </div>
+        </div> */}
       </Modal>
     </div>
   );
@@ -123,3 +118,8 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
   },
 };
+
+          {/* <div className="brand-box">
+        <h1>Magic Form</h1>
+        <p>Build forms in React , without the tears </p>
+      </div> */}
