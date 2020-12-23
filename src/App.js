@@ -64,8 +64,8 @@ function App(){
         {userData.user ? <Navbar /> : <Header/> }
         
         <Switch>
-          <Route path='/profileDetail' component={ProfileDetailList} exact />
-          <Route path='/articleDetails' component={ArticleDetails} exact />    
+          <Route path='/profileDetail/:id' component={ProfileDetailList} exact />
+          <Route path='/articleDetail/:id' component={ArticleDetails} exact />    
           <Route path='/' component={userData.user ? Home : Main} />      
         </Switch>
       </div>

@@ -11,7 +11,7 @@ const RegisterForm = () => {
     const [password, setPassword] = useState("")
  
     const handleOnClick = async(e) =>{
-        e.preventDefault()
+        e.preventDefault();
         const newUser = {
             firstName,
             lastName,

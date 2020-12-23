@@ -25,6 +25,11 @@
     font-size: smaller;
     padding: 8px 0px;
 }
+.trendingusername img{
+    width: 20px;
+    height: 20px;
+
+}
 .trendingtitle{
     font-weight:bolder;
     padding-bottom: 8px;

@@ -10,9 +10,8 @@ const BigCard = (props) => {
     
             <div className="bigtext-container">
                     <Link 
-                        // to="/:id"  
+                        to={`/articleDetail/${props.id}` }
                         className="big-link"
-                        // onClick = {() => {}}
                     >
                         <div className="big-username">
                             <img className="big-profileImage" src={props.profileImage}/>
@@ -40,3 +39,5 @@ const BigCard = (props) => {
 }
 
 export default BigCard;
+
+// TODO: date fns ile date formatla

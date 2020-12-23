@@ -37,7 +37,7 @@ const getAllPosts = asyncErrorWrapper(async (req, res, next) => {
 });
 const getSinglePost = asyncErrorWrapper(async (req, res, next) => {
   const { id } = req.params;
-  const post = await Post.findById(id);
+  const post = await Post.findById(id).populate('author');
   res.status(200).json({
     success: true,
     data: post,
