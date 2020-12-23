@@ -1,0 +1,27 @@
+TODO:1 Start project yarn init or npm init and install dependencies ✅
+        - "bcryptjs": "^2.4.3",
+          "dotenv": "^8.2.0",
+          "express": "^4.17.1",
+          "express-async-handler": "^1.1.4",
+          "express-validator": "^6.8.0",
+         "jsonwebtoken": "^8.5.1",
+         "mongoose": "^5.11.8"
+TODO:2 Folder olusturmak ✅
+TODO:3 MongoDb Settings ✅
+TODO:4 Start Server  ✅
+TODO:5 Postman Config ✅
+TODO:6 Route Config(Auth register login logout getuser) ✅
+TODO:7 Create User model ✅
+TODO:8 Register demo ✅
+TODO:9 JWT token ✅
+TODO:9 Clean Code ✅
+TODO:10 express-async-handler try cathc den kurtulmak için ✅
+TODO:11 login ✅
+TODO:12 Auth Midd.  ✅
+TODO:12 Logout ✅
+TODO:13 userRouter and controller  ✅
+TODO:14 postRouter and controller ✅
+TODO:15 userQuery ve postQuery yazılması 
+TODO:16 userProfil image uploads (multer pack.)
+      -
+TODO:17 post images upload array 

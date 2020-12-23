@@ -6,7 +6,6 @@ import { faSearch, faBookmark,faUserCircle, faBell } from '@fortawesome/free-sol
 // import { checkSquare } from '@fortawesome/free-solid-svg-icons';
 
 
-
 const Navbar = () => {
     return(
         <div className="container">
@@ -31,5 +30,7 @@ const Navbar = () => {
         
     )
 }
+
+
 
 export default Navbar;

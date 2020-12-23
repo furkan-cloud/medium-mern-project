@@ -1,0 +1,21 @@
+.profileDetailListContainer{
+    display: flex;
+    border: 1px solid red;
+    width: 100%;
+    margin-right: 30%;
+}
+
+.profileDetailImageContainer{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.profileDetailImage{
+    width: 130px;
+    height: 130px;
+}
+
+.profileDetailArticleContainer{
+    width: 60%;
+}
