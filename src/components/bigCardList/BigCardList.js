@@ -1,19 +1,21 @@
-import React from 'react';
-import BigCard from '../bigCard/bigCard';
-import {bigCardContent} from '../../data/bigCardData';
+import React, {useContext} from 'react';
+import UserContext from '../../context/UserContext';
+import BigCard from '../bigCard/BigCard';
 
 const BigCardList = () => {
-    console.log(bigCardContent)
+
+    const {articles} = useContext(UserContext);
+    console.log(articles)
    return(
       <div className = 'bigCardListContainer'> 
-          {bigCardContent.map((content,index)=>
+          {articles?.map((content,index)=>
               <BigCard
-                  profileImage={content.profileImage}
-                  username={content.username}
-                  imageUrl={content.imageUrl}
+                  profileImage={content.author.avatar_image}
+                  username={content.author.firstName + content.author.lastName}
+                  imageUrl={content.post_image}
                   title={content.title}
-                  description={content.description}
-                  date={content.date}
+                  description={content.content}
+                  date={content.createdAt}
                   key={index}
               />           
           )}  

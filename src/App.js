@@ -26,6 +26,24 @@ import Header from "./components/headers/Header"
 
 function App(){
   const [userData, setUserData] = useState({user: null, token: null})
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [articles, setArticles] = useState(null);
+  
+  function openModal() {
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  useEffect(() => {
+    const fetchArticles = async() => {
+      const articleData = await axios.get("http://localhost:5000/api/posts")
+     //console.log(articleData.data.data);
+      setArticles(articleData.data.data)
+    }
+    fetchArticles(); 
+  }, [])
 
   useEffect(() =>{
     const userCheck = async() =>{
@@ -36,14 +54,15 @@ function App(){
       }
     }
     userCheck()
-  },[userData])
+  },[])
 
 
   return (
     <BrowserRouter>
-      <UserContext.Provider value={{userData, setUserData}}>
+      <UserContext.Provider value={{userData, setUserData, openModal, closeModal, modalIsOpen, setIsOpen, articles}}>
       <div className="App">
-        <Navbar />
+        {userData.user ? <Navbar /> : <Header/> }
+        
         <Switch>
           <Route path='/profileDetail' component={ProfileDetailList} exact />
           <Route path='/articleDetails' component={ArticleDetails} exact />    
