@@ -1,22 +1,23 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import "./ProfilDetail.css";
 import ArticleDetailCard from "../articleDetailCard/ArticleDetailCard";
 
 const ProfilDetail = () => {
   const [userProfile, setUserProfile] = useState(null);
-  const {id} = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    const fetchUser = async() => {
-      const userProfileData  = await axios.get(`http://localhost:5000/api/users/${id}`)
-      console.log(userProfileData?.data?.data)
-      setUserProfile(userProfileData?.data?.data)
-    }
-    fetchUser()
-  }, [id])
-
+    const fetchUser = async () => {
+      const userProfileData = await axios.get(
+        `http://localhost:5000/api/users/${id}`
+      );
+      console.log(userProfileData?.data?.data);
+      setUserProfile(userProfileData?.data?.data);
+    };
+    fetchUser();
+  }, [id]);
 
   return (
     <div className="profil__card__container">
@@ -35,10 +36,7 @@ const ProfilDetail = () => {
       <div className="profil__card__content">
         <div className="profil__card__content__left">
           <div>
-            <img
-              src={userProfile.avatar_img}
-              alt="userImage"
-            />
+            <img src={userProfile?.avatar_img} alt="userImage" />
           </div>
 
           <div className="profil__card__content__left__info">
@@ -51,14 +49,14 @@ const ProfilDetail = () => {
           className="
           profil__card__content__right"
         >
-          {userProfile?.posts.map((content, index) =>
+          {userProfile?.posts.map((content, index) => (
             <ArticleDetailCard
               date={content.createdAt}
               title={content.title}
               articleText={content.content}
               imageUrl={content.post_image}
             />
-          )}
+          ))}
         </div>
       </div>
     </div>
@@ -66,7 +64,6 @@ const ProfilDetail = () => {
 };
 
 export default ProfilDetail;
-
 
 // author: "5fe2de2cb7c09046688b1110"
 // content: "dummy subtitle form datadummy subtitle form datadummy subtitle form datadummy subtitle form datadummy subtitle form data"
