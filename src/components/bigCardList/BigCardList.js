@@ -11,6 +11,7 @@ const BigCardList = () => {
             {articles?.map((content, index) =>
                 <BigCard
                     id={content._id}
+                    authorId = {content.author._id}
                     profileImage={content.author.avatar_img}
                     username={content.author.firstName + content.author.lastName}
                     imageUrl={content.post_image}

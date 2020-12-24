@@ -5,7 +5,7 @@ const CustomError = require("../helpers/error/CustomError");
 const getSingleUser = asyncErrorWrapper(async (req, res, next) => {
   const { id } = req.params;
 
-  const user = await User.findById(id);
+  const user = await User.findById(id).populate('posts');
   return res.json({
     success: true,
     data: user,

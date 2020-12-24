@@ -1,15 +1,14 @@
-import React, {useState, createContext,useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
 import Navbar from './components/navbar/Navbar.js';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/homePage/Home';
 import ArticleDetails from './pages/articleDetail/ArticleDetails';
-import ProfileDetailList from './pages/profileDetailList/ProfileDetailList';
-import RegisterForm from './components/registerForm/RegisterForm';
 import UserContext from "./context/UserContext"
 import Main from './pages/mainPage/Main';
 import Header from "./components/headers/Header"
+import ProfilDetail from './components/profil/ProfilDetail';
 
 
 // const fetchArticles = async ()
@@ -64,7 +63,7 @@ function App(){
         {userData.user ? <Navbar /> : <Header/> }
         
         <Switch>
-          <Route path='/profileDetail/:id' component={ProfileDetailList} exact />
+          <Route path='/profileDetail/:id' component={ProfilDetail} exact />
           <Route path='/articleDetail/:id' component={ArticleDetails} exact />    
           <Route path='/' component={userData.user ? Home : Main} />      
         </Switch>

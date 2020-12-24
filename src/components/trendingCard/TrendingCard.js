@@ -8,14 +8,14 @@ const TrendingCard = (props) => {
     <div className="trendingcard-container">
       <div className="number-container">01</div>
       <Link
-        to = '/'
+        to='/'
       >
         <div className="trendingtext-container">
           <div className="trendingusername">
 
-            <img src={props.profileImage}></img>
+            <img className='trendingProfileImage' src={props.profileImage}></img>
 
-            {props.firstName}
+            <div>{props.firstName}</div>
           </div>
           <div className="trendingtitle">{props.title}</div>
 
