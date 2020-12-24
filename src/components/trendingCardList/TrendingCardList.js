@@ -8,6 +8,7 @@ import UserContext from '../../context/UserContext'
 const TrendingCardList = () => {
   //   console.log(cardContent)
   const { articles } = useContext(UserContext);
+  
   return (
     <div className='TrendingCardListContainer'>
       {articles?.map((article, index) =>

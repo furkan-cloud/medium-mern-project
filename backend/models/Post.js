@@ -35,7 +35,6 @@ const PostSchema = new Schema({
   },
   author: {
     type: mongoose.Schema.ObjectId,
-
     ref: "User",
   },
   likes: [{ type: mongoose.Schema.ObjectId, ref: "User" }],
