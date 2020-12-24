@@ -1,15 +1,14 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-import './App.css';
-import Navbar from './components/navbar/Navbar.js';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Home from './pages/homePage/Home';
-import ArticleDetails from './pages/articleDetail/ArticleDetails';
-import UserContext from "./context/UserContext"
-import Main from './pages/mainPage/Main';
-import Header from "./components/headers/Header"
-import ProfilDetail from './components/profil/ProfilDetail';
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./App.css";
+import Navbar from "./components/navbar/Navbar.js";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./pages/homePage/Home";
+import ArticleDetails from "./pages/articleDetail/ArticleDetails";
+import UserContext from "./context/UserContext";
+import Main from "./pages/mainPage/Main";
+import Header from "./components/headers/Header";
+import ProfilDetail from "./components/profil/ProfilDetail";
 
 // const fetchArticles = async ()
 
@@ -22,12 +21,11 @@ import ProfilDetail from './components/profil/ProfilDetail';
 //   setCityList(filteredList);
 // };
 
-
-function App(){
-  const [userData, setUserData] = useState({user: null, token: null})
+function App() {
+  const [userData, setUserData] = useState({ user: null, token: null });
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [articles, setArticles] = useState(null);
-  
+
   function openModal() {
     setIsOpen(true);
   }
@@ -36,38 +34,50 @@ function App(){
   }
 
   useEffect(() => {
-    const fetchArticles = async() => {
-      const articleData = await axios.get("http://localhost:5000/api/posts")
-     //console.log(articleData.data.data);
-      setArticles(articleData.data.data)
-    }
-    fetchArticles(); 
-  }, [])
+    const fetchArticles = async () => {
+      const articleData = await axios.get("http://localhost:5000/api/posts");
+      //console.log(articleData.data.data);
+      setArticles(articleData.data.data);
+    };
+    fetchArticles();
+  }, []);
 
-  useEffect(() =>{
-    const userCheck = async() =>{
-      let token = localStorage.getItem("token")
-      if (token){
-        const userResponse = await axios.get("http://localhost:5000/api/auth/user", {headers: {"x-auth-token": token}})
-        setUserData({user: userResponse.data.user, token})
+  useEffect(() => {
+    const userCheck = async () => {
+      let token = localStorage.getItem("token");
+      if (token) {
+        const userResponse = await axios.get(
+          "http://localhost:5000/api/auth/user",
+          { headers: { "x-auth-token": token } }
+        );
+        setUserData({ user: userResponse.data.user, token });
       }
-    }
-    userCheck()
-  },[])
-
+    };
+    userCheck();
+  }, []);
 
   return (
     <BrowserRouter>
-      <UserContext.Provider value={{userData, setUserData, openModal, closeModal, modalIsOpen, setIsOpen, articles}}>
-      <div className="App">
-        {userData.user ? <Navbar /> : <Header/> }
-        
-        <Switch>
-          <Route path='/profileDetail/:id' component={ProfilDetail} exact />
-          <Route path='/articleDetail/:id' component={ArticleDetails} exact />    
-          <Route path='/' component={userData.user ? Home : Main} />      
-        </Switch>
-      </div>
+      <UserContext.Provider
+        value={{
+          userData,
+          setUserData,
+          openModal,
+          closeModal,
+          modalIsOpen,
+          setIsOpen,
+          articles,
+        }}
+      >
+        <div className="App">
+          {userData.user ? <Navbar /> : <Header />}
+
+          <Switch>
+            <Route path="/profileDetail/:id" component={ProfilDetail} exact />
+            <Route path="/articleDetail/:id" component={ArticleDetails} exact />
+            <Route path="/" component={userData.user ? Home : Main} />
+          </Switch>
+        </div>
       </UserContext.Provider>
     </BrowserRouter>
   );
