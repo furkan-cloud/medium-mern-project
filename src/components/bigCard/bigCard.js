@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import "./bigCard.css";
+import "./BigCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 

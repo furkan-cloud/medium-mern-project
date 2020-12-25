@@ -36,10 +36,11 @@ function App() {
   useEffect(() => {
     const fetchArticles = async () => {
       const articleData = await axios.get("http://localhost:5000/api/posts");
-      //console.log(articleData.data.data);
+      console.log(articleData.data.data);
       setArticles(articleData.data.data);
     };
     fetchArticles();
+
   }, []);
 
   useEffect(() => {

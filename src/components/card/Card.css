@@ -1,15 +1,17 @@
 .card-container {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     border: 1px solid pink;
     padding-bottom: 32px;
 }
 
 .card-image{
-    width: 100%;
+    width: 100%
 }
 
 .text-container{
+    width: 60%;
     margin-right: 20px;
     text-align: left;
 }
@@ -29,5 +31,6 @@
 }
 
 .image-container {
+    width: 30%;
     align-self: center;
 }

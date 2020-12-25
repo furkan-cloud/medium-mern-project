@@ -7,7 +7,7 @@ const Card = (props) => {
     
             <div className="text-container">
                 <div className="username">
-                    <a href="">{props.userprofile}</a>
+                    <a href="">{props.profileImage}</a>
                     {props.username}
                 </div>
                 <div className="title">{props.title}</div>

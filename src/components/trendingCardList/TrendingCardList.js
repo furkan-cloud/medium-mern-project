@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import TrendingCard from '../trendingCard/TrendingCard';
-import { trendingCardContent } from '../../data/trendingCardData';
 import './TrendingCardList.css';
 import UserContext from '../../context/UserContext'
 

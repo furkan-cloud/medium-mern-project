@@ -1,22 +1,24 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './MainCard.css';
+import UserContext from '../../context/UserContext';
 
 const MainCard = () => {
+    const { articles } = useContext(UserContext);
+    console.log(articles);
     return (
         <div className="maincard-container">
             <div className="main-image-container">
-                <img className="main-image" src='https://miro.medium.com/fit/c/376/282/0*SZ9hlfia03wfgsth.jpg' alt='' />
+                <img className="main-image" src={articles[0][0]?.post_image} alt='' />
             </div>
-
             <div className="main-text-container">
                 <div className="main-username">
-                    <img src = 'https://miro.medium.com/fit/c/20/20/1*U6oowcH4fc_jKALXYqbtxQ.png'  width="10" height="10"></img>
-                    Nur KOcar
+                    <img src = {articles[0]?.author.avatar_img}  width="20" height="20"></img>
+                    {articles[3]?.author.firstName + articles[0]?.author.lastName}
                 </div>
 
-                <div className="main-title">10 Free React Native Courses for Beginners to Learn in 2021</div>
-                <div>There is a huge demand for cross-platform app frameworks like React Native and Flutter which allows you to create native-looking iOS and Android apps with the same code base.</div>
-                <div className="main-date">15/12</div>
+                <div className="main-title">{articles[0]?.title}</div>
+                <div>{articles[0]?.content}</div>
+                <div className="main-date">{articles[0]?.createdAt}</div>
             </div>
         </div>
     )
