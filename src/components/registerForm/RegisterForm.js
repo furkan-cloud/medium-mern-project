@@ -24,7 +24,7 @@ const RegisterForm = ({modalIsOpen, closeModal}) => {
         setUserData({ user: registerResponse.data.user, token: registerResponse.data.access_token })
         localStorage.setItem("token", registerResponse.data.access_token)
     }
-
+        // TODO: sadece token set edilecek user degil
     return (
         <div className='registerFormContainer'>
             <Modal

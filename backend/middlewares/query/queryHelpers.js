@@ -29,7 +29,7 @@ const paginationHelper = async (totalDocuments, query, req) => {
   //paginate
   const total = totalDocuments;
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 5;
+  const limit = parseInt(req.query.limit) || 15;
 
   const startIndex = (page - 1) * limit;
   const endIndex = page * limit; // end page

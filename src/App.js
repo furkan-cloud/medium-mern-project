@@ -53,6 +53,7 @@ function App() {
           { headers: { "x-auth-token": token } }
         );
         setUserData({ user: userResponse.data.user, token });
+        console.log(userResponse.data.user)
       }
     };
     userCheck();
