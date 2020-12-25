@@ -1,6 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './ArticleDetailCard.css'
+import Claps from "../icons/Claps"
+import Bookmark from "../icons/Bookmark"
+
 
 import {
     faBookmark,
@@ -8,6 +11,8 @@ import {
     faSignLanguage,
     faUpload
   } from "@fortawesome/free-solid-svg-icons";
+import Comment from '../icons/Comment';
+import Upload from '../icons/Upload';
 
 const ArticleDetailCard = (props) => {
     return(
@@ -28,31 +33,15 @@ const ArticleDetailCard = (props) => {
 
             <div>
                 <div>
-                    <FontAwesomeIcon
-                        icon={faSignLanguage}
-                        style={{ color: "#bdbdbd" }}
-                        size="2x"
-                />
+                    <Claps/>
                 <div className="applause">200</div>
-                <FontAwesomeIcon
-                    icon={faComment}
-                    style={{ color: "#bdbdbd" }}
-                    size="2x"
-                />
+                    <Comment/>
                 <div className="comment">20</div>
                 </div>
 
                 <div>
-                    <FontAwesomeIcon
-                        icon={faBookmark}
-                        style={{ color: "#bdbdbd" }}
-                        size="2x"
-                    />
-                     <FontAwesomeIcon
-                        icon={faUpload}
-                        style={{ color: "#bdbdbd" }}
-                        size="2x"
-                    />
+                    <Bookmark/>
+                    <Upload/>
                 </div>
             </div>
         </div>

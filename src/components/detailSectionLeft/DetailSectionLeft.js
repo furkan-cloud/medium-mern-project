@@ -8,6 +8,8 @@ import {
   faComment,
   faSignLanguage,
 } from "@fortawesome/free-solid-svg-icons";
+import Claps from "../icons/Claps";
+import Comment from "../icons/Comment";
 
 const DetailSectionLeft = () => {
   return (
@@ -26,19 +28,12 @@ const DetailSectionLeft = () => {
         <hr />
         <div className="icons-container">
           <div className="icons">
-            <FontAwesomeIcon
-              icon={faSignLanguage}
-              style={{ color: "#bdbdbd" }}
-              size="2x"
-            />
+           <Claps/>
             <div className="applause">200</div>
           </div>
           <div className="icons">
-            <FontAwesomeIcon
-              icon={faComment}
-              style={{ color: "#bdbdbd" }}
-              size="2x"
-            /><div className="comment">20</div>
+          <Comment/>
+           <div className="comment">20</div>
           </div>
           <div className="icons">
             <FontAwesomeIcon

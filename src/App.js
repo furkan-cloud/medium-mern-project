@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar.js";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/homePage/Home";
 import ArticleDetails from "./pages/articleDetail/ArticleDetails";
+import PostEditor from "./components/addpost/PostEditor"
 import UserContext from "./context/UserContext";
 import Main from "./pages/mainPage/Main";
 import Header from "./components/headers/Header";
@@ -76,6 +77,7 @@ function App() {
           <Switch>
             <Route path="/profileDetail/:id" component={ProfilDetail} exact />
             <Route path="/articleDetail/:id" component={ArticleDetails} exact />
+            <Route path="/posts/add" component={PostEditor} exact />
             <Route path="/" component={userData.user ? Home : Main} />
           </Switch>
         </div>

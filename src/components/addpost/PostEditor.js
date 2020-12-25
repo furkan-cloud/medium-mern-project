@@ -2,11 +2,10 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import ReactHtmlParser from "react-html-parser";
 import UserContext from "../../context/UserContext";
-import Editor from "./CkEditor";
 import "./PostEditor.css";
-import ReactEditor from "./ReactEditor";
 import { useContext, useState } from "react";
 import Axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const PostEditor = () => {
   const { userData } = useContext(UserContext);
@@ -14,6 +13,7 @@ const PostEditor = () => {
   const [title, setTitle] = useState();
   const [image, setImage] = useState(null);
   const [post, setPost] = useState(null);
+  const history = useHistory()
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
@@ -26,7 +26,7 @@ const PostEditor = () => {
     formData.append("content", content);
     formData.append("post_image", image);
     formData.append("subtitle", title);
-    formData.append("author", userData.user.id);
+    formData.append("author", userData.user._id);
 
     console.log(formData);
     let token = localStorage.getItem("token");
@@ -49,6 +49,8 @@ const PostEditor = () => {
     setContent("");
     setTitle("");
     setImage("");
+
+    history.push(`/profileDetail/${userData.user._id}`)
   };
   return (
     <div>
@@ -74,7 +76,7 @@ const PostEditor = () => {
             type="file"
             // ref={hiddenFileInput}
             onChange={handleChange}
-            style={{ display: "none" }}
+            // style={{ display: "none" }}
           />
         </div>
         <CKEditor

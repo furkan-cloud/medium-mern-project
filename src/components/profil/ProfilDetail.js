@@ -19,13 +19,20 @@ const ProfilDetail = () => {
     fetchUser();
   }, [id]);
 
+  async function addFollow() {
+    const userProfileData = await axios.get(
+      `http://localhost:5000/api/users/follow/${id}`
+    );
+    console.log(userProfileData.data)
+  }
+
   return (
     <div className="profil__card__container">
       <div className="profil__card__header">
         <h2>{userProfile?.firstName}</h2>
       </div>
       <div className="profil__card__subheader">
-        <button className="profil__card__subheader__btn"> Following</button>
+        <button onClick={addFollow} className="profil__card__subheader__btn">Follow</button>
         <Link>
           <span> {userProfile?.followersCount} </span> <span>Followers</span>
         </Link>

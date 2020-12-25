@@ -18,7 +18,7 @@ const BigCard = (props) => {
         <Link to={`/articleDetail/${props.id}`} className="big-link">
           <div className="big-card-title">{props.title}</div>
           <div className="big-card-desc">
-            {ReactHtmlParser(props.description)}
+            {ReactHtmlParser(props.description.slice(0,150))}
           </div>
         </Link>
         <div className="date-icons">
