@@ -1,18 +1,14 @@
-.registerFormContainer{
-    width: 50%;
-    height: auto;
-    margin:5vh 10vw;
+.mainContainer{
+
 }
 
-.registerForm{
-    width: 100%;
-    height: 100%;
+.signInForm{
     display: flex;
     flex-direction: column;
-    /* padding: 2vh 1vw; */
+    padding: 5vh;
 }
 
-input{
+.signInInput{
     width: 50%;
     border: none;
     outline: none;
@@ -23,17 +19,14 @@ input{
     border-bottom: 2px solid #ccc;
     transition:.3s ease-in-out;
 }
-.input-label{
-    margin-bottom: 0.5vh;
-}
 
-.modalInputContainer{
+.signInContainer{
     display: flex;
     flex-direction: column;
     margin: 1vh;
 }
 
-.modalRegister{
+.modalSignIn{
     width: 15%;
     background-color: #FFC017;
     padding: 1vh;
@@ -43,9 +36,9 @@ input{
     font-weight: 400;
     font-size: 1rem;
     margin-top: 1vh;
-}
+} 
 
-.modalRegister:hover{
+.modalSignIn:hover{
     background-color: white;
     color: #FFC017 ;
     font-weight: bold;
