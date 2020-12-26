@@ -1,17 +1,26 @@
 import "./DetailSectionLeft.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faBookmark,
-  faUserCircle,
-  faBalanceScaleRight,
-  faComment,
-  faSignLanguage,
-} from "@fortawesome/free-solid-svg-icons";
 import Claps from "../icons/Claps";
-import Comment from "../icons/Comment";
+import Bookmark from "../icons/Bookmark";
+import axios from 'axios';
+import { useEffect, useLayoutEffect, useState } from "react";
 
-const DetailSectionLeft = () => {
+const DetailSectionLeft = ({singleArticle}) => {
+
+  const [claps, setClaps] = useState(singleArticle?.claps)
+  console.log(singleArticle)
+  useLayoutEffect(()=>{
+    setClaps(singleArticle?.claps)
+  },[])
+
+  const handleClaps = async ()  => {
+    let token = localStorage.getItem("token");
+    const getClaps = await axios.get(
+      `http://localhost:5000/api/posts/${singleArticle?._id}/claps`,
+      { headers: { "x-auth-token": token } }
+    );
+    console.log(getClaps.data)
+    setClaps(getClaps.data?.data.claps)
+    }
   return (
     <div className="articleDetailLeft">
      
@@ -20,27 +29,20 @@ const DetailSectionLeft = () => {
       <div className="position">
         <div className="line">
           <div>Written By</div>
-          <div className="writer">Faruk Cihan</div>
+          <div className="writer">{singleArticle?.author?.firstName + " " + singleArticle?.author?.lastName}</div>
           <div className="left-button-container">
             <button className="left-button">Following</button>
           </div>
         </div>
         <hr />
         <div className="icons-container">
-          <div className="icons">
+          <div onClick = {handleClaps} className="icons">
            <Claps/>
-            <div className="applause">200</div>
+            <div className="applause">{claps}</div>
           </div>
+    
           <div className="icons">
-          <Comment/>
-           <div className="comment">20</div>
-          </div>
-          <div className="icons">
-            <FontAwesomeIcon
-              icon={faBookmark}
-              style={{ color: "#bdbdbd" }}
-              size="2x"
-            /> 
+           <Bookmark/>
           </div>
         </div>
       </div>

@@ -19,14 +19,16 @@
 .headerLeft {
     border-left: 1px solid grey;
     padding-left: 20px;
+    font-size: 1.3rem;
     /* flex-direction: ; */
 }
 
 .containerRight {
     display: flex;
-    /* width: 400px; */
-    justify-content: center;
+    width: 300px;
+    justify-content: space-around;
     align-items: center;
+    border: 1px solid green;
     /* flex-direction: ; */
     /* padding-right: 80px; */
 }
@@ -34,25 +36,29 @@
 .navbarImage {
     /* display: inline-block; */
     /* width: 100px; */
-    height: 90px;
+    height: 55px;
 }
 
 .search {
     /* padding-right: 10px;
     padding-left: 10px;
     padding-top: 20px; */
-    padding: 20px;
+    /* padding: 20px; */
     margin-top: 0px;
 }
 
- .button{
+ .navbar-button{
     /* width:10px; */
-    height: 50px;
-    color: white;
-    background-color: #1a8917;
+    height: 30px;
+    color: #1a8917;
+    background-color:white;
     border-radius: 5px;
-    font-size: 20px;
-    border: none;
-    padding: 0 20px;
+    font-size: 16px;
+    border: 1px solid #1a8917;
 }
 
+.navbar-profileImage{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}

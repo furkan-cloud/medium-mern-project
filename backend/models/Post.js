@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const slugify = require("slugify");
+var moment = require('moment');
 
 const { Schema } = mongoose;
 
@@ -31,8 +32,12 @@ const PostSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now,
+    default: Date.now
   },
+  formatDate: {
+    type: String,
+  },
+  
   author: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
@@ -79,6 +84,7 @@ PostSchema.pre("save", function (next) {
     next();
   }
   this.slug = this.makeSlug(this.title);
+  this.formatDate = moment(Date.now()).format("MMM D")
   next();
 });
 

@@ -1,6 +1,6 @@
 import './ArticleProfile.css';
 
-const ArticleProfile = ({ author }) => {
+const ArticleProfile = ({ author, formatDate }) => {
     return (
         <div className="articleProfileContainer">
             <a href="/profileDetails" className="articleProfileLink">
@@ -12,7 +12,7 @@ const ArticleProfile = ({ author }) => {
                     <span>{author?.lastName}</span>
                 </div>
             </a>
-            <div className="articleDate">{author?.createdAt}</div>
+            <div className="articleDate">{formatDate}</div>
         </div>
     )
 }
