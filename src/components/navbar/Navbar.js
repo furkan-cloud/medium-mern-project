@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import UserContext from '../../context/UserContext'
 import "./Navbar.css";
@@ -29,15 +29,19 @@ const Navbar = () => {
     }
   }
 
-  const {userData} = useContext(UserContext)
+  const { userData } = useContext(UserContext)
 
   return (
     <div className="container">
       <div className="containerLeft">
-        <img
-          className="navbarImage"
-          src="https://miro.medium.com/max/8978/1*s986xIGqhfsN8U--09_AdA.png"
-        />
+        <Link
+          to = '/'
+        >
+          <img
+            className="navbarImage"
+            src="https://miro.medium.com/max/8978/1*s986xIGqhfsN8U--09_AdA.png"
+          />
+        </Link>
         <h1 className="headerLeft">{greeting()}</h1>
       </div>
 
@@ -52,9 +56,9 @@ const Navbar = () => {
           <button className="navbar-button">Add Article</button>
         </Link>
         <Link>
-            <img className="navbar-profileImage" src={userData.user.avatar_img} />
+          <img className="navbar-profileImage" src={userData.user.avatar_img} />
         </Link>
-            
+
       </div>
     </div>
   );

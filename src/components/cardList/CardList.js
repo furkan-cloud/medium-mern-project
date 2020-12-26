@@ -16,7 +16,7 @@ const CardList = () => {
                     username={article?.author.firstName + article?.author.lastName}
                     title={article?.title}
                     profileImage={article?.author.avatar_img}
-                    date={article?.createdAt}
+                    date={article?.formatDate}
                     imageUrl={article?.post_image}
                     key={index}
                 />
