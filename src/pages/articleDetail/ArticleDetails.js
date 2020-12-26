@@ -24,7 +24,7 @@ const ArticleDetails = () => {
 
     return (
         <div className='articleDetailContainer'>
-            <DetailSectionLeft  />
+            <DetailSectionLeft singleArticle = {singleArticle} />
             <DetailSectionMiddle singleArticle = {singleArticle} />
             <DetailSectionRight />
         </div>
