@@ -1,30 +1,61 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import "./ProfilDetail.css";
 import ArticleDetailCard from "../articleDetailCard/ArticleDetailCard";
+import UserContext from "../../context/UserContext";
 
 const ProfilDetail = () => {
   const [userProfile, setUserProfile] = useState(null);
-  const {id} = useParams();
+  const { userData, setUserData } = useContext(UserContext);
+  const { id } = useParams();
 
   useEffect(() => {
-    const fetchUser = async() => {
-      const userProfileData  = await axios.get(`http://localhost:5000/api/users/${id}`)
-      console.log(userProfileData?.data?.data)
-      setUserProfile(userProfileData?.data?.data)
-    }
-    fetchUser()
-  }, [id])
+    const fetchUser = async () => {
+      const userProfileData = await axios.get(
+        `http://localhost:5000/api/users/${id}`
+      );
+      setUserProfile(userProfileData?.data?.data);
+    };
+    fetchUser();
+  }, [userData]);
+
+  async function removeFollow() {
+    let token = localStorage.getItem("token");
+    const unFollowProfileData = await axios.get(
+      `http://localhost:5000/api/users/unfollow/${id}`,
+      {
+        headers: {
+          "x-auth-token": token,
+        },
+      }
+    );
+    setUserData({ user: unFollowProfileData.data, token });
+  }
 
 
+  async function addFollow() {
+    let token = localStorage.getItem("token");
+    const followProfileData = await axios.get(
+      `http://localhost:5000/api/users/follow/${id}`,
+      {
+        headers: {
+          "x-auth-token": token,
+        },
+      }
+    );
+    setUserData({ user: followProfileData.data, token });
+
+  }
+  console.log(userData);
   return (
+
     <div className="profil__card__container">
       <div className="profil__card__header">
         <h2>{userProfile?.firstName}</h2>
       </div>
       <div className="profil__card__subheader">
-        <button className="profil__card__subheader__btn"> Following</button>
+        <button onClick={userProfile?.followers?.includes(userData.user._id) ? removeFollow : addFollow} className="profil__card__subheader__btn">{userProfile?.followers?.includes(userData.user._id) ? 'Following' : 'Follow'}</button>
         <Link>
           <span> {userProfile?.followersCount} </span> <span>Followers</span>
         </Link>
@@ -35,10 +66,7 @@ const ProfilDetail = () => {
       <div className="profil__card__content">
         <div className="profil__card__content__left">
           <div>
-            <img
-              src={userProfile.avatar_img}
-              alt="userImage"
-            />
+            <img src={userProfile?.avatar_img} alt="userImage" />
           </div>
 
           <div className="profil__card__content__left__info">
@@ -51,14 +79,14 @@ const ProfilDetail = () => {
           className="
           profil__card__content__right"
         >
-          {userProfile?.posts.map((content, index) =>
+          {userProfile?.posts.map((content, index) => (
             <ArticleDetailCard
               date={content.createdAt}
               title={content.title}
               articleText={content.content}
               imageUrl={content.post_image}
             />
-          )}
+          ))}
         </div>
       </div>
     </div>
@@ -66,7 +94,6 @@ const ProfilDetail = () => {
 };
 
 export default ProfilDetail;
-
 
 // author: "5fe2de2cb7c09046688b1110"
 // content: "dummy subtitle form datadummy subtitle form datadummy subtitle form datadummy subtitle form datadummy subtitle form data"

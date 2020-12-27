@@ -7,6 +7,7 @@ const {
   deletePost,
   likePost,
   undolikePost,
+  clapsPost,
 } = require("../controllers/postController");
 const authCheck = require("../middlewares/auth/authCheck");
 const postQuery = require("../middlewares/query/postQuery");
@@ -82,10 +83,16 @@ router.delete(
 router.get("/:id/like", [authCheck, checkPostExist], likePost);
 /**
  * @route   PUT api/posts/:id/undolike
- * @desc    Delete Post data
+ * @desc    Like Post data
  * @access  Private
  */
 router.get("/:id/undolike", [authCheck, checkPostExist], undolikePost);
+/**
+ * @route   PUT api/posts/:id/claps
+ * @desc    Claps Post data
+ * @access  Private
+ */
+router.get("/:id/claps", [authCheck, checkPostExist], clapsPost);
 
 module.exports = router;
 

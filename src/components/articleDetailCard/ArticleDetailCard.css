@@ -1,3 +1,8 @@
 .articleDetailImage{
     width: 100%;
 }
+
+.all-icons{
+    display: flex;
+    flex-direction: row;
+}

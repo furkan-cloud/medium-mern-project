@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import TrendingCard from '../trendingCard/TrendingCard';
-import { trendingCardContent } from '../../data/trendingCardData';
 import './TrendingCardList.css';
 import UserContext from '../../context/UserContext'
 
@@ -14,10 +13,11 @@ const TrendingCardList = () => {
       {articles?.map((article, index) =>
         <TrendingCard
           id={article?._id}
+          authorId={article.author._id}
           firstName={article?.author.firstName}
           title={article?.title}
           profileImage = {article?.author.avatar_img}
-          date={article?.createdAt}
+          date={article?.formatDate}
           key={index}
         />
 

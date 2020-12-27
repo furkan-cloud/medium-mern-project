@@ -1,15 +1,17 @@
 .card-container {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     border: 1px solid pink;
     padding-bottom: 32px;
 }
 
 .card-image{
-    width: 100%;
+    width: 100%
 }
 
 .text-container{
+    width: 60%;
     margin-right: 20px;
     text-align: left;
 }
@@ -17,6 +19,12 @@
 .username{
     font-size: smaller;
     padding-bottom: 8px;
+}
+.card-profileImage{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 .title{
     font-weight:bolder;
@@ -29,5 +37,6 @@
 }
 
 .image-container {
+    width: 30%;
     align-self: center;
 }

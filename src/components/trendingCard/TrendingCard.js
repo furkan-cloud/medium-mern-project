@@ -7,22 +7,25 @@ const TrendingCard = (props) => {
 
     <div className="trendingcard-container">
       <div className="number-container">01</div>
-      <Link
-        to='/'
-      >
-        <div className="trendingtext-container">
+
+      <div className="trendingtext-container">
+        <Link to={`/profileDetail/${props.authorId}`}>
           <div className="trendingusername">
 
             <img className='trendingProfileImage' src={props.profileImage}></img>
 
             <div>{props.firstName}</div>
           </div>
+        </Link>
+        <Link
+          to={`/articleDetail/${props.id}`}
+        >
           <div className="trendingtitle">{props.title}</div>
+        </Link>
+        <div className="trendingdate">{props.date}</div>
 
-          <div className="trendingdate">{props.date}</div>
+      </div>
 
-        </div>
-      </Link>
     </div>
   );
 };

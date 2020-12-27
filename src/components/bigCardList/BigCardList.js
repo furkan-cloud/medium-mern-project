@@ -1,29 +1,27 @@
-import React, { useContext } from 'react';
-import UserContext from '../../context/UserContext';
-import BigCard from '../bigCard/BigCard';
+import React, { useContext } from "react";
+import UserContext from "../../context/UserContext";
+import BigCard from "../bigCard/BigCard";
 
 const BigCardList = () => {
-
-    const { articles } = useContext(UserContext);
-    //console.log(articles)
-    return (
-        <div className='bigCardListContainer'>
-            {articles?.map((content, index) =>
-                <BigCard
-                    id={content._id}
-                    authorId = {content.author._id}
-                    profileImage={content.author.avatar_img}
-                    username={content.author.firstName + content.author.lastName}
-                    imageUrl={content.post_image}
-                    title={content.title}
-                    description={content.content}
-                    date={content.createdAt}
-                    key={index}
-                />
-            )}
-        </div>
-
-    )
-}
+  const { articles } = useContext(UserContext);
+  //console.log(articles)
+  return (
+    <div className="bigCardListContainer">
+      {articles?.map((article, index) => (
+        <BigCard
+          id={article._id}
+          authorId={article.author._id}
+          profileImage={article.author.avatar_img}
+          username={article.author.firstName + article.author.lastName}
+          imageUrl={article.post_image}
+          title={article.title}
+          description={article.content}
+          date={article.formatDate}
+          key={index}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default BigCardList;

@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../context/UserContext"
 import Modal from "react-modal";
+import "./SignIn.css"
 
 const SignInForm = (props) => {
     const { setUserData } = useContext(UserContext)
@@ -22,18 +23,22 @@ const SignInForm = (props) => {
     }
 
     return (
-        <div>
+        <div className="mainContainer">
             <Modal
                 isOpen={props.openSignInMOdal}
-                onRequestClose={props.openSignInMOdal}
+                onRequestClose={props.closeModal}
                 style={customStyles}
             >
-                <form>
-                    <label>Email</label>
-                    <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
-                    <label>Password</label>
-                    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
-                    <button onClick={handleOnClick} >sign</button>
+                <form className="signInForm" >
+                    <div className="signInContainer">
+                    <label>Email :</label>
+                    <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} className="signInInput" />
+                    </div>
+                    <div className="signInContainer">
+                    <label>Password :</label>
+                    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)}  className="signInInput" />
+                    </div>
+                    <button onClick={handleOnClick} className="modalSignIn">Sign In</button>
                 </form>
             </Modal>
         </div >
@@ -46,7 +51,7 @@ export default SignInForm;
 
 const customStyles = {
     content: {
-        width: "60%",
+        width: "50%",
         height: "auto",
         top: "50%",
         left: "50%",
