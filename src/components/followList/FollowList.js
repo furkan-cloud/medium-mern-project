@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Avatar from '../latestFromFollowing/Avatar';
 import { Link } from 'react-router-dom';
 import './FollowList.css';
+import UserContext from '../../context/UserContext';
 
 const followList = [
     {
@@ -56,6 +57,8 @@ const followList = [
 ]
 
 const FollowList = () => {
+    const {userData} = useContext(UserContext)
+    console.log(userData);
     return (
         <div className='followListContainer'>
             <h3 className = 'followingHeader'>LATEST FROM FOLLOWING</h3>

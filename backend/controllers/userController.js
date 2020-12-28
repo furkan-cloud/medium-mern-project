@@ -21,8 +21,8 @@ const getAllUsers = asyncErrorWrapper(async (req, res, next) => {
 const followUser = asyncErrorWrapper(async (req, res, next) => {
   const { id } = req.params;
 
-  let user = await User.findById(id);
-  let currentUser = await User.findById(req.user.id);
+  let user = await User.findById(id)
+  let currentUser = await User.findById(req.user.id)
 
   //TODO followers da burada eklenecek birinin followingi birinin followerse olucak ✅
 
