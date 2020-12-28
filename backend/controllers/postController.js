@@ -37,7 +37,8 @@ const getAllPosts = asyncErrorWrapper(async (req, res, next) => {
 });
 const getSinglePost = asyncErrorWrapper(async (req, res, next) => {
   const { id } = req.params;
-  const post = await Post.findById(id).populate("author");
+  const post = await Post.findById(id).populate("author").sort("-createdAt");
+
   res.status(200).json({
     success: true,
     data: post,
@@ -72,7 +73,7 @@ const likePost = asyncErrorWrapper(async (req, res, next) => {
   const { id } = req.params;
 
   let post = await Post.findById(id);
-  let currentUser = await User.findById(req.user.id)
+  let currentUser = await User.findById(req.user.id);
 
   if (post.likes.includes(req.user.id)) {
     return next(new CustomError("You already liked this post", 400));
@@ -88,7 +89,7 @@ const likePost = asyncErrorWrapper(async (req, res, next) => {
     success: true,
     message: "Liked operations successfull",
     data: post,
-    currentUser
+    currentUser,
   });
 });
 

@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <div>
       {/* <SignInForm /> */}
-      <ProfilDetail />
+      {/* <ProfilDetail /> */}
     </div>
   );
 };
