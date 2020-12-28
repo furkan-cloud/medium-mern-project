@@ -20,7 +20,7 @@ const MainCard = () => {
                     {articles && articles[0]?.author.firstName + articles && articles[0]?.author.lastName}
                 </div>
             </Link>
-            <Link to={`/articleDetail/${articles[0]?._id}`} className="big-link">
+            <Link to={`/articleDetail/${articles && articles[0]?._id}`} className="big-link">
                 <div className="main-title">{articles && articles[0]?.title}</div>
                 <div>{articles && ReactHtmlParser(articles[0]?.content.slice(0,400))}</div>
             </Link>

@@ -8,6 +8,7 @@ import UserContext from "../../context/UserContext";
 const ProfilDetail = () => {
   const [userProfile, setUserProfile] = useState(null);
   const { userData, setUserData } = useContext(UserContext);
+  // const [follow, setFollow] = useState(userProfile?.followers?.includes(userData?.user?._id))
   const { id } = useParams();
 
   useEffect(() => {
@@ -17,7 +18,7 @@ const ProfilDetail = () => {
       );
       setUserProfile(userProfileData?.data?.data);
     };
-    fetchUser();
+     fetchUser()
   }, [userData]);
 
   async function removeFollow() {
@@ -30,6 +31,7 @@ const ProfilDetail = () => {
         },
       }
     );
+    console.log(unFollowProfileData)
     setUserData({ user: unFollowProfileData.data, token });
   }
 
@@ -45,6 +47,7 @@ const ProfilDetail = () => {
       }
     );
     setUserData({ user: followProfileData.data, token });
+    console.log(followProfileData)
 
   }
   console.log(userData);
@@ -55,7 +58,7 @@ const ProfilDetail = () => {
         <h2>{userProfile?.firstName}</h2>
       </div>
       <div className="profil__card__subheader">
-        <button onClick={userProfile?.followers?.includes(userData.user._id) ? removeFollow : addFollow} className="profil__card__subheader__btn">{userProfile?.followers?.includes(userData.user._id) ? 'Following' : 'Follow'}</button>
+        <button onClick={userProfile?.followers?.includes(userData?.user?._id) ? removeFollow : addFollow} className="profil__card__subheader__btn">{userProfile?.followers?.includes(userData?.user?._id) ? 'Following' : 'Follow'}</button>
         <Link>
           <span> {userProfile?.followersCount} </span> <span>Followers</span>
         </Link>

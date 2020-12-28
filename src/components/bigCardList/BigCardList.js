@@ -18,6 +18,7 @@ const BigCardList = () => {
           description={article.content}
           date={article.formatDate}
           key={index}
+          likes={article.likes}
         />
       ))}
     </div>

@@ -71,6 +71,7 @@ function App() {
           modalIsOpen,
           setIsOpen,
           articles,
+          setArticles
         }}
       >
         <div className="App">

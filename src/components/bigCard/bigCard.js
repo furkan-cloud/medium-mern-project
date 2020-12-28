@@ -1,14 +1,49 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
 import "./BigCard.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+import axios from 'axios'
 import Bookmark from '../icons/Bookmark';
 import BookmarkFill from '../icons/BookmarkFill';
 import ThreeDots from '../icons/ThreeDots'
+import UserContext from "../../context/UserContext";
 
 const BigCard = (props) => {
+  const { articles, setArticles, userData, setUserData } = useContext(UserContext)
+  const [isLike , setIsLike] = useState(props.likes.includes(userData.user._id))
+
+  async function removeBookmark() {
+    let token = localStorage.getItem("token");
+    const undoLikeData = await axios.get(
+      `http://localhost:5000/api/posts/${props.id}/undolike`,
+      {
+        headers: {
+          "x-auth-token": token,
+        },
+      }
+    );
+    console.log(undoLikeData)
+    setIsLike(false)
+    
+  }
+
+
+  async function addBookmark() {
+    let token = localStorage.getItem("token");
+    const likeData = await axios.get(
+      `http://localhost:5000/api/posts/${props.id}/like`,
+      {
+        headers: {
+          "x-auth-token": token,
+        },
+      }
+    );
+    console.log(likeData)
+    setIsLike(true)
+
+  }
+
+
   return (
     <div className="bigcard-container">
       <div className="bigtext-container">
@@ -27,7 +62,7 @@ const BigCard = (props) => {
         <div className="date-icons">
           <div className="big-card-date">{props.date}</div>
           <div className="big-card-icons">
-            <Bookmark />
+          <div onClick={isLike ? removeBookmark : addBookmark}>{isLike ? <BookmarkFill/> : <Bookmark/> }</div>
             <ThreeDots />
           </div>
         </div>
