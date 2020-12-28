@@ -82,7 +82,17 @@ const UserSchema = new Schema({
 
   avatar_img: {
     type: String,
-    default: "default.jpg",
+    default: "https://www.pngrepo.com/download/5125/avatar.png",
+  },
+  readingList: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Post",
+    },
+  ],
+  readingListCount: {
+    type: Number,
+    default: 0,
   },
 });
 
