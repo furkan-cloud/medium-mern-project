@@ -6,14 +6,16 @@ import "./PostEditor.css";
 import { useContext, useState } from "react";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
+import { topics } from "../../data/topicData";
 
 const PostEditor = () => {
   const { userData } = useContext(UserContext);
   const [content, setContent] = useState();
   const [title, setTitle] = useState();
   const [image, setImage] = useState(null);
+  const [topic, setTopic] = useState(null);
   const [post, setPost] = useState(null);
-  const history = useHistory()
+  const history = useHistory();
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
@@ -26,6 +28,7 @@ const PostEditor = () => {
     formData.append("content", content);
     formData.append("post_image", image);
     formData.append("subtitle", title);
+    formData.append("topic", topic);
     formData.append("author", userData.user._id);
 
     console.log(formData);
@@ -50,7 +53,7 @@ const PostEditor = () => {
     setTitle("");
     setImage("");
 
-    history.push(`/profileDetail/${userData.user._id}`)
+    history.push(`/profileDetail/${userData.user._id}`);
   };
   return (
     <div>
@@ -78,6 +81,16 @@ const PostEditor = () => {
             onChange={handleChange}
             // style={{ display: "none" }}
           />
+          <label>
+            Select Topics:
+            <select value={topic} onChange={(e) => setTopic(e.target.value)}>
+              {topics.map((topic, i) => (
+                <option key={i} value={topic}>
+                  {topic}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
         <CKEditor
           editor={ClassicEditor}
