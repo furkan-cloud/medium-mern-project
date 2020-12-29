@@ -7,10 +7,11 @@ import Bookmark from '../icons/Bookmark';
 import BookmarkFill from '../icons/BookmarkFill';
 import ThreeDots from '../icons/ThreeDots'
 import UserContext from "../../context/UserContext";
+import RegisterForm from "../registerForm/RegisterForm";
 
 const BigCard = (props) => {
-  const { articles, setArticles, userData, setUserData } = useContext(UserContext)
-  const [isLike , setIsLike] = useState(props.likes.includes(userData.user._id))
+  const { articles, setArticles, userData, setUserData, openModal, closeModal, modalIsOpen, setIsOpen } = useContext(UserContext)
+  const [isLike , setIsLike] = useState(props.likes.includes(userData?.user?._id))
 
   async function removeBookmark() {
     let token = localStorage.getItem("token");
@@ -43,17 +44,24 @@ const BigCard = (props) => {
 
   }
 
+  function modalOpen() {
+    if(!userData?.user?._id){
+      setIsOpen(true)
+    }
+  }
+
 
   return (
     <div className="bigcard-container">
       <div className="bigtext-container">
-        <Link to={`/profileDetail/${props.authorId}`} className="big-link">
+        <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
+        <Link onClick={(e) => {e.preventDefault(); modalOpen()}} to={userData?.user?._id ? `/profileDetail/${props.authorId}` : '/'} className="big-link">
           <div className="big-username">
             <img className="big-profileImage" src={props.profileImage} />
             <div>{props.username}</div>
           </div>
         </Link>
-        <Link to={`/articleDetail/${props.id}`} className="big-link">
+        <Link onClick={(e) => {e.preventDefault(); modalOpen()}} to={userData?.user?._id ?`/articleDetail/${props.id}` : null} className="big-link">
           <div className="big-card-title">{props.title}</div>
           <div className="big-card-desc">
             {ReactHtmlParser(props.description.slice(0, 150))}
