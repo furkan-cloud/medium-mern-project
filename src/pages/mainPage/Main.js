@@ -12,6 +12,7 @@ const Main = () => {
       {/* <SignInForm /> */}
       <SectionTwo/>
       <SectionThree/>
+      {/* <ProfilDetail /> */}
     </div>
   );
 };
