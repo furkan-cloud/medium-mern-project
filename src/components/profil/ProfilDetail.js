@@ -7,7 +7,7 @@ import UserContext from "../../context/UserContext";
 
 const ProfilDetail = () => {
   const [userProfile, setUserProfile] = useState(null);
-  const { userData, setUserData } = useContext(UserContext);
+  const { userData, setUserData} = useContext(UserContext);
   // const [follow, setFollow] = useState(userProfile?.followers?.includes(userData?.user?._id))
   const { id } = useParams();
 

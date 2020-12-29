@@ -6,10 +6,7 @@ import UserContext from "../../context/UserContext";
 import RegisterForm from "../registerForm/RegisterForm";
 
 function Header(props) {
-  const { modalIsOpen, openModal, closeModal } = useContext(UserContext);
-  const [signInModalIsOpen, setSigInModalOpen] = useState(false);
-
-  const openSignInModal = () => setSigInModalOpen(!signInModalIsOpen);
+  const { modalIsOpen, openModal, closeModal, signInModalIsOpen, openSignInModal } = useContext(UserContext);
 
   return (
     <div className="containere01">

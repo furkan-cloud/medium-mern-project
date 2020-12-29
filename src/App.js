@@ -27,6 +27,9 @@ function App() {
   const [userData, setUserData] = useState({ user: null, token: null });
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [articles, setArticles] = useState(null);
+  const [signInModalIsOpen, setSignInModalOpen] = useState(false);
+
+  const openSignInModal = () => setSignInModalOpen(!signInModalIsOpen);
 
   function openModal() {
     setIsOpen(true);
@@ -71,7 +74,10 @@ function App() {
           modalIsOpen,
           setIsOpen,
           articles,
-          setArticles
+          setArticles,
+          signInModalIsOpen,
+          setSignInModalOpen,
+          openSignInModal
         }}
       >
         <div className="App">
