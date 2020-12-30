@@ -25,7 +25,7 @@ import ProfilDetail from "./components/profil/ProfilDetail";
 
 function App() {
   const [userData, setUserData] = useState({ user: null, token: null });
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [articles, setArticles] = useState(null);
   const [signInModalIsOpen, setSignInModalOpen] = useState(false);
 

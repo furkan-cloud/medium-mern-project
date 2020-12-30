@@ -34,7 +34,7 @@ const RegisterForm = ({modalIsOpen, closeModal}) => {
         // TODO: sadece token set edilecek user degil
     return (   
         <div className='registerFormContainer'>
-            <SignIn openSignInMOdal={signInModalIsOpen}/>
+            <SignIn openSignInModal={signInModalIsOpen}/>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}

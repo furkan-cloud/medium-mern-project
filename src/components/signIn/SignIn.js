@@ -1,14 +1,20 @@
 import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../context/UserContext"
 import Modal from "react-modal";
 import "./SignIn.css"
+import RegisterForm from "../registerForm/RegisterForm";
 
-const SignInForm = ({openSignInMOdal, closeModal}) => {
-    const { setUserData } = useContext(UserContext)
+const SignInForm = ({openSignInModal, signInModalIsOpen}) => {
+    const { setUserData, openModal } = useContext(UserContext)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    const handleCreateClick = () => {
+        openSignInModal();
+        openModal();
+   }
 
     const handleOnClick = async (e) => {
         e.preventDefault()
@@ -23,13 +29,11 @@ const SignInForm = ({openSignInMOdal, closeModal}) => {
     }
 
     return (
-        <div className="mainContainer">
+        <div>
+            <RegisterForm />
             <Modal
-                isOpen={openSignInMOdal}
-                //isOpen={this.state.showModal}
-                // onRequestClose={closeModal}
-                onRequestClose = {closeModal}
-                shouldCloseOnOverlayClick={true}
+                isOpen={signInModalIsOpen}
+                onRequestClose = {openSignInModal}
                 style={customStyles}
             >
             <form className="signInForm" >
@@ -42,13 +46,15 @@ const SignInForm = ({openSignInMOdal, closeModal}) => {
                     <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} className="signInInput" />
                 </div>
                 <button onClick={handleOnClick} className="modalSignIn">Sign In</button>
-                <button onClick={closeModal}>close</button>
+                <p> No account?<Link onClick={handleCreateClick}>Create one</Link></p>
             </form>
             </Modal>
-        </div >
+            </div>
+        
     )
 };
 
+// No account? Create one
 
 
 export default SignInForm;

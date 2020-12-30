@@ -11,7 +11,7 @@ function Header(props) {
   return (
     <div className="containere01">
       <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
-      <SignIn openSignInMOdal={signInModalIsOpen} closeModal={closeModal} />
+      <SignIn openSignInModal={openSignInModal} signInModalIsOpen={signInModalIsOpen} />
       <div className="headerContainere01">
         <div className="contentLefte01">
           <img
