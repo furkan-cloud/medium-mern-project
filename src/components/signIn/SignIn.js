@@ -30,7 +30,7 @@ const SignInForm = ({openSignInModal, signInModalIsOpen}) => {
 
     return (
         <div>
-            <RegisterForm />
+            {/* <RegisterForm /> */}
             <Modal
                 isOpen={signInModalIsOpen}
                 onRequestClose = {openSignInModal}
@@ -46,7 +46,7 @@ const SignInForm = ({openSignInModal, signInModalIsOpen}) => {
                     <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} className="signInInput" />
                 </div>
                 <button onClick={handleOnClick} className="modalSignIn">Sign In</button>
-                <p> No account?<Link onClick={handleCreateClick}>Create one</Link></p>
+                <p> No account?<span style= {{color:"#1a8917", cursor:"pointer"}} onClick={handleCreateClick} >Create one</span></p>
             </form>
             </Modal>
             </div>

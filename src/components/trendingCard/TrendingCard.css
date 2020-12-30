@@ -32,6 +32,7 @@
     font-size: 0.8rem;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .trendingusername img{
     width: 20px;
@@ -41,7 +42,7 @@
 .trendingtitle{
     font-weight:bolder;
     padding-bottom: 8px;
-
+    cursor: pointer;
 }
 .trendingdate{
     font-size: 13px;

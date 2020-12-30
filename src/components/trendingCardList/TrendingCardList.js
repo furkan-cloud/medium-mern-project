@@ -10,10 +10,10 @@ const TrendingCardList = () => {
   
   return (
     <div className='TrendingCardListContainer'>
-      {articles?.map((article, index) =>
+      {articles?.slice(0,6).map((article, index) =>
         <TrendingCard
           id={article?._id}
-          authorId={article.author._id}
+          authorId={article?.author._id}
           firstName={article?.author.firstName}
           title={article?.title}
           profileImage = {article?.author.avatar_img}

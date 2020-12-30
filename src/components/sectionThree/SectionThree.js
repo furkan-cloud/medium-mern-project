@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './SectionThree.css';
 import BigCardList from '../bigCardList/BigCardList'
 import ReadingCard from '../readingCard/ReadingCard';
 import { readingCardContent } from "../../data/readingData"
 import FooterList from '../footerList/FooterList';
+import UserContext from '../../context/UserContext';
 
 
 const SectionThree = () => {
+    const { userData, setUserData, signInModalIsOpen, openSignInModal } = useContext(UserContext)
+    console.log("userdata",userData?.user?.readingList)
     return (
         <div className='sectionThreeContainer'>
             <div className="bigCard-container">
@@ -14,13 +17,15 @@ const SectionThree = () => {
             </div>
             <div className = 'sectionThreeRightContainer'>
                 <div className="sectionThree-right">
-                    {readingCardContent.map((readingContent, index) =>
+                    {userData?.user?.readingList?.slice(0,3).map((readingContent, index) =>
                         <ReadingCard
-                            profileImage={readingContent.profileImage}
-                            username={readingContent.username}
-                            imageUrl={readingContent.imageUrl}
+                            id={readingContent._id}
+                            authorId={readingContent.author._id}
+                            profileImage={readingContent?.author.avatar_img}
+                            firstName={readingContent.author.firstName}
+                            imageUrl={readingContent.post_image}
                             title={readingContent.title}
-                            date={readingContent.date}
+                            date={readingContent.formatDate}
                             key={index}
                         />)}
                 </div>

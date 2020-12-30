@@ -43,7 +43,6 @@ function Header(props) {
                 <a href="#">Sign In</a> */}
           <button
             onClick={() => openModal()}
-            type="button"
             className="buttonFirste01"
           >
             Get Started
@@ -68,8 +67,6 @@ function Header(props) {
           <div className="thirde01">
             <button
               onClick={() => openModal()}
-              type="button"
-              type="button"
               className="buttone01"
             >
               Get Started

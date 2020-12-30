@@ -77,7 +77,7 @@ function App() {
           setArticles,
           signInModalIsOpen,
           setSignInModalOpen,
-          openSignInModal
+          openSignInModal,
         }}
       >
         <div className="App">
