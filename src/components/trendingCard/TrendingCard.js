@@ -22,13 +22,13 @@ const TrendingCard = (props) => {
     <div className="trendingcard-container">
       <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
       <Link
-       
+
       >
         <div className="number-container">01</div>
 
         <div className="trendingtext-container">
           <Link
-             onClick={(e) => {
+            onClick={(e) => {
               e.preventDefault();
               modalOpen();
             }} to={userData?.user?._id ? `/profileDetail/${props.authorId}` : "/"}
@@ -42,7 +42,7 @@ const TrendingCard = (props) => {
               <div>{props.firstName}</div>
             </div>
           </Link>
-          <Link  to={userData?.user?._id ? `/articleDetail/${props.id}` : "/"}>
+          <Link to={userData?.user?._id ? `/articleDetail/${props.id}` : "/"}>
             <div className="trendingtitle">{props.title}</div>
           </Link>
           <div className="trendingdate">{props.date}</div>
