@@ -13,7 +13,7 @@ const RegisterForm = ({modalIsOpen, closeModal}) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-   const handleSigInClick = () => {
+   const handleSignInClick = () => {
         closeModal();
         openSignInModal()
    }
@@ -59,7 +59,8 @@ const RegisterForm = ({modalIsOpen, closeModal}) => {
                     </div>
                     
                     <button onClick={handleOnClick} className="modalRegister">Register</button>
-                    <p>Already have an account?<Link onClick={handleSigInClick}>SignIn</Link></p>
+                    <p>Already have an account?<span style= {{color:"#1a8917", cursor:"pointer"}} onClick={handleSignInClick}>Sign In</span></p>
+                    
                 </form>
             </Modal>
         </div>

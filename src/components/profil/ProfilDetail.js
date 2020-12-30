@@ -82,12 +82,14 @@ const ProfilDetail = () => {
           className="
           profil__card__content__right"
         >
-          {userProfile?.posts.map((content, index) => (
+          {userProfile?.posts.map((post, index) => (
             <ArticleDetailCard
-              date={content.createdAt}
-              title={content.title}
-              articleText={content.content}
-              imageUrl={content.post_image}
+            singleArticle={post}
+            // id={content._id}
+            //   date={content.formatDate}
+            //   title={content.title}
+            //   articleText={content.content}
+            //   imageUrl={content.post_image}
             />
           ))}
         </div>

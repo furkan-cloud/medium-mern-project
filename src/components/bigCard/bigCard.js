@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
 import "./BigCard.css";
 import axios from "axios";
@@ -10,6 +10,7 @@ import UserContext from "../../context/UserContext";
 import RegisterForm from "../registerForm/RegisterForm";
 
 const BigCard = (props) => {
+  const history = useHistory();
   const { articles, setArticles, userData, setUserData, openModal, closeModal, modalIsOpen, setIsOpen } = useContext(UserContext)
   const [isLike , setIsLike] = useState(props.likes.includes(userData?.user?._id))
 
@@ -47,22 +48,32 @@ const BigCard = (props) => {
     }
   }
 
+  const handleOnClick = () => {
+    userData?.user
+      ? history.push(`/profileDetail/${props.authorId}`)
+      : modalOpen();
+  };
+
+  const handleOnClickArticle = () => {
+    userData?.user
+      ? history.push(`/articleDetail/${props.id}`)
+      : modalOpen();
+  };
+
   return (
     <div className="bigcard-container">
       <div className="bigtext-container">
         <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
-        <Link onClick={(e) => {e.preventDefault(); modalOpen()}} to={userData?.user?._id ? `/profileDetail/${props.authorId}` : '/'} className="big-link">
-          <div className="big-username">
+          <div onClick={handleOnClick} className="big-username">
             <img className="big-profileImage" src={props.profileImage} />
             <div>{props.username}</div>
           </div>
-        </Link>
-        <Link onClick={(e) => {e.preventDefault(); modalOpen()}} to={userData?.user?._id ?`/articleDetail/${props.id}` : null} className="big-link">
+          <div onClick={handleOnClickArticle} className="big-card-header">
           <div className="big-card-title">{props.title}</div>
           <div className="big-card-desc">
             {ReactHtmlParser(props.description.slice(0, 150))}
           </div>
-        </Link>
+          </div>
         <div className="date-icons">
           <div className="big-card-date">{props.date}</div>
           <div className="big-card-icons">

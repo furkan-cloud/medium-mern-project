@@ -1,39 +1,45 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, useLayoutEffect } from "react";
 import "./ArticleDetailCard.css";
 import Claps from "../icons/Claps";
 import Bookmark from "../icons/Bookmark";
 import ReactHtmlParser from "react-html-parser";
-
-import {
-  faBookmark,
-  faComment,
-  faSignLanguage,
-  faUpload,
-} from "@fortawesome/free-solid-svg-icons";
 import Comment from "../icons/Comment";
 import Upload from "../icons/Upload";
+import axios from "axios";
 
-const ArticleDetailCard = (props) => {
+const ArticleDetailCard = ({ singleArticle }) => {
+  const [claps, setClaps] = useState(singleArticle?.claps);
+
+  const handleClaps = async () => {
+    let token = localStorage.getItem("token");
+    const getClaps = await axios.get(
+      `http://localhost:5000/api/posts/${singleArticle?._id}/claps`,
+      { headers: { "x-auth-token": token } }
+    );
+    console.log(getClaps.data);
+    setClaps(getClaps.data?.data.claps);
+  };
+
+  useLayoutEffect(() => {
+    setClaps(singleArticle?.claps);
+  }, [singleArticle?.claps]);
+
   return (
     <div className="article-detail-container">
-      <p>{props.date}</p>
-      <h1>{props.title}</h1>
-      <img className="articleDetailImage" src={props.imageUrl} />
-      <p>{ReactHtmlParser(props.articleText)}</p>
-      <a href="/articleDetails">{props.readTime}</a>
-
+      <p>{singleArticle?.formatDate}</p>
+      <h1>{singleArticle?.title}</h1>
+      <img className="articleDetailImage" src={singleArticle?.post_image} />
+      <p>{ReactHtmlParser(singleArticle?.content)}</p>
+      {/* <a href="/articleDetails">{singleArticle?.readTime}</a> */}
       <div className="all-icons">
-        <div>
-          <Claps />
-          <div className="applause">200</div>
-        </div>
-        <div>
+        <div className="all-icons-left">
+          <Claps onClick={handleClaps} /> {claps}
           <Comment />
-          <div className="comment">20</div>
         </div>
-        <Bookmark />
-        <Upload />
+        <div className="all-icons-right">
+          <Bookmark />
+          <Upload />
+        </div>
       </div>
     </div>
   );
