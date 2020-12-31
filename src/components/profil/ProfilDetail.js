@@ -11,7 +11,7 @@ const ProfilDetail = () => {
   const { userData, setUserData } = useContext(UserContext);
 
   const [isfollow, setIsFollow] = useState(
-    userData.user?.following.filter((fol) => fol._id == id).length > 0
+    userData.user?.following?.filter((fol) => fol._id == id).length > 0
   );
 
   // const isFollow = () => {
