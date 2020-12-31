@@ -10,7 +10,6 @@ const Home = () => {
       <SectionOne />
       <SectionTwo />
       <SectionThree />
-      {/* <PostEditor /> */}
     </div>
   );
 };

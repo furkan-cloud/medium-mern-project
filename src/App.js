@@ -11,6 +11,7 @@ import UserContext from "./context/UserContext";
 import Main from "./pages/mainPage/Main";
 import Header from "./components/headers/Header";
 import ProfilDetail from "./components/profil/ProfilDetail";
+import MyProfile from "./pages/myProfile/MyProfile";
 
 // const fetchArticles = async ()
 
@@ -84,10 +85,12 @@ function App() {
           {userData.user ? <Navbar /> : <Header />}
 
           <Switch>
+            <Route path="/myProfile/:id" component={MyProfile} exact />
             <Route path="/profileDetail/:id" component={ProfilDetail} exact />
             <Route path="/articleDetail/:id" component={ArticleDetails} exact />
             <Route path="/posts/add" component={PostEditor} exact />
             <Route path="/" component={userData.user ? Home : Main} />
+
           </Switch>
         </div>
       </UserContext.Provider>
