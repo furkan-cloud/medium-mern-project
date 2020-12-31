@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import UserContext from "../../context/UserContext";
-import BigCard from "../bigCard/BigCard";
+import BigCard from "../bigCard/bigCard";
 
 const BigCardList = () => {
   const { articles } = useContext(UserContext);
   //console.log(articles)
   return (
     <div className="bigCardListContainer">
-      {articles?.slice(0,10).map((article, index) => (
+      {articles?.slice(0, 10).map((article, index) => (
         <BigCard
           id={article._id}
           authorId={article.author._id}

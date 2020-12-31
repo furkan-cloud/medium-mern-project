@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import "./BigCard.css";
+import "./bigCard.css";
 import axios from "axios";
 import Bookmark from "../icons/Bookmark";
 import BookmarkFill from "../icons/BookmarkFill";
@@ -11,8 +11,19 @@ import RegisterForm from "../registerForm/RegisterForm";
 
 const BigCard = (props) => {
   const history = useHistory();
-  const { articles, setArticles, userData, setUserData, openModal, closeModal, modalIsOpen, setIsOpen } = useContext(UserContext)
-  const [isLike , setIsLike] = useState(props.likes.includes(userData?.user?._id))
+  const {
+    articles,
+    setArticles,
+    userData,
+    setUserData,
+    openModal,
+    closeModal,
+    modalIsOpen,
+    setIsOpen,
+  } = useContext(UserContext);
+  const [isLike, setIsLike] = useState(
+    props.likes.includes(userData?.user?._id)
+  );
 
   async function removeBookmark() {
     let token = localStorage.getItem("token");
@@ -43,8 +54,8 @@ const BigCard = (props) => {
   }
 
   function modalOpen() {
-    if(!userData?.user?._id){
-      setIsOpen(true)
+    if (!userData?.user?._id) {
+      setIsOpen(true);
     }
   }
 
@@ -55,25 +66,23 @@ const BigCard = (props) => {
   };
 
   const handleOnClickArticle = () => {
-    userData?.user
-      ? history.push(`/articleDetail/${props.id}`)
-      : modalOpen();
+    userData?.user ? history.push(`/articleDetail/${props.id}`) : modalOpen();
   };
 
   return (
     <div className="bigcard-container">
       <div className="bigtext-container">
         <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
-          <div onClick={handleOnClick} className="big-username">
-            <img className="big-profileImage" src={props.profileImage} />
-            <div>{props.username}</div>
-          </div>
-          <div onClick={handleOnClickArticle} className="big-card-header">
+        <div onClick={handleOnClick} className="big-username">
+          <img className="big-profileImage" src={props.profileImage} />
+          <div>{props.username}</div>
+        </div>
+        <div onClick={handleOnClickArticle} className="big-card-header">
           <div className="big-card-title">{props.title}</div>
           <div className="big-card-desc">
             {ReactHtmlParser(props.description.slice(0, 150))}
           </div>
-          </div>
+        </div>
         <div className="date-icons">
           <div className="big-card-date">{props.date}</div>
           <div className="big-card-icons">
