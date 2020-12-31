@@ -13,9 +13,6 @@ const TrendingCard = (props) => {
     modalIsOpen,
     setIsOpen,
   } = useContext(UserContext);
-
-  console.log("userdata", userData);
-
   function modalOpen() {
     if (!userData?.user?._id) {
       setIsOpen(true);
@@ -29,25 +26,22 @@ const TrendingCard = (props) => {
   };
 
   const handleOnClickArticle = () => {
-    userData?.user
-      ? history.push(`/articleDetail/${props.id}`)
-      : modalOpen();
+    userData?.user ? history.push(`/articleDetail/${props.id}`) : modalOpen();
   };
 
   return (
     <div className="trendingcard-container">
       <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
-      <div className="number-container">01</div>
+      <div className="number-container">0{props.number + 1}</div>
 
       <div className="trendingtext-container">
-          <div onClick={handleOnClick} className="trendingusername">
-            <img
-              className="trendingProfileImage"
-              src={props.profileImage}
-            ></img>
-            <div>{props.firstName}</div>
-          </div>
-          <div onClick={handleOnClickArticle} className="trendingtitle">{props.title}</div>
+        <div onClick={handleOnClick} className="trendingusername">
+          <img className="trendingProfileImage" src={props.profileImage}></img>
+          <div>{props.firstName}</div>
+        </div>
+        <div onClick={handleOnClickArticle} className="trendingtitle">
+          {props.title}
+        </div>
         <div className="trendingdate">{props.date}</div>
       </div>
     </div>
