@@ -3,11 +3,21 @@ const User = require("../models/User");
 const asyncErrorWrapper = require("express-async-handler");
 
 const userProfileInfo = asyncErrorWrapper(async (req, res, next) => {
-  console.log(req.user);
-  const user = await User.findById(req.user.id).populate({
-    path: "posts",
-    select: "title content post_image",
-  });
+  const user = await User.findById(req.user.id)
+    .populate("following")
+    .populate({
+      path: "readingList", // populate blogs
+      populate: {
+        path: "author", // in blogs, populate comments
+      },
+    })
+    .populate({
+      path: "posts", // populate blogs
+      populate: {
+        path: "author", // in blogs, populate comments
+      },
+    })
+    .select("-password");
   res.status(200).json({
     success: true,
     user,
@@ -16,11 +26,17 @@ const userProfileInfo = asyncErrorWrapper(async (req, res, next) => {
 
 const updateProfileInfo = asyncErrorWrapper(async (req, res, next) => {
   const editInfo = req.body;
-  // console.log(req.user.userData);
-  const user = await User.findByIdAndUpdate(req.user.id, editInfo, {
-    new: true,
-    runValidators: true,
-  });
+  // console.log(req.file.path);
+  // console.log(req.body);
+  const imageurl = req.file.path;
+  const user = await User.findByIdAndUpdate(
+    req.user.id,
+    { ...editInfo, avatar_img: imageurl },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
   res.status(200).json({
     success: true,
     user,
@@ -28,7 +44,7 @@ const updateProfileInfo = asyncErrorWrapper(async (req, res, next) => {
 });
 
 const imageUpload = asyncErrorWrapper(async (req, res, next) => {
-  imageurl = req.file.path;
+  const imageurl = req.file.path;
   //console.log(req.file.path);
   const user = await User.findByIdAndUpdate(
     req.user.id,

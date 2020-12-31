@@ -103,7 +103,7 @@ const PostEditor = () => {
           onChange={(event, editor) => {
             const data = editor.getData();
             setContent(data);
-            console.log({ event, editor, data });
+            //console.log({ event, editor, data });
           }}
         />
         {/* <ReactEditor /> */}
