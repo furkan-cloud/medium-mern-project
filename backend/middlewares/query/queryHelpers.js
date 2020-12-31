@@ -21,6 +21,8 @@ const sortHelper = (query, req) => {
   const sortKey = req.query.sortBy;
   if (sortKey === "most-liked") {
     return (query = query.sort("-likeCount"));
+  } else if (sortKey === "most-claps") {
+    return (query = query.sort("-claps"));
   }
   return (query = query.sort("-createdAt"));
 };
