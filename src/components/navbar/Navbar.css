@@ -62,3 +62,8 @@
     height: 20px;
     border-radius: 50%;
 }
+
+.navbarProfileImageContainer{
+    cursor: pointer;
+    position: relative;
+}

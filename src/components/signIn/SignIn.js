@@ -1,14 +1,20 @@
 import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../context/UserContext"
 import Modal from "react-modal";
 import "./SignIn.css"
+import RegisterForm from "../registerForm/RegisterForm";
 
-const SignInForm = (props) => {
-    const { setUserData } = useContext(UserContext)
+const SignInForm = ({openSignInModal, signInModalIsOpen}) => {
+    const { setUserData, openModal } = useContext(UserContext)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    const handleCreateClick = () => {
+        openSignInModal();
+        openModal();
+   }
 
     const handleOnClick = async (e) => {
         e.preventDefault()
@@ -23,28 +29,32 @@ const SignInForm = (props) => {
     }
 
     return (
-        <div className="mainContainer">
+        <div>
+            {/* <RegisterForm /> */}
             <Modal
-                isOpen={props.openSignInMOdal}
-                onRequestClose={props.closeModal}
+                isOpen={signInModalIsOpen}
+                onRequestClose = {openSignInModal}
                 style={customStyles}
             >
-                <form className="signInForm" >
-                    <div className="signInContainer">
+            <form className="signInForm" >
+                <div className="signInContainer">
                     <label>Email :</label>
                     <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} className="signInInput" />
-                    </div>
-                    <div className="signInContainer">
+                </div>
+                <div className="signInContainer">
                     <label>Password :</label>
-                    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)}  className="signInInput" />
-                    </div>
-                    <button onClick={handleOnClick} className="modalSignIn">Sign In</button>
-                </form>
+                    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} className="signInInput" />
+                </div>
+                <button onClick={handleOnClick} className="modalSignIn">Sign In</button>
+                <p> No account?<span style= {{color:"#1a8917", cursor:"pointer"}} onClick={handleCreateClick} >Create one</span></p>
+            </form>
             </Modal>
-        </div >
+            </div>
+        
     )
 };
 
+// No account? Create one
 
 
 export default SignInForm;

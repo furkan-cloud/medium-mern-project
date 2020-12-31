@@ -6,15 +6,12 @@ import UserContext from "../../context/UserContext";
 import RegisterForm from "../registerForm/RegisterForm";
 
 function Header(props) {
-  const { modalIsOpen, openModal, closeModal } = useContext(UserContext);
-  const [signInModalIsOpen, setSigInModalOpen] = useState(false);
-
-  const openSignInModal = () => setSigInModalOpen(!signInModalIsOpen);
+  const { modalIsOpen, openModal, closeModal, signInModalIsOpen, openSignInModal } = useContext(UserContext);
 
   return (
     <div className="containere01">
       <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
-      <SignIn openSignInMOdal={signInModalIsOpen} closeModal={closeModal} />
+      <SignIn openSignInModal={openSignInModal} signInModalIsOpen={signInModalIsOpen} />
       <div className="headerContainere01">
         <div className="contentLefte01">
           <img
@@ -46,7 +43,6 @@ function Header(props) {
                 <a href="#">Sign In</a> */}
           <button
             onClick={() => openModal()}
-            type="button"
             className="buttonFirste01"
           >
             Get Started
@@ -71,8 +67,6 @@ function Header(props) {
           <div className="thirde01">
             <button
               onClick={() => openModal()}
-              type="button"
-              type="button"
               className="buttone01"
             >
               Get Started

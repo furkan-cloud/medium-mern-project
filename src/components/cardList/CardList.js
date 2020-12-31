@@ -9,7 +9,7 @@ const CardList = () => {
 
     return (
         <div className='cardListContainer'>
-            {articles?.map((article, index) =>
+            {articles?.slice(0,4).map((article, index) =>
                 <Card
                     id={article?._id}
                     authorId={article?.author._id}

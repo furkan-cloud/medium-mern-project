@@ -7,7 +7,7 @@ const BigCardList = () => {
   //console.log(articles)
   return (
     <div className="bigCardListContainer">
-      {articles?.map((article, index) => (
+      {articles?.slice(0, 10).map((article, index) => (
         <BigCard
           id={article._id}
           authorId={article.author._id}
@@ -18,6 +18,7 @@ const BigCardList = () => {
           description={article.content}
           date={article.formatDate}
           key={index}
+          likes={article.likes}
         />
       ))}
     </div>

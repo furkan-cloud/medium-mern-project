@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import ReactDOM from "react-dom";
 import UserContext from '../../context/UserContext'
 import "./Navbar.css";
@@ -14,6 +14,7 @@ import Search from "../icons/Search";
 import Bookmark from "../icons/Bookmark";
 import DoubleBookmark from "../icons/DoubleBookmark";
 import Alarm from "../icons/Alarm";
+import ProfileListModal from "../profileListModal/ProfileListModal";
 // import { checkSquare } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
@@ -28,6 +29,10 @@ const Navbar = () => {
       return "Good evening";
     }
   }
+
+  const [showModal, setShowModal] = useState(false)
+
+  const handleOnClick = () => {setShowModal(!showModal)}
 
   const { userData } = useContext(UserContext)
 
@@ -55,9 +60,12 @@ const Navbar = () => {
         <Link to={"/posts/add"}>
           <button className="navbar-button">Add Article</button>
         </Link>
-        <Link>
+        <div className="navbarProfileImageContainer" onClick={handleOnClick}>
           <img className="navbar-profileImage" src={userData.user.avatar_img} />
-        </Link>
+          {showModal && <ProfileListModal/>}
+          
+        </div>
+        
 
       </div>
     </div>

@@ -6,9 +6,21 @@ import ArticleDetailCard from "../articleDetailCard/ArticleDetailCard";
 import UserContext from "../../context/UserContext";
 
 const ProfilDetail = () => {
+  const { id } = useParams();
   const [userProfile, setUserProfile] = useState(null);
   const { userData, setUserData } = useContext(UserContext);
-  const { id } = useParams();
+
+  const [isfollow, setIsFollow] = useState(
+    userData.user?.following?.filter((fol) => fol._id == id).length > 0
+  );
+
+  // const isFollow = () => {
+  //   if (userData.user?.following.filter((fol) => fol._id == id).length > 0) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // };
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -18,7 +30,7 @@ const ProfilDetail = () => {
       setUserProfile(userProfileData?.data?.data);
     };
     fetchUser();
-  }, [userData]);
+  }, [isfollow]);
 
   async function removeFollow() {
     let token = localStorage.getItem("token");
@@ -30,9 +42,9 @@ const ProfilDetail = () => {
         },
       }
     );
-    setUserData({ user: unFollowProfileData.data, token });
+    setIsFollow(false);
+    setUserData({ user: unFollowProfileData.data.data, token });
   }
-
 
   async function addFollow() {
     let token = localStorage.getItem("token");
@@ -44,18 +56,29 @@ const ProfilDetail = () => {
         },
       }
     );
-    setUserData({ user: followProfileData.data, token });
-
+    setIsFollow(true);
+    setUserData({ user: followProfileData.data.data, token });
   }
-  console.log(userData);
-  return (
 
+  return (
     <div className="profil__card__container">
       <div className="profil__card__header">
         <h2>{userProfile?.firstName}</h2>
       </div>
       <div className="profil__card__subheader">
-        <button onClick={userProfile?.followers?.includes(userData.user._id) ? removeFollow : addFollow} className="profil__card__subheader__btn">{userProfile?.followers?.includes(userData.user._id) ? 'Following' : 'Follow'}</button>
+        {isfollow ? (
+          <button
+            onClick={removeFollow}
+            className="profil__card__subheader__btn"
+          >
+            <span>Following</span>
+          </button>
+        ) : (
+          <button onClick={addFollow} className="profil__card__subheader__btn">
+            <span>Follow</span>
+          </button>
+        )}
+
         <Link>
           <span> {userProfile?.followersCount} </span> <span>Followers</span>
         </Link>
@@ -79,12 +102,14 @@ const ProfilDetail = () => {
           className="
           profil__card__content__right"
         >
-          {userProfile?.posts.map((content, index) => (
+          {userProfile?.posts.map((post, index) => (
             <ArticleDetailCard
-              date={content.createdAt}
-              title={content.title}
-              articleText={content.content}
-              imageUrl={content.post_image}
+              singleArticle={post}
+              // id={content._id}
+              //   date={content.formatDate}
+              //   title={content.title}
+              //   articleText={content.content}
+              //   imageUrl={content.post_image}
             />
           ))}
         </div>

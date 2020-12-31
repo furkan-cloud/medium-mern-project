@@ -1,31 +1,49 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-import './TrendingCard.css';
+import React, { useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
+import "./TrendingCard.css";
+import UserContext from "../../context/UserContext";
+import RegisterForm from "../registerForm/RegisterForm";
 
 const TrendingCard = (props) => {
-  return (
+  const history = useHistory();
+  const {
+    userData,
+    openModal,
+    closeModal,
+    modalIsOpen,
+    setIsOpen,
+  } = useContext(UserContext);
+  function modalOpen() {
+    if (!userData?.user?._id) {
+      setIsOpen(true);
+    }
+  }
 
+  const handleOnClick = () => {
+    userData?.user
+      ? history.push(`/profileDetail/${props.authorId}`)
+      : modalOpen();
+  };
+
+  const handleOnClickArticle = () => {
+    userData?.user ? history.push(`/articleDetail/${props.id}`) : modalOpen();
+  };
+
+  return (
     <div className="trendingcard-container">
-      <div className="number-container">01</div>
+      <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
+      <div className="number-container">0{props.number + 1}</div>
 
       <div className="trendingtext-container">
-        <Link to={`/profileDetail/${props.authorId}`}>
-          <div className="trendingusername">
-
-            <img className='trendingProfileImage' src={props.profileImage}></img>
-
-            <div>{props.firstName}</div>
-          </div>
-        </Link>
-        <Link
-          to={`/articleDetail/${props.id}`}
-        >
-          <div className="trendingtitle">{props.title}</div>
-        </Link>
+        <div onClick={handleOnClick} className="trendingusername">
+          <img className="trendingProfileImage" src={props.profileImage}></img>
+          <div>{props.firstName}</div>
+        </div>
+        <div onClick={handleOnClickArticle} className="trendingtitle">
+          {props.title}
+        </div>
         <div className="trendingdate">{props.date}</div>
-
       </div>
-
     </div>
   );
 };

@@ -1,9 +1,19 @@
+import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import UserContext from '../../context/UserContext';
 import './ArticleProfile.css';
 
 const ArticleProfile = ({ author, formatDate }) => {
+    const history = useHistory()
+    const {userData} = useContext(UserContext);
+    const handleOnClick = () => {
+        userData?.user
+          ? history.push(`/profileDetail/${author._id}`)
+          : modalOpen();
+      };
     return (
         <div className="articleProfileContainer">
-            <a href="/profileDetails" className="articleProfileLink">
+            <div onClick={handleOnClick} className="articleProfileLink">
                 <div>
                     <img className="articleProfileImage" src={author?.avatar_img} />
                 </div>
@@ -11,7 +21,7 @@ const ArticleProfile = ({ author, formatDate }) => {
                     <span>{author?.firstName}</span>
                     <span>{author?.lastName}</span>
                 </div>
-            </a>
+            </div>
             <div className="articleDate">{formatDate}</div>
         </div>
     )

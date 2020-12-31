@@ -4,6 +4,16 @@
     text-align: left;
     align-items: center;
     margin-bottom: 48px;
+    /* justify-content: space-between; */
+    width: 100%;
+}
+
+.bigtext-container{
+    width: 70%;
+}
+
+.big-image-container{
+    width: 15%;
 }
 
 .big-link{
@@ -17,13 +27,20 @@
     height: 20px;
     border-radius: 50%;
     margin-right: 10px;
+    
 }
 
 .big-username{
     font-size: 0.8rem;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
+
+.big-card-header{
+    cursor: pointer;
+}
+
 .big-card-title{
     font-weight: 700;
     font-size: 1.4rem;

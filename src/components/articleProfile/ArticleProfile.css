@@ -6,6 +6,7 @@
 .articleProfileLink{
     text-decoration: none;
     display: flex;
+    cursor: pointer;
 }
 
 .articleProfileImage{

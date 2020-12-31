@@ -3,13 +3,20 @@ import axios from "axios";
 import UserContext from "../../context/UserContext"
 import './RegisterForm.css';
 import Modal from "react-modal";
+import {Link} from 'react-router-dom';
+import SignIn from "../signIn/SignIn";
 
 const RegisterForm = ({modalIsOpen, closeModal}) => {
-    const { userData, setUserData } = useContext(UserContext)
+    const { userData, setUserData, signInModalIsOpen, openSignInModal } = useContext(UserContext)
     const [firstName, setFirstName] = useState("")
     const [lastName, setlastName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+   const handleSignInClick = () => {
+        closeModal();
+        openSignInModal()
+   }
 
     const handleOnClick = async (e) => {
         e.preventDefault();
@@ -25,8 +32,9 @@ const RegisterForm = ({modalIsOpen, closeModal}) => {
         localStorage.setItem("token", registerResponse.data.access_token)
     }
         // TODO: sadece token set edilecek user degil
-    return (
+    return (   
         <div className='registerFormContainer'>
+            <SignIn openSignInModal={signInModalIsOpen}/>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
@@ -51,6 +59,8 @@ const RegisterForm = ({modalIsOpen, closeModal}) => {
                     </div>
                     
                     <button onClick={handleOnClick} className="modalRegister">Register</button>
+                    <p>Already have an account?<span style= {{color:"#1a8917", cursor:"pointer"}} onClick={handleSignInClick}>Sign In</span></p>
+                    
                 </form>
             </Modal>
         </div>
