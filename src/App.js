@@ -43,7 +43,7 @@ function App() {
     const fetchArticles = async () => {
       const articleData = await axios.get("http://localhost:5000/api/posts");
       console.log(articleData.data.data);
-      setArticles(articleData.data.data);
+      setArticles(articleData?.data?.data);
     };
     fetchArticles();
 
@@ -57,8 +57,8 @@ function App() {
           "http://localhost:5000/api/auth/user",
           { headers: { "x-auth-token": token } }
         );
-        setUserData({ user: userResponse.data.user, token });
-        console.log(userResponse.data.user)
+        setUserData({ user: userResponse?.data?.user, token });
+        //console.log(userResponse.data.user)
       }
     };
     userCheck();

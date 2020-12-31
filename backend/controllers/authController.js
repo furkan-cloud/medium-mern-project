@@ -98,12 +98,17 @@ const logout = asyncErrorWrapper(async (req, res, next) => {
     });
 });
 const currentUser = asyncErrorWrapper(async (req, res, next) => {
-  const user = await User.findById(req.user.id).populate('posts').populate('following').populate({
+  const user = await User.findById(req.user.id).populate('following').populate({
     path: "readingList", // populate blogs
     populate: {
-       path: "author" // in blogs, populate comments
+      path: "author" // in blogs, populate comments
     }
- }).select("-password");
+  }).populate({
+    path: "posts", // populate blogs
+    populate: {
+      path: "author" // in blogs, populate comments
+    }
+  }).select("-password");
   if (!user) {
     return next(new CustomError("User does not exist", 400));
   }
