@@ -1,21 +1,14 @@
 import React, { useContext, useState } from "react";
-import ReactDOM from "react-dom";
-import UserContext from '../../context/UserContext'
+
+import UserContext from "../../context/UserContext";
 import "./Navbar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faBookmark,
-  faUserCircle,
-  faBell,
-} from "@fortawesome/free-solid-svg-icons";
+
 import { Link } from "react-router-dom";
 import Search from "../icons/Search";
-import Bookmark from "../icons/Bookmark";
+
 import DoubleBookmark from "../icons/DoubleBookmark";
 import Alarm from "../icons/Alarm";
 import ProfileListModal from "../profileListModal/ProfileListModal";
-// import { checkSquare } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
   function greeting() {
@@ -30,18 +23,18 @@ const Navbar = () => {
     }
   }
 
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
-  const handleOnClick = () => {setShowModal(!showModal)}
+  const handleOnClick = () => {
+    setShowModal(!showModal);
+  };
 
-  const { userData } = useContext(UserContext)
+  const { userData } = useContext(UserContext);
 
   return (
     <div className="container">
       <div className="containerLeft">
-        <Link
-          to = '/'
-        >
+        <Link to="/">
           <img
             className="navbarImage"
             src="https://miro.medium.com/max/8978/1*s986xIGqhfsN8U--09_AdA.png"
@@ -61,12 +54,12 @@ const Navbar = () => {
           <button className="navbar-button">Add Article</button>
         </Link>
         <div className="navbarProfileImageContainer" onClick={handleOnClick}>
-          <img className="navbar-profileImage" src={userData.user.avatar_img} />
-          {showModal && <ProfileListModal/>}
-          
+          <img
+            className="navbar-profileImage"
+            src={userData?.user?.avatar_img}
+          />
+          {showModal && <ProfileListModal />}
         </div>
-        
-
       </div>
     </div>
   );

@@ -6,8 +6,8 @@ const User = require("../models/User");
 const addPost = asyncErrorWrapper(async (req, res, next) => {
   const postInfo = req.body;
   const imgUrl = req.file.path;
-  console.log(req.body);
-  console.log(req.file);
+  // console.log(req.body);
+  // console.log(req.file);
 
   const currentUser = await User.findById(req.user.id);
 

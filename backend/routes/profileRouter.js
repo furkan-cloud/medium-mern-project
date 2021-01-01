@@ -22,7 +22,12 @@ router.get("/", authCheck, userProfileInfo);
  * @desc    Update Profile endpoint
  * @access  Private
  */
-router.put("/update", authCheck, updateProfileInfo);
+router.put(
+  "/update",
+  authCheck,
+  profileImageUpload.single("avatar_img"),
+  updateProfileInfo
+);
 /**
  * @route   PUT /api/profile/upload
  * @desc    Update Profile endpoint

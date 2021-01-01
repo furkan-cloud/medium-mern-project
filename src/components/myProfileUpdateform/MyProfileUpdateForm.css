@@ -1,0 +1,16 @@
+.profileFormContainer {
+}
+
+.myProfileAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+}
+.imageUpload {
+  position: absolute;
+  cursor: pointer;
+  top: 60px;
+  left: 60px;
+  z-index: 999;
+}
