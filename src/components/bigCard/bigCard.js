@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import "./bigCard.css";
+import "./BigCard.css";
 import axios from "axios";
 import Bookmark from "../icons/Bookmark";
 import BookmarkFill from "../icons/BookmarkFill";
@@ -35,7 +35,7 @@ const BigCard = (props) => {
         },
       }
     );
-    console.log(undoLikeData);
+    console.log(undoLikeData.data);
     setIsLike(false);
   }
 
@@ -49,7 +49,7 @@ const BigCard = (props) => {
         },
       }
     );
-    console.log(likeData);
+    console.log(likeData.data);
     setIsLike(true);
   }
 

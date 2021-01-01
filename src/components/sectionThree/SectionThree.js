@@ -9,7 +9,6 @@ import UserContext from '../../context/UserContext';
 
 const SectionThree = () => {
     const { userData, setUserData, signInModalIsOpen, openSignInModal } = useContext(UserContext)
-    console.log("userdata",userData?.user?.readingList)
     return (
         <div className='sectionThreeContainer'>
             <div className="bigCard-container">
@@ -17,7 +16,7 @@ const SectionThree = () => {
             </div>
             <div className = 'sectionThreeRightContainer'>
                 <div className="sectionThree-right">
-                    {userData?.user?.readingList?.slice(0,3).map((readingContent, index) =>
+                    {userData?.user?.readingList?.slice(0,6).map((readingContent, index) =>
                         <ReadingCard
                             id={readingContent._id}
                             authorId={readingContent.author._id}

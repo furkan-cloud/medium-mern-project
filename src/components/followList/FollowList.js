@@ -7,7 +7,6 @@ import UserContext from '../../context/UserContext';
 
 const FollowList = () => {
     const {userData} = useContext(UserContext)
-    console.log(userData);
     return (
         <div className='followListContainer'>
             <h3 className = 'followingHeader'>LATEST FROM FOLLOWING</h3>
@@ -15,10 +14,10 @@ const FollowList = () => {
                 {
                     userData?.user?.following?.map((followed) => (
                         <Avatar
-                            key={followed._id}
-                            profileImage={followed.avatar_img}
-                            firstName={followed.firstName}
-                            lastName={followed.lastName}
+                            key={followed?._id}
+                            profileImage={followed?.avatar_img}
+                            firstName={followed?.firstName}
+                            lastName={followed?.lastName}
                         />
                     ))
                 }

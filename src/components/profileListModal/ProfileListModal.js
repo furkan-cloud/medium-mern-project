@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useContext } from "react"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import UserContext from "../../context/UserContext"
 import './ProfileListModal.css'
 
@@ -9,6 +9,7 @@ import './ProfileListModal.css'
 
 const ProfileListModal = () => {
     const {userData, setUserData} = useContext(UserContext)
+    const history = useHistory()
     const Logout = async() =>{
         const logoutRes = await axios.get(
             "http://localhost:5000/api/auth/logout",
@@ -16,6 +17,7 @@ const ProfileListModal = () => {
           );
         localStorage.setItem("token", "")
         setUserData({user:null, token:null})
+        history.push("/")
     }
     return(
         <div className="profileListModalContainer">

@@ -3,7 +3,7 @@ import axios from "axios";
 import UserContext from "../../context/UserContext"
 import './RegisterForm.css';
 import Modal from "react-modal";
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import SignIn from "../signIn/SignIn";
 
 const RegisterForm = ({modalIsOpen, closeModal}) => {
@@ -18,6 +18,8 @@ const RegisterForm = ({modalIsOpen, closeModal}) => {
         openSignInModal()
    }
 
+   const history = useHistory()
+
     const handleOnClick = async (e) => {
         e.preventDefault();
         const newUser = {
@@ -30,6 +32,8 @@ const RegisterForm = ({modalIsOpen, closeModal}) => {
         const registerResponse = await axios.post("http://localhost:5000/api/auth/register", newUser)
         setUserData({ user: registerResponse.data.user, token: registerResponse.data.access_token })
         localStorage.setItem("token", registerResponse.data.access_token)
+        closeModal()
+        history.push("/")
     }
         // TODO: sadece token set edilecek user degil
     return (   
