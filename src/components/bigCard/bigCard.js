@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import "./BigCard.css";
+import "./bigCard.css";
 import axios from "axios";
 import Bookmark from "../icons/Bookmark";
 import BookmarkFill from "../icons/BookmarkFill";
@@ -22,7 +22,8 @@ const BigCard = (props) => {
     setIsOpen,
   } = useContext(UserContext);
   const [isLike, setIsLike] = useState(
-    props.likes.includes(userData?.user?._id)
+    userData?.user?.readingList?.filter((read) => read._id == props.id).length >
+      0
   );
 
   async function removeBookmark() {
@@ -36,6 +37,7 @@ const BigCard = (props) => {
       }
     );
     console.log(undoLikeData.data);
+    setUserData({ user: undoLikeData.data.currentUser, token });
     setIsLike(false);
   }
 
@@ -50,6 +52,7 @@ const BigCard = (props) => {
       }
     );
     console.log(likeData.data);
+    setUserData({ user: likeData.data.currentUser, token });
     setIsLike(true);
   }
 

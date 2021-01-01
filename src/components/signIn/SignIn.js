@@ -1,13 +1,19 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../context/UserContext";
 import Modal from "react-modal";
 import "./SignIn.css";
-import RegisterForm from "../registerForm/RegisterForm";
 
 const SignInForm = ({ openSignInModal, signInModalIsOpen }) => {
-  const { setUserData, openModal, userData } = useContext(UserContext);
+  const history = useHistory();
+  const {
+    setUserData,
+    openModal,
+    userData,
+    setAuthToken,
+    authToken,
+  } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,8 +33,21 @@ const SignInForm = ({ openSignInModal, signInModalIsOpen }) => {
       "http://localhost:5000/api/auth/login",
       newUser
     );
-    setUserData({ ...userData, token: signResponse?.data?.access_token });
+    setUserData({
+      user: signResponse?.data?.user,
+      token: signResponse?.data?.access_token,
+    });
     localStorage.setItem("token", signResponse?.data?.access_token);
+    const userResponse = await axios.get(
+      "http://localhost:5000/api/auth/user",
+      { headers: { "x-auth-token": signResponse.data.access_token } }
+    );
+    // setUserData({
+    //   user: userResponse?.data?.user,
+    //   token: signResponse.data.access_token,
+    // });
+
+    history.push("/");
     openSignInModal();
   };
 

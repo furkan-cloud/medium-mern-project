@@ -5,7 +5,7 @@ const CustomError = require("../helpers/error/CustomError");
 const getSingleUser = asyncErrorWrapper(async (req, res, next) => {
   const { id } = req.params;
 
-  const user = await User.findById(id).populate('posts')
+  const user = await User.findById(id).populate("posts");
   return res.json({
     success: true,
     data: user,
@@ -21,8 +21,8 @@ const getAllUsers = asyncErrorWrapper(async (req, res, next) => {
 const followUser = asyncErrorWrapper(async (req, res, next) => {
   const { id } = req.params;
 
-  let user = await User.findById(id)
-  let currentUser = await User.findById(req.user.id)
+  let user = await User.findById(id);
+  let currentUser = await User.findById(req.user.id);
 
   //TODO followers da burada eklenecek birinin followingi birinin followerse olucak ✅
 
@@ -62,7 +62,7 @@ const unfollowUser = asyncErrorWrapper(async (req, res, next) => {
   user.followers.splice(userIndex, 1);
   user.followersCount = user.followers.length;
   await user.save({ new: true });
-  await currentUser.save();
+  await currentUser.save({ new: true });
   res.status(200).json({
     success: true,
     message: "Unfollow operations successfull",
