@@ -27,8 +27,9 @@ const SignInForm = ({ openSignInModal, signInModalIsOpen }) => {
       "http://localhost:5000/api/auth/login",
       newUser
     );
-    setUserData({ ...userData, token: signResponse.data.access_token });
-    localStorage.setItem("token", signResponse.data.access_token);
+    setUserData({ ...userData, token: signResponse?.data?.access_token });
+    localStorage.setItem("token", signResponse?.data?.access_token);
+    openSignInModal();
   };
 
   return (
