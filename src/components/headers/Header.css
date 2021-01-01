@@ -4,6 +4,7 @@
     border-bottom: 1px solid black;
 }
 .headerContainere01 {
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     border-bottom: 0.5px solid black;
@@ -13,7 +14,6 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: 400;
     color: #080808;
-
 }
 .contentLefte01 {
     /* width: 300px; */
@@ -40,16 +40,21 @@ a {
 .footerContainere01 {
     display: flex;
     justify-content: space-around;
+    padding-bottom: 3%;
     /* border-bottom: 1px solid black; */
 }
 .footerLefte01 {
     width: 40%;
     box-sizing: border-box;
     align-self: center;
+    text-align: left;
     /* border: 1px solid blue; */
 }
 .footerRighte01 {
     width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .buttone01 {
     background-color: transparent;
@@ -77,4 +82,9 @@ a {
     cursor: pointer;
     transition: 0.3s;
 }
+
+.footerRighte01img{
+    width: 300px;
+}
+
 

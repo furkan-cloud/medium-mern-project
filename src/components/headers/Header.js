@@ -73,7 +73,9 @@ function Header(props) {
             </button>
           </div>
         </div>
-        <div className="footerRighte01"></div>
+        <div className="footerRighte01">
+          <img className = 'footerRighte01img' src = 'https://miro.medium.com/proxy/1*8rgW0Qvy2bSGSBMlORMhQA.png'/>
+        </div>
       </div>
     </div>
   );

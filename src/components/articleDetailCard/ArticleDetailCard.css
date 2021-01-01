@@ -12,3 +12,8 @@
     display: flex;
     align-items: center;
 }
+
+.article-detail-container{
+    margin-bottom: 10%;
+
+}

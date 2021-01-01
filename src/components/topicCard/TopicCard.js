@@ -5,7 +5,7 @@ const TopicCard = ({topicName}) => {
     return(
         <div className = 'topicCardContainer'>
             <p>{topicName}</p>
-            <button className = 'button'>Follow</button>
+            <button className = 'topic_button'>Follow</button>
         </div>
     )
 }

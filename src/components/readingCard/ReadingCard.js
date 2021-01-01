@@ -2,7 +2,6 @@ import React from "react";
 import './ReadingCard.css';
 
 const ReadingCard = (props) => {
-  console.log("iamage", props.profileImage)
   return (  
     <div className="readingcard-container">
       <div className="readingtext-container">
