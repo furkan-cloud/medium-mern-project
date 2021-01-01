@@ -6,11 +6,16 @@
     padding: 5px 0;
 }
 
-.button{
+.topic_button{
     border: 1px solid #1a8917;
     color: #1a8917;
     border-radius: 5px;
-    padding: 0px 20px;
+    padding: 10px 20px;
     background-color: white;
     font-size: 15px;
+}
+
+.topic_button:hover {
+    background-color: #1a8917;
+    color: white;
 }

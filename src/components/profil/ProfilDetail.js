@@ -55,7 +55,7 @@ const ProfilDetail = () => {
   return (
     <div className="profil__card__container">
       <div className="profil__card__header">
-        <div>
+        <div className="profil__card__username" >
           <h2>{userProfile?.firstName}</h2>
         </div>
 
@@ -63,21 +63,21 @@ const ProfilDetail = () => {
           {isfollow ? (
             <button
               onClick={removeFollow}
-              className="profil__card__subheader__btn"
+              className="profil__card__subheader__following__btn"
             >
               <span>Following</span>
             </button>
           ) : (
             <button
               onClick={addFollow}
-              className="profil__card__subheader__btn"
+              className="profil__card__subheader__follow__btn"
             >
               <span>Follow</span>
             </button>
           )}
 
           <Link>
-            <span> {userProfile?.followersCount} </span> <span>Followers</span>
+            <span className="profil__card__followers" > {userProfile?.followersCount} Followers</span>
           </Link>
           <Link>
             <span>About</span>
@@ -91,9 +91,9 @@ const ProfilDetail = () => {
           </div>
 
           <div className="profil__card__content__left__info">
-            <p>ABOUT</p>
-            <p>{userProfile?.firstName + userProfile?.lastName}</p>
-            <p>{userProfile?.email}</p>
+            <p className="info_text">ABOUT</p>
+            <p className="info_text">{userProfile?.firstName + userProfile?.lastName}</p>
+            <p className="info_text">{userProfile?.email}</p>
           </div>
         </div>
         <div

@@ -53,13 +53,14 @@
     color: #1a8917;
     background-color:white;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 15px;
     border: 1px solid #1a8917;
+    cursor: pointer;
 }
 
 .navbar-profileImage{
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
 }
 
