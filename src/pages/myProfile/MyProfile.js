@@ -89,7 +89,7 @@ const MyProfile = () => {
             <div>Following: {userProfile?.followingCount}</div>
           </div>
           <div>
-            <button onClick={handleOnUpdateOpen}>Edit Profile</button>
+            <button className="edit_profile_btn" onClick={handleOnUpdateOpen}>Edit Profile</button>
           </div>
         </div>
       </div>

@@ -5,8 +5,8 @@ import DetailSectionLeft from '../../components/detailSectionLeft/DetailSectionL
 import DetailSectionMiddle from '../../components/detailSectionMiddle/DetailSectionMiddle';
 import DetailSectionRight from '../../components/detailSectionRight/DetailSectionRight';
 import { articleContent } from '../../data/articleData';
-
 import './ArticleDetails.css';
+import Footer from '../../components/footer/Footer';
 
 const ArticleDetails = () => {
     //console.log(articleContent);
@@ -27,8 +27,12 @@ const ArticleDetails = () => {
             <DetailSectionLeft singleArticle = {singleArticle} />
             <DetailSectionMiddle singleArticle = {singleArticle} />
             <DetailSectionRight />
-        </div>
+            {/* <div>
+                <Footer/>
+            </div> */}
 
+        </div>
+            
     )
 }
 
