@@ -44,7 +44,7 @@ const updateProfileInfo = asyncErrorWrapper(async (req, res, next) => {
 });
 
 const imageUpload = asyncErrorWrapper(async (req, res, next) => {
-  const imageurl = req.file.path;
+  const imageurl = req?.file?.path;
   //console.log(req.file.path);
   const user = await User.findByIdAndUpdate(
     req.user.id,

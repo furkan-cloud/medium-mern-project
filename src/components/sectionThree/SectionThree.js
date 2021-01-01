@@ -1,3 +1,4 @@
+
 import React, {useContext} from 'react';
 import './SectionThree.css';
 import BigCardList from '../bigCardList/BigCardList'
@@ -38,7 +39,9 @@ const SectionThree = () => {
                 </div>
             </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
 export default SectionThree;

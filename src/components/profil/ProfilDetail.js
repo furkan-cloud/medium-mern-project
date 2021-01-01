@@ -22,7 +22,7 @@ const ProfilDetail = () => {
       setUserProfile(userProfileData?.data?.data);
     };
     fetchUser();
-  }, [isfollow]);
+  }, [isfollow, id]);
 
   async function removeFollow() {
     let token = localStorage.getItem("token");
@@ -34,9 +34,8 @@ const ProfilDetail = () => {
         },
       }
     );
-    setIsFollow(false);
+    unFollowProfileData.data && setIsFollow(false);
     setUserData({ user: unFollowProfileData.data.data, token });
-    
   }
 
   async function addFollow() {
@@ -49,9 +48,8 @@ const ProfilDetail = () => {
         },
       }
     );
-    setIsFollow(true);
+    followProfileData.data && setIsFollow(true);
     setUserData({ user: followProfileData.data.data, token });
-   
   }
 
   return (
@@ -60,10 +58,8 @@ const ProfilDetail = () => {
         <div className="profil__card__username" >
           <h2>{userProfile?.firstName}</h2>
         </div>
-        
-        <div 
-       
-        >
+
+        <div>
           {isfollow ? (
             <button
               onClick={removeFollow}
@@ -121,5 +117,3 @@ const ProfilDetail = () => {
 };
 
 export default ProfilDetail;
-
-
