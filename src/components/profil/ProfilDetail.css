@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.profil__card__username{
+  padding: 8px;
+}
+
 /* .profil__card__header h2 {
   font-size: 34px;
   color: #f1f1f1;
@@ -28,18 +32,30 @@
   margin-top: 0;
 }
 
-.profil__card__subheader__btn {
+.profil__card__subheader__following__btn {
   /* width:10px; */
   color: #f1f1f1;
-  border: 1px solid rgba(22, 133, 159, 1);
+  border: 1px solid #1a8917;
   border-radius: 5px;
-  background: rgba(22, 133, 159, 1);
+  background:#1a8917;
   border: none;
   padding: 12px;
   font-size: 14px;
   text-align: center;
   align-items: flex-start;
   cursor: pointer;
+}
+
+.profil__card__subheader__follow__btn{
+  color: #1a8917;
+  background-color: #f1f1f1;
+  border: 1px solid  #1a8917 ;
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+  align-items: flex-start;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .profil__card__subheader a {
@@ -54,6 +70,17 @@
 }
 
 .profil__card__content__left__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info_text{
+  border: 1px solid red;
+  display: flex;
+  position: relative;
+  top: 8px;
+  
+
 }
 
 .profil__card__content__left__info p {
@@ -70,4 +97,8 @@
 .profil__card__content__right{
   max-width: 700px;
   margin-left: 10% ;
+}
+
+.profil__card__followers{
+  padding: 0px 7px;
 }
