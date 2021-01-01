@@ -19,6 +19,21 @@
   margin-bottom: auto;
 }
 
+.edit_profile_btn{
+  height: 40px;
+    color: #1a8917;
+    background-color:white;
+    border-radius: 5px;
+    font-size: 15px;
+    border: 1px solid #1a8917;
+    cursor: pointer;
+}
+
+.edit_profile_btn:hover{
+    background-color:  #1a8917;
+    color: white;
+}
+
 .myProfileContent {
   margin-top: 8%;
   display: flex;

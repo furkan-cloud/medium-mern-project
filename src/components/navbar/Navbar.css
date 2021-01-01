@@ -58,6 +58,11 @@
     cursor: pointer;
 }
 
+.navbar-button:hover{
+    color: white;
+    background-color: #1a8917; ;
+}
+
 .navbar-profileImage{
     width: 35px;
     height: 35px;

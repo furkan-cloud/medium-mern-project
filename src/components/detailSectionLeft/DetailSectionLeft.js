@@ -1,5 +1,6 @@
 import "./DetailSectionLeft.css";
 import Claps from "../icons/Claps";
+import Comment from "../icons/Comment"
 import Bookmark from "../icons/Bookmark";
 import axios from "axios";
 import { useLayoutEffect, useState } from "react";
@@ -40,6 +41,9 @@ const DetailSectionLeft = ({ singleArticle }) => {
           <div onClick={handleClaps} className="icons">
             <Claps />
             <div className="applause">{claps}</div>
+          </div>
+          <div className="icons">
+            <Comment/>
           </div>
 
           <div className="icons">
