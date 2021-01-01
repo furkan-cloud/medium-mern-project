@@ -14,14 +14,6 @@ const ProfilDetail = () => {
     userData.user?.following?.filter((fol) => fol._id == id).length > 0
   );
 
-  // const isFollow = () => {
-  //   if (userData.user?.following.filter((fol) => fol._id == id).length > 0) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // };
-
   useEffect(() => {
     const fetchUser = async () => {
       const userProfileData = await axios.get(
@@ -44,6 +36,7 @@ const ProfilDetail = () => {
     );
     setIsFollow(false);
     setUserData({ user: unFollowProfileData.data.data, token });
+    
   }
 
   async function addFollow() {
@@ -58,33 +51,42 @@ const ProfilDetail = () => {
     );
     setIsFollow(true);
     setUserData({ user: followProfileData.data.data, token });
+   
   }
 
   return (
     <div className="profil__card__container">
       <div className="profil__card__header">
-        <h2>{userProfile?.firstName}</h2>
-      </div>
-      <div className="profil__card__subheader">
-        {isfollow ? (
-          <button
-            onClick={removeFollow}
-            className="profil__card__subheader__btn"
-          >
-            <span>Following</span>
-          </button>
-        ) : (
-          <button onClick={addFollow} className="profil__card__subheader__btn">
-            <span>Follow</span>
-          </button>
-        )}
+        <div>
+          <h2>{userProfile?.firstName}</h2>
+        </div>
+        
+        <div 
+       
+        >
+          {isfollow ? (
+            <button
+              onClick={removeFollow}
+              className="profil__card__subheader__btn"
+            >
+              <span>Following</span>
+            </button>
+          ) : (
+            <button
+              onClick={addFollow}
+              className="profil__card__subheader__btn"
+            >
+              <span>Follow</span>
+            </button>
+          )}
 
-        <Link>
-          <span> {userProfile?.followersCount} </span> <span>Followers</span>
-        </Link>
-        <Link>
-          <span>About</span>
-        </Link>
+          <Link>
+            <span> {userProfile?.followersCount} </span> <span>Followers</span>
+          </Link>
+          <Link>
+            <span>About</span>
+          </Link>
+        </div>
       </div>
       <div className="profil__card__content">
         <div className="profil__card__content__left">
@@ -95,7 +97,7 @@ const ProfilDetail = () => {
           <div className="profil__card__content__left__info">
             <p>ABOUT</p>
             <p>{userProfile?.firstName + userProfile?.lastName}</p>
-            <p>@ezranbayantemur</p>
+            <p>{userProfile?.email}</p>
           </div>
         </div>
         <div
@@ -120,14 +122,4 @@ const ProfilDetail = () => {
 
 export default ProfilDetail;
 
-// author: "5fe2de2cb7c09046688b1110"
-// content: "dummy subtitle form datadummy subtitle form datadummy subtitle form datadummy subtitle form datadummy subtitle form data"
-// createdAt: "2020-12-23T06:06:23.992Z"
-// likeCount: 0
-// likes: []
-// post_image: "https://res.cloudinary.com/clarusway2020/image/upload/v1608703582/oalqc4ahf8hxratz0cvx.jpg"
-// slug: "dummy-title-form-data4"
-// subtitle: "dummy subtitle form data"
-// title: "dummy title form data4"
-// __v: 0
-// _id: "5fe2de5fb7c09046688b1111"
+

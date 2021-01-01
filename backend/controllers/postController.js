@@ -97,19 +97,24 @@ const undolikePost = asyncErrorWrapper(async (req, res, next) => {
   const { id } = req.params;
 
   let post = await Post.findById(id);
-
+  let currentUser = await User.findById(req.user.id);
   if (!post.likes.includes(req.user.id)) {
     return next(new CustomError("You can not  undo  this post", 400));
   }
   const index = post.likes.indexOf(req.user.id);
+ const userIndex = currentUser.readingList.indexOf(post._id);
   post.likes.splice(index, 1);
+  currentUser.readingList.splice(userIndex,1)
+  currentUser.readingListCount = currentUser.readingList.length
   post.likeCount = post.likes.length;
   await post.save();
+  await currentUser.save()
 
   res.status(200).json({
     success: true,
     message: "UnLiked operations successfull",
     data: post,
+    currentUser
   });
 });
 

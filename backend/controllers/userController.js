@@ -35,7 +35,7 @@ const followUser = asyncErrorWrapper(async (req, res, next) => {
   currentUser.followingCount = currentUser.following.length;
   user.followersCount = user.followers.length;
   await user.save({ new: true });
-  await currentUser.save();
+  await currentUser.save({ new: true });
 
   res.status(200).json({
     success: true,
