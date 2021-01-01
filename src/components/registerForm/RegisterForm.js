@@ -30,10 +30,10 @@ const RegisterForm = ({modalIsOpen, closeModal}) => {
         }
 
         const registerResponse = await axios.post("http://localhost:5000/api/auth/register", newUser)
-        setUserData({ user: registerResponse.data.user, token: registerResponse.data.access_token })
-        localStorage.setItem("token", registerResponse.data.access_token)
+        setUserData({ user: registerResponse?.data?.user, token: registerResponse?.data?.access_token })
+        localStorage.setItem("token", registerResponse?.data?.access_token)
         closeModal()
-        history.push("/")
+        history.push("/");
     }
         // TODO: sadece token set edilecek user degil
     return (   

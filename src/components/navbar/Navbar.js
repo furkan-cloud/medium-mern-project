@@ -11,6 +11,7 @@ import Alarm from "../icons/Alarm";
 import ProfileListModal from "../profileListModal/ProfileListModal";
 
 const Navbar = () => {
+  
   function greeting() {
     var today = new Date();
     var curHr = today.getHours();
