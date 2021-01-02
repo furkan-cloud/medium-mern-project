@@ -4,7 +4,6 @@ import UserContext from '../../context/UserContext'
 
 
 const CardList = () => {
-    //console.log(cardContent)
     const { articles } = useContext(UserContext);
 
     return (
@@ -28,13 +27,3 @@ const CardList = () => {
 }
 
 export default CardList;
-
-// {articles?.map((article, index) =>
-//     <TrendingCard
-//       id={article?._id}
-//       firstName={article?.author.firstName}
-//       title={article?.title}
-//       profileImage = {article?.author.avatar_img}
-//       date={article?.createdAt}
-//       key={index}
-//     />

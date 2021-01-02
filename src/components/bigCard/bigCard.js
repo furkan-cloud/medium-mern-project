@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import "./bigCard.css";
+import "./BigCard.css";
 import axios from "axios";
 import Bookmark from "../icons/Bookmark";
 import BookmarkFill from "../icons/BookmarkFill";
@@ -21,10 +21,7 @@ const BigCard = (props) => {
     modalIsOpen,
     setIsOpen,
   } = useContext(UserContext);
-  const [isLike, setIsLike] = useState(
-    userData?.user?.readingList?.filter((read) => read._id == props.id).length >
-      0
-  );
+
 
   async function removeBookmark() {
     let token = localStorage.getItem("token");
@@ -36,9 +33,9 @@ const BigCard = (props) => {
         },
       }
     );
-    console.log(undoLikeData.data);
+
     setUserData({ user: undoLikeData.data.currentUser, token });
-    setIsLike(false);
+
   }
 
   async function addBookmark() {
@@ -51,9 +48,8 @@ const BigCard = (props) => {
         },
       }
     );
-    console.log(likeData.data);
+
     setUserData({ user: likeData.data.currentUser, token });
-    setIsLike(true);
   }
 
   function modalOpen() {
@@ -89,9 +85,15 @@ const BigCard = (props) => {
         <div className="date-icons">
           <div className="big-card-date">{props.date}</div>
           <div className="big-card-icons">
-            <div onClick={isLike ? removeBookmark : addBookmark}>
-              {isLike ? <BookmarkFill /> : <Bookmark />}
-            </div>
+            {
+              props.likes.includes(userData?.user?._id) ? 
+              (<div onClick={removeBookmark}>
+                <BookmarkFill />
+              </div>) :
+                (<div onClick={addBookmark}>
+                  <Bookmark />
+                </div>)
+            }
             <ThreeDots />
           </div>
         </div>

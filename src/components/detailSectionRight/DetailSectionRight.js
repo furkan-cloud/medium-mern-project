@@ -2,7 +2,7 @@ import './DetailSectionRight.css';
 
 const DetailSectionRight = () => {
     return(
-        <div className = 'articleDetailRight'>dd</div>
+        <div className = 'articleDetailRight'></div>
     )
 }
 

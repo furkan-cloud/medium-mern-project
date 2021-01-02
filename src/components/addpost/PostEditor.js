@@ -47,7 +47,6 @@ const PostEditor = () => {
         },
       }
     );
-    console.log(postResponse.data.post);
     setPost(postResponse.data.post);
     setContent("");
     setTitle("");
@@ -56,21 +55,21 @@ const PostEditor = () => {
     history.push(`/profileDetail/${userData.user._id}`);
   };
   return (
-    <div>
+    <div className = 'postEditorContainer'>
       <form action="" enctype="multipart/form-data">
         <div className="input-grup">
-          <label htmlFor=""> Title </label>
+          <label className = 'profileUpdateLabel' htmlFor=""> Title </label>
           <input
+          className = 'postEditorInput'
             type="text"
             name="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="file-input" style={{ cursor: "pointer" }}>
-            {" "}
-            image{" "}
+        <div className="input-grup">
+          <label className = 'profileUpdateLabel' htmlFor="file-input" style={{ cursor: "pointer" }}>
+            Image
           </label>
 
           <input
@@ -81,7 +80,7 @@ const PostEditor = () => {
             onChange={handleChange}
             // style={{ display: "none" }}
           />
-          <label>
+          <label className = 'profileUpdateLabel'>
             Select Topics:
             <select value={topic} onChange={(e) => setTopic(e.target.value)}>
               {topics.map((topic, i) => (
@@ -107,7 +106,7 @@ const PostEditor = () => {
           }}
         />
         {/* <ReactEditor /> */}
-        <button onClick={handleOnClick}> add </button>
+        <button className = 'addBtn' onClick={handleOnClick}> Add </button>
       </form>
 
       {/* {post ? ReactHtmlParser(post.content) : null} */}
