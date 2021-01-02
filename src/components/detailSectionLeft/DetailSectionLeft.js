@@ -14,7 +14,7 @@ const DetailSectionLeft = ({ singleArticle }) => {
       `http://localhost:5000/api/posts/${singleArticle?._id}/claps`,
       { headers: { "x-auth-token": token } }
     );
-    console.log(getClaps.data);
+  
     setClaps(getClaps.data?.data.claps);
   };
 
@@ -45,10 +45,6 @@ const DetailSectionLeft = ({ singleArticle }) => {
           <div className="icons">
             <Comment/>
           </div>
-
-          <div className="icons">
-            <Bookmark />
-          </div>
         </div>
       </div>
     </div>
@@ -56,4 +52,4 @@ const DetailSectionLeft = ({ singleArticle }) => {
 };
 
 export default DetailSectionLeft;
-/*deneme*/
+

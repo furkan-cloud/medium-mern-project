@@ -15,8 +15,13 @@
 }
 
 .myProfileHeaderFollowContainer {
+  display: flex;
+  flex-direction: column;
   margin-top: auto;
   margin-bottom: auto;
+}
+.myProfileHeaderContent{
+  margin-bottom: 6%;
 }
 
 .edit_profile_btn{
