@@ -36,6 +36,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    padding-top: 1vh;
 }
 
 .big-card-header{
@@ -95,7 +96,7 @@
         width: 62%;
     }
     .bigtext-container{
-        width: 60%;
+        width: 55%;
         margin-right: 2vw;
     }
     
@@ -128,10 +129,14 @@
     /* .bigtext-container{
         width: 62%;
     } */
+    .bigtext-container{
+        /* width: 60%; */
+        margin-right: 3vw;
+    }
 
     .big-card-image{
-        width: 170px;
-        height: 100px;
+        width: 155px;
+        height: 120px;
     }
     
     .big-card-title{
@@ -140,7 +145,7 @@
     }
     
     .big-card-desc {
-        font-size: 0.8rem;
+        display: none;
     }
   }
 
@@ -151,7 +156,7 @@
 
     .big-card-image{
         width: 140px;
-        height: 80px;
+        height: 100px;
     }
     .big-username{
         font-size: 0.7rem;

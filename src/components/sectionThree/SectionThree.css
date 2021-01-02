@@ -58,13 +58,6 @@
     }
   }
 
-  @media only screen and (max-width: 900px) {
-    .sectionThreeContainer{
-        margin: 5vh 4vw;
-        width: 92%;
-    }
-  }
-
   @media only screen and (max-width: 768px) {
     .sectionThreeContainer{
         margin: 5vh 3vw;

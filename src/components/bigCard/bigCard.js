@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import "./BigCard.css";
+import "./bigCard.css";
 import axios from "axios";
 import Bookmark from "../icons/Bookmark";
 import BookmarkFill from "../icons/BookmarkFill";
@@ -79,7 +79,7 @@ const BigCard = (props) => {
         <div onClick={handleOnClickArticle} className="big-card-header">
           <div className="big-card-title">{props.title}</div>
           <div className="big-card-desc">
-            {ReactHtmlParser(props.description.slice(0, 150))}
+            {ReactHtmlParser(props.description.slice(0, 100))}
           </div>
         </div>
         <div className="date-icons">

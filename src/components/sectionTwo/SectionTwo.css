@@ -22,15 +22,16 @@
     border: 1px solid black;
 }
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 1200px) {
     .sectionTwoContainer{
         /* padding: 40px 0px 16px;
         border-top: 1px solid rgba(230, 230, 230, 1);
         border-bottom: 1px solid rgba(230, 230, 230, 1);; */
         /* width: 90%; */
-        margin: 5vh 3vw;
     }
   }
+
 
   @media only screen and (max-width: 900px) {
     .sectionTwoContainer{
@@ -42,11 +43,13 @@
     }
   }
 
-  @media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 768px) {
     .sectionTwoContainer{
         /* padding: 40px 0px 16px;
         border-top: 1px solid rgba(230, 230, 230, 1);
         border-bottom: 1px solid rgba(230, 230, 230, 1);; */
         /* width: 90%; */
+        margin: 5vh 3vw;
     }
   }
+
