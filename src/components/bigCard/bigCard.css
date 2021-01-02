@@ -10,6 +10,7 @@
 
 .bigtext-container{
     width: 70%;
+    margin-right: 1vw;
 }
 
 .big-image-container{
@@ -79,3 +80,85 @@
     height: 133px;
 
 }
+
+@media only screen and (max-width: 1400px) {
+    .bigtext-container{
+        width: 60%;
+        margin-right: 3vw;
+    }
+  }
+
+
+@media only screen and (max-width: 1200px) {
+    .bigCard-container{
+        display: flex;
+        width: 62%;
+    }
+    .bigtext-container{
+        width: 60%;
+        margin-right: 2vw;
+    }
+    
+    .big-image-container{
+        width: 15%;
+    }
+    .big-card-image{
+        width: 180px;
+        height: 110px;
+    }
+  }
+
+@media only screen and (max-width: 900px) {
+    .bigCard-container{
+        display: flex;
+        width: 100%;
+    }
+    .bigtext-container{
+        width: 65%;
+        margin-right: 3vw;
+    }
+
+    .big-card-image{
+        width: 180px;
+        height: 110px;
+    }
+  }
+
+@media only screen and (max-width: 768px) {
+    /* .bigtext-container{
+        width: 62%;
+    } */
+
+    .big-card-image{
+        width: 170px;
+        height: 100px;
+    }
+    
+    .big-card-title{
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    
+    .big-card-desc {
+        font-size: 0.8rem;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    /* .bigtext-container{
+        width: 58%;
+    } */
+
+    .big-card-image{
+        width: 140px;
+        height: 80px;
+    }
+    .big-username{
+        font-size: 0.7rem;
+        display: flex;
+    }
+    
+    .big-card-title{
+        font-size: 1.1rem;
+    }
+  }

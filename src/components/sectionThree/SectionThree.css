@@ -1,9 +1,10 @@
 .sectionThreeContainer{
-    width: 100%;
+    width: 84%;
     display: flex;
     padding: 56px 0px 0px ;
     justify-content: space-between;
     border:1px solid purple;
+    margin: 5vh 8vw;
 }
 
 .bigCard-container{
@@ -38,3 +39,34 @@
     display: flex;
     position: absolute;
 }
+
+@media only screen and (max-width: 900px) {
+    .sectionThreeContainer{
+        flex-direction: column-reverse;
+        width: 92%;
+        margin: 5vh 4vw;
+    }
+    .sectionThreeRightContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2vh;
+    }
+    .bigCard-container{
+        display: flex;
+        width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .sectionThreeContainer{
+        margin: 5vh 4vw;
+        width: 92%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .sectionThreeContainer{
+        margin: 5vh 3vw;
+    }
+  }
