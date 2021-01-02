@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react';
 import './SectionThree.css';
 import BigCardList from '../bigCardList/BigCardList'

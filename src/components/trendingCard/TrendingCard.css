@@ -1,10 +1,10 @@
 .trendingcard-container{
     display: flex;
     flex-direction: row;
-    width: 20vw;
+    width: 24vw;
     border: 1px solid yellowgreen;
     padding: 0px 14px;
-    margin-right: 25px;
+    /* margin-right: 25px; */
 }
 
 .number-container{
@@ -49,3 +49,69 @@
     color: rgba(117, 117, 117, 1);
 }
 
+@media only screen and (max-width: 1400px) {
+    .trendingcard-container{
+        /* display: flex;
+        flex-direction: row; */
+        width: 22vw;
+        /* border: 1px solid yellowgreen;
+        padding: 0px 14px;
+        margin-right: 25px; */
+    }
+  }
+
+@media only screen and (max-width: 1200px) {
+    .trendingcard-container{
+        /* display: flex;
+        flex-direction: row; */
+        width: 35vw;
+        /* border: 1px solid yellowgreen;
+        padding: 0px 14px;
+        margin-right: 25px; */
+    }
+  }
+
+  @media only screen and (max-width: 920px) {
+    .trendingcard-container{
+        /* display: flex;
+        flex-direction: row; */
+        width: 32vw;
+        margin-right: 25px;
+        /* border: 1px solid yellowgreen;
+        padding: 0px 14px;
+        margin-right: 25px; */
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .trendingcard-container{
+        /* display: flex;
+        flex-direction: row; */
+        width: 50vw;
+        /* border: 1px solid yellowgreen;
+        padding: 0px 14px;
+        margin-right: 25px; */
+    }
+  }
+
+  @media only screen and (max-width: 680px) {
+    .trendingcard-container{
+        /* display: flex;
+        flex-direction: row; */
+        width: 85vw;
+        /* border: 1px solid yellowgreen;
+        padding: 0px 14px;
+        margin-right: 25px; */
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .trendingcard-container{
+        /* display: flex;
+        flex-direction: row; */
+        /* width: 50vw; */
+        /* border: 1px solid yellowgreen;
+        padding: 0px 14px;
+        margin-right: 25px; */
+    }
+  }

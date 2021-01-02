@@ -98,7 +98,6 @@ const BigCard = (props) => {
           </div>
         </div>
       </div>
-
       <div className="big-image-container">
         <img className="big-card-image" src={props.imageUrl} alt="" />
       </div>

@@ -1,8 +1,9 @@
 .sectionTwoContainer{
-    padding: 40px 0px 16px;
+    padding: 40px 0px;
     border-top: 1px solid rgba(230, 230, 230, 1);
     border-bottom: 1px solid rgba(230, 230, 230, 1);;
-    width: 100%;
+    width: 84%;
+    margin: 5vh 8vw;
 }
 
 .trend-title-up{
@@ -17,5 +18,35 @@
 
 .trendingCard-container{
     display: flex;
+    /* width: 100%; */
     border: 1px solid black;
 }
+
+@media only screen and (max-width: 768px) {
+    .sectionTwoContainer{
+        /* padding: 40px 0px 16px;
+        border-top: 1px solid rgba(230, 230, 230, 1);
+        border-bottom: 1px solid rgba(230, 230, 230, 1);; */
+        /* width: 90%; */
+        margin: 5vh 3vw;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .sectionTwoContainer{
+        /* padding: 40px 0px 16px;
+        border-top: 1px solid rgba(230, 230, 230, 1);
+        border-bottom: 1px solid rgba(230, 230, 230, 1);; */
+        width: 92%;
+        margin: 5vh 4vw;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .sectionTwoContainer{
+        /* padding: 40px 0px 16px;
+        border-top: 1px solid rgba(230, 230, 230, 1);
+        border-bottom: 1px solid rgba(230, 230, 230, 1);; */
+        /* width: 90%; */
+    }
+  }
