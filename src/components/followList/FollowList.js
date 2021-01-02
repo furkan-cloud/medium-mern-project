@@ -15,6 +15,7 @@ const FollowList = () => {
                     userData?.user?.following?.map((followed) => (
                         <Avatar
                             key={followed?._id}
+                            id ={followed?._id}
                             profileImage={followed?.avatar_img}
                             firstName={followed?.firstName}
                             lastName={followed?.lastName}

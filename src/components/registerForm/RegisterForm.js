@@ -62,6 +62,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
           <div className="modalInputContainer">
             <label className="input-label">First Name :</label>
             <input
+            className = 'registerFormInput'
               type="text"
               name="firstName"
               onChange={(e) => setFirstName(e.target.value)}
@@ -70,6 +71,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
           <div className="modalInputContainer">
             <label className="input-label">Last Name :</label>
             <input
+             className = 'registerFormInput'
               type="text"
               name="lastName"
               onChange={(e) => setlastName(e.target.value)}
@@ -78,6 +80,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
           <div className="modalInputContainer">
             <label className="input-label">Email :</label>
             <input
+             className = 'registerFormInput'
               type="email"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
@@ -86,6 +89,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
           <div className="modalInputContainer">
             <label className="input-label">Password :</label>
             <input
+             className = 'registerFormInput'
               type="password"
               name="password"
               onChange={(e) => setPassword(e.target.value)}

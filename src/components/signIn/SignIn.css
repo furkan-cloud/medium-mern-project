@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
 }
-/* 
+
 .signInInput{
     width: 50%;
     border: none;
@@ -22,7 +22,7 @@
     border:none;
     border-bottom: 2px solid #ccc;
     transition:.3s ease-in-out;
-} */
+} 
 
 .signInContainer{
     display: flex;

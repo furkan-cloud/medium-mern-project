@@ -1,5 +1,5 @@
 
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import './SectionThree.css';
 import BigCardList from '../bigCardList/BigCardList'
 import ReadingCard from '../readingCard/ReadingCard';
@@ -16,13 +16,13 @@ const SectionThree = () => {
             <div className="bigCard-container">
                 <BigCardList />
             </div>
-            <div className = 'sectionThreeRightContainer'>
+            <div className='sectionThreeRightContainer'>
                 <div className="sectionThree-right">
                     <div className="reading_list-container">
-                       <DoubleBookmark className="double_bookmark"/>
-                       <p className="reading_list"> READING LIST </p>
+                        <DoubleBookmark className="double_bookmark" />
+                        <p className="reading_list"> READING LIST </p>
                     </div>
-                    {userData?.user?.readingList?.slice(0,6).map((readingContent, index) =>
+                    {userData?.user?.readingList?.slice(0, 6).map((readingContent, index) =>
                         <ReadingCard
                             id={readingContent?._id}
                             authorId={readingContent?.author?._id}
@@ -39,8 +39,6 @@ const SectionThree = () => {
                 </div>
             </div>
         </div>
-      </div>
-    </div>
   );
 };
 

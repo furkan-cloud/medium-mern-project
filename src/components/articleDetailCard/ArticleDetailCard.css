@@ -14,6 +14,9 @@
 }
 
 .article-detail-container{
-    margin-bottom: 10%;
+    margin-bottom: 12%;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 3%;
+    text-align: left;
 
 }
