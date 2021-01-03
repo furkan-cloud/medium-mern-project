@@ -1,6 +1,6 @@
 .articleDetailMiddle{
     width: 60%;
-    border: 1px  solid green
+    /* border: 1px  solid green */
 }
 .articleTitle{
     text-align: left;
@@ -11,4 +11,15 @@
 }
 .articleMainImage{
     width: 100%;
+}
+.articleDetailMiddleProfile{
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle_icons{
+    display: flex;
+}
+.articleDetailMiddleContent{
+    text-align: left;
 }

@@ -50,7 +50,7 @@ const MyProfileUpdateForm = ({ handleOnUpdateClose = () => {} }) => {
   };
   return (
     <div className="profileFormContainer">
-      <img className="myProfileAvatar" src={userData?.user?.avatar_img}></img>
+      <img className="profileFormAvatar" src={userData?.user?.avatar_img}></img>
       <form className="profileForm" enctype="multipart/form-data" action="">
         <div className="profileFormInputContainer">
           <label className="imageUpload" htmlFor="avatar_img">
@@ -73,6 +73,7 @@ const MyProfileUpdateForm = ({ handleOnUpdateClose = () => {} }) => {
         <div className="profileFormInputContainer">
           <label className="profile-input-label">First Name :</label>
           <input
+          className = 'profileUpdateInput'
             value={firstName}
             type="text"
             name="firstName"
@@ -82,6 +83,7 @@ const MyProfileUpdateForm = ({ handleOnUpdateClose = () => {} }) => {
         <div className="profileFormInputContainer">
           <label className="profile-input-label">Last Name :</label>
           <input
+           className = 'profileUpdateInput'
             value={lastName}
             type="text"
             name="lastName"
@@ -91,6 +93,7 @@ const MyProfileUpdateForm = ({ handleOnUpdateClose = () => {} }) => {
         <div className="profileFormInputContainer">
           <label className="profile-input-label">Email :</label>
           <input
+           className = 'profileUpdateInput'
             value={email}
             type="email"
             name="email"

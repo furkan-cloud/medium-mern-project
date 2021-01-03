@@ -81,15 +81,15 @@ const MyProfile = () => {
           </label> */}
         </div>
         <div className="myProfileHeaderFollowContainer">
-          <div>
+          <div className = 'myProfileHeaderContent'>
             <span>{userProfile?.firstName + " " + userProfile?.lastName}</span>
           </div>
-          <div>
-            <div>Followers: {userProfile?.followersCount}</div>
-            <div>Following: {userProfile?.followingCount}</div>
+          <div className = 'myProfileHeaderContent'>
+            <div className = 'myProfileHeaderContent'>Followers: {userProfile?.followersCount}</div>
+            <div className = 'myProfileHeaderContent'>Following: {userProfile?.followingCount}</div>
           </div>
           <div>
-            <button onClick={handleOnUpdateOpen}>Edit Profile</button>
+            <button className="edit_profile_btn" onClick={handleOnUpdateOpen}>Edit Profile</button>
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@ export default MyProfile;
 
 const customStyles = {
   content: {
-    width: "50%",
+    width: "35%",
     height: "auto",
     top: "50%",
     left: "50%",

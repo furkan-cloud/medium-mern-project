@@ -1,15 +1,22 @@
 .profil__card__container {
-  background-color: #f6f6f6;
+  /* background-color: #f6f6f6; */
   max-width: 1270px;
 }
 .profil__card__header {
   /* background-color: rgba(22, 133, 159, 1); */
   display: flex;
   align-items: center;
+  border-bottom: 2px solid #ccc;
+
 }
 
 .profil__card__username{
   padding: 8px;
+  margin-right: 2%;
+  
+}
+.profil__card__username h2{
+  text-transform: capitalize;
 }
 
 /* .profil__card__header h2 {
@@ -67,6 +74,7 @@
 }
 .profil__card__content__left img {
   width: 131px;
+  margin-top: 20%;
 }
 
 .profil__card__content__left__info {
@@ -101,4 +109,5 @@
 
 .profil__card__followers{
   padding: 0px 7px;
+  /* margin-left: 2% ; */
 }

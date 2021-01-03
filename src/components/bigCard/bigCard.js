@@ -21,10 +21,7 @@ const BigCard = (props) => {
     modalIsOpen,
     setIsOpen,
   } = useContext(UserContext);
-  const [isLike, setIsLike] = useState(
-    userData?.user?.readingList?.filter((read) => read._id == props.id).length >
-      0
-  );
+
 
   async function removeBookmark() {
     let token = localStorage.getItem("token");
@@ -36,9 +33,9 @@ const BigCard = (props) => {
         },
       }
     );
-    console.log(undoLikeData.data);
+
     setUserData({ user: undoLikeData.data.currentUser, token });
-    setIsLike(false);
+
   }
 
   async function addBookmark() {
@@ -51,9 +48,8 @@ const BigCard = (props) => {
         },
       }
     );
-    console.log(likeData.data);
+
     setUserData({ user: likeData.data.currentUser, token });
-    setIsLike(true);
   }
 
   function modalOpen() {
@@ -83,20 +79,25 @@ const BigCard = (props) => {
         <div onClick={handleOnClickArticle} className="big-card-header">
           <div className="big-card-title">{props.title}</div>
           <div className="big-card-desc">
-            {ReactHtmlParser(props.description.slice(0, 150))}
+            {ReactHtmlParser(props.description.slice(0, 100))}
           </div>
         </div>
         <div className="date-icons">
           <div className="big-card-date">{props.date}</div>
           <div className="big-card-icons">
-            <div onClick={isLike ? removeBookmark : addBookmark}>
-              {isLike ? <BookmarkFill /> : <Bookmark />}
-            </div>
+            {
+              props.likes.includes(userData?.user?._id) ? 
+              (<div onClick={removeBookmark}>
+                <BookmarkFill />
+              </div>) :
+                (<div onClick={addBookmark}>
+                  <Bookmark />
+                </div>)
+            }
             <ThreeDots />
           </div>
         </div>
       </div>
-
       <div className="big-image-container">
         <img className="big-card-image" src={props.imageUrl} alt="" />
       </div>

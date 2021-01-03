@@ -1,5 +1,6 @@
 import "./DetailSectionLeft.css";
 import Claps from "../icons/Claps";
+import Comment from "../icons/Comment"
 import Bookmark from "../icons/Bookmark";
 import axios from "axios";
 import { useLayoutEffect, useState } from "react";
@@ -13,7 +14,7 @@ const DetailSectionLeft = ({ singleArticle }) => {
       `http://localhost:5000/api/posts/${singleArticle?._id}/claps`,
       { headers: { "x-auth-token": token } }
     );
-    console.log(getClaps.data);
+  
     setClaps(getClaps.data?.data.claps);
   };
 
@@ -41,9 +42,8 @@ const DetailSectionLeft = ({ singleArticle }) => {
             <Claps />
             <div className="applause">{claps}</div>
           </div>
-
           <div className="icons">
-            <Bookmark />
+            <Comment/>
           </div>
         </div>
       </div>
@@ -52,4 +52,4 @@ const DetailSectionLeft = ({ singleArticle }) => {
 };
 
 export default DetailSectionLeft;
-/*deneme*/
+

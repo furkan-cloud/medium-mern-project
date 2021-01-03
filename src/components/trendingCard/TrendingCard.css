@@ -1,51 +1,77 @@
-.trendingcard-container{
-    display: flex;
-    flex-direction: row;
-    width: 20vw;
-    border: 1px solid yellowgreen;
-    padding: 0px 14px;
-    margin-right: 25px;
+.trendingcard-container {
+  display: flex;
+  flex-direction: row;
+  width: 29%;
+  border: 1px solid yellowgreen;
+  padding: 0px 14px;
 }
 
-.number-container{
-    font-size: 30px;
-    color: rgba(230, 230, 230, 1);
-    line-height: 36px;
-    font-weight: bold;
+.number-container {
+  font-size: 30px;
+  color: rgba(230, 230, 230, 1);
+  line-height: 36px;
+  font-weight: bold;
 }
 
-.trendingtext-container{
-    text-align: left;
-    margin-bottom: 24px;
-    padding:0px 16px;
-
+.trendingtext-container {
+  text-align: left;
+  margin-bottom: 24px;
+  padding: 0px 16px;
 }
-.trendingProfileImage{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-
-.trendingusername{
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-.trendingusername img{
-    width: 20px;
-    height: 20px;
-
-}
-.trendingtitle{
-    font-weight:bolder;
-    padding-bottom: 8px;
-    cursor: pointer;
-}
-.trendingdate{
-    font-size: 13px;
-    color: rgba(117, 117, 117, 1);
+.trendingProfileImage {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
+.trendingusername {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 1vh 0;
+}
+.trendingusername img {
+  width: 20px;
+  height: 20px;
+}
+.trendingtitle {
+  font-weight: bolder;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+.trendingdate {
+  font-size: 13px;
+  color: rgba(117, 117, 117, 1);
+}
+
+@media only screen and (max-width: 1400px) {
+  .trendingcard-container {
+    width: 23vw;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .trendingcard-container {
+    width: 35vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .trendingcard-container {
+    width: 38vw;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .trendingcard-container {
+    width: 85vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .trendingcard-container {
+    width: 82vw;
+  }
+}

@@ -13,6 +13,7 @@
     padding: 10px 20px;
     background-color: white;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .topic_button:hover {

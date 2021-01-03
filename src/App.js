@@ -45,7 +45,9 @@ function App() {
     userData?.user?.email,
     userData?.user?.followingCount,
     userData?.user?.readingListCount,
+    userData?.user?.claps,
   ]);
+
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -53,7 +55,12 @@ function App() {
       setArticles(articleData?.data?.data);
     };
     fetchArticles();
-  }, []);
+  }, 
+  [
+    userData?.user?.readingListCount,
+    userData?.user?.email,
+    articles?.likeCount
+  ]);
 
   return (
     <BrowserRouter>
