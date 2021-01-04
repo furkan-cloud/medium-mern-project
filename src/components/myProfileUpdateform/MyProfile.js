@@ -10,49 +10,45 @@ const MyProfileUpdateForm = ({ handleOnUpdateClose = () => {} }) => {
   const [lastName, setlastName] = useState(userData.user.lastName);
   const [email, setEmail] = useState(userData.user.email);
   //const [password, setPassword] = useState(userData.user.password);
-  const [imgAvatar, setImgAvatar] = useState(null);
-  const handleAvatarChange = (e) => {
-    console.log(e.target.files[0]);
-    if (e.target.files[0]) {
-      setImgAvatar(e.target.files[0]);
-    }
-  };
+  // const [imgAvatar, setImgAvatar] = useState(null);
+  // const handleAvatarChange = (e) => {
+  //   console.log(e.target.files[0]);
+  //   if (e.target.files[0]) {
+  //     setImgAvatar(e.target.files[0]);
+  //   }
+  // };
   const handleOnClick = async (e) => {
     e.preventDefault();
-    // const updatedUser = {
-    //   firstName,
-    //   lastName,
-    //   email,
-    //   password,
-    // };
-    const ProfilFormData = new FormData();
-    ProfilFormData.append("firstName", firstName);
-    ProfilFormData.append("lastName", lastName);
-    ProfilFormData.append("email", email);
-    ProfilFormData.append("avatar_img", imgAvatar);
+    const updatedUser = {
+      firstName,
+      lastName,
+      email,
+    };
+    // const ProfilFormData = new FormData();
+    // ProfilFormData.append("firstName", firstName);
+    // ProfilFormData.append("lastName", lastName);
+    // ProfilFormData.append("email", email);
+    // ProfilFormData.append("avatar_img", imgAvatar);
 
     let token = localStorage.getItem("token");
 
     const registerResponse = await axios.put(
       "http://localhost:5000/api/profile/update",
-      ProfilFormData,
+      updatedUser,
       {
         headers: {
           "x-auth-token": token,
         },
       }
     );
-    //console.log(registerResponse.data.user);
     setUserData({ ...userData, user: registerResponse.data.user });
     handleOnUpdateClose();
-
-    // localStorage.setItem("token", registerResponse.data.access_token)
   };
   return (
     <div className="profileFormContainer">
       <img className="profileFormAvatar" src={userData?.user?.avatar_img}></img>
-      <form className="profileForm" enctype="multipart/form-data" action="">
-        <div className="profileFormInputContainer">
+      <form className="profileForm">
+        {/* <div className="profileFormInputContainer">
           <label className="imageUpload" htmlFor="avatar_img">
             <button
               style={{ pointerEvents: "none" }}
@@ -69,11 +65,11 @@ const MyProfileUpdateForm = ({ handleOnUpdateClose = () => {} }) => {
             onChange={handleAvatarChange}
             style={{ display: "none" }}
           />
-        </div>
+        </div> */}
         <div className="profileFormInputContainer">
           <label className="profile-input-label">First Name :</label>
           <input
-          className = 'profileUpdateInput'
+            className="profileUpdateInput"
             value={firstName}
             type="text"
             name="firstName"
@@ -83,7 +79,7 @@ const MyProfileUpdateForm = ({ handleOnUpdateClose = () => {} }) => {
         <div className="profileFormInputContainer">
           <label className="profile-input-label">Last Name :</label>
           <input
-           className = 'profileUpdateInput'
+            className="profileUpdateInput"
             value={lastName}
             type="text"
             name="lastName"
@@ -93,7 +89,7 @@ const MyProfileUpdateForm = ({ handleOnUpdateClose = () => {} }) => {
         <div className="profileFormInputContainer">
           <label className="profile-input-label">Email :</label>
           <input
-           className = 'profileUpdateInput'
+            className="profileUpdateInput"
             value={email}
             type="email"
             name="email"

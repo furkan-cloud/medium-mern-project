@@ -10,9 +10,17 @@ import Media from "../../components/icons/Media";
 const MyProfile = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [imgAvatar, setImgAvatar] = useState(null);
+  const [disabled, setDisabled] = useState(null);
 
-  const { userData } = useContext(UserContext);
+  const { userData, setUserData } = useContext(UserContext);
   const [showProfileModal, setShowProfileModal] = useState(false);
+  const handleAvatarChange = (e) => {
+    if (e.target.files[0]) {
+      console.log(e.target.files[0]);
+      setImgAvatar(e.target.files[0]);
+      setDisabled(true);
+    }
+  };
 
   useEffect(() => {
     const fechProfilInfo = async () => {
@@ -35,14 +43,26 @@ const MyProfile = () => {
   const handleOnUpdateOpen = () => {
     setShowProfileModal(true);
   };
-  //   const handleAvatarChange = (e) => {
-  //     if (e.target.files[0]) {
-  //       console.log(e.target.files[0].name);
-  //       setImgAvatar(e.target.files[0]);
-  //     }
-  //   };
+  const handleOnClick = async (e) => {
+    e.preventDefault();
 
-  // localStorage.setItem("token", registerResponse.data.access_token)
+    const ProfilFormData = new FormData();
+
+    ProfilFormData.append("avatar_img", imgAvatar);
+
+    let token = localStorage.getItem("token");
+
+    const registerResponse = await axios.post(
+      "http://localhost:5000/api/profile/upload",
+      ProfilFormData,
+      {
+        headers: {
+          "x-auth-token": token,
+        },
+      }
+    );
+    setUserData({ ...userData, user: registerResponse.data.user });
+  };
 
   return (
     <div className="profileContainer">
@@ -62,34 +82,55 @@ const MyProfile = () => {
       </Modal>
       <div className="myProfileHeader">
         <div className="myProfileHeaderAvatarContainer">
-          <img className="myProfileAvatar" src={userProfile?.avatar_img}></img>
-          {/* <label htmlFor="avatar">
-            <button
-              style={{ pointerEvents: "none" }}
-              // onClick={() => alert("MEDİA ADD")}
-            >
-              <Media />
-            </button>
-            <input
-              id="avatar"
-              accept="image/*"
-              type="file"
-              // ref={hiddenFileInput}
-              onChange={handleAvatarChange}
-              style={{ display: "none" }}
-            />
-          </label> */}
+          <img
+            className="myProfileAvatar"
+            src={userProfile?.avatar_img}
+            alt="avatar"
+          />
+          <form action="" enctype="multipart/form-data">
+            <label htmlFor="avatar_img">
+              <div
+                className="avatarUploadBtn"
+                // style={{ pointerEvents: "none" }}
+                // onClick={() => alert("MEDİA ADD")}
+              >
+                <Media />
+              </div>
+              <input
+                id="avatar_img"
+                accept="image/*"
+                type="file"
+                name="avatar_img"
+                // ref={hiddenFileInput}
+                onChange={handleAvatarChange}
+                style={{ display: "none" }}
+              />
+            </label>
+            {!disabled ? (
+              <span style={{ fontWeight: "bold" }}>Select İmage</span>
+            ) : (
+              <button className="edit_profile_btn" onClick={handleOnClick}>
+                Edit Profile İmage
+              </button>
+            )}
+          </form>
         </div>
         <div className="myProfileHeaderFollowContainer">
-          <div className = 'myProfileHeaderContent'>
+          <div className="myProfileHeaderContent">
             <span>{userProfile?.firstName + " " + userProfile?.lastName}</span>
           </div>
-          <div className = 'myProfileHeaderContent'>
-            <div className = 'myProfileHeaderContent'>Followers: {userProfile?.followersCount}</div>
-            <div className = 'myProfileHeaderContent'>Following: {userProfile?.followingCount}</div>
+          <div className="myProfileHeaderContent">
+            <div className="myProfileHeaderContent">
+              Followers: {userProfile?.followersCount}
+            </div>
+            <div className="myProfileHeaderContent">
+              Following: {userProfile?.followingCount}
+            </div>
           </div>
           <div>
-            <button className="edit_profile_btn" onClick={handleOnUpdateOpen}>Edit Profile</button>
+            <button className="edit_profile_btn" onClick={handleOnUpdateOpen}>
+              Edit Profile
+            </button>
           </div>
         </div>
       </div>

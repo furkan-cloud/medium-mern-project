@@ -17,29 +17,39 @@
   border-radius: 50%;
 }
 
+.avatarUploadBtn {
+  position: relative;
+  cursor: pointer;
+}
+.avatarUploadBtn svg {
+  font-size: 32px;
+  color: gray;
+  cursor: pointer;
+}
+
 .myProfileHeaderFollowContainer {
   display: flex;
   flex-direction: column;
   margin-top: auto;
   margin-bottom: auto;
 }
-.myProfileHeaderContent{
+.myProfileHeaderContent {
   margin-bottom: 6%;
 }
 
-.edit_profile_btn{
+.edit_profile_btn {
   height: 40px;
-    color: #1a8917;
-    background-color:white;
-    border-radius: 5px;
-    font-size: 15px;
-    border: 1px solid #1a8917;
-    cursor: pointer;
+  color: #1a8917;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid #1a8917;
+  cursor: pointer;
 }
 
-.edit_profile_btn:hover{
-    background-color:  #1a8917;
-    color: white;
+.edit_profile_btn:hover {
+  background-color: #1a8917;
+  color: white;
 }
 
 .myProfileContent {
