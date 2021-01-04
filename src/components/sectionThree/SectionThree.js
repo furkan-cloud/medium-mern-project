@@ -17,10 +17,13 @@ const SectionThree = () => {
             </div>
             <div className='sectionThreeRightContainer'>
                 <div className="sectionThree-right">
-                    <div className="reading_list-container">
-                        <DoubleBookmark className="double_bookmark" />
-                        <p className="reading_list"> READING LIST </p>
-                    </div>
+                    {userData?.user?.readingList?.length > 0 && 
+                         <div className="reading_list-container">
+                         <DoubleBookmark className="double_bookmark" />
+                         <p className="reading_list"> READING LIST </p>
+                     </div>
+                    }
+                   
                     {userData?.user?.readingList?.slice(0, 6).map((readingContent, index) =>
                         <ReadingCard
                             id={readingContent?._id}
