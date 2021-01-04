@@ -1,6 +1,7 @@
 .profil__card__container {
   /* background-color: #f6f6f6; */
   max-width: 1270px;
+  margin: 2vh 7vw;
 }
 .profil__card__header {
   /* background-color: rgba(22, 133, 159, 1); */
@@ -55,7 +56,7 @@
 
 .profil__card__subheader__follow__btn{
   color: #1a8917;
-  background-color: #f1f1f1;
+  background-color: white;
   border: 1px solid  #1a8917 ;
   padding: 12px;
   font-size: 14px;
@@ -87,8 +88,6 @@
   display: flex;
   position: relative;
   top: 8px;
-  
-
 }
 
 .profil__card__content__left__info p {
@@ -98,7 +97,7 @@
   letter-spacing: 0.083em;
   font-weight: 400;
   text-align: left;
-  margin: 0;
+  margin-bottom: 1px;
   padding: 0;
 }
 

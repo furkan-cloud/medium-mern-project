@@ -1,10 +1,7 @@
 .container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
-    /* border: 1px solid red; */
-    /* margin: 40px 0; */
-
+    margin: 5vh 7vw;
 }
 
 .containerLeft {

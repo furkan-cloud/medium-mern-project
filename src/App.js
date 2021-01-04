@@ -82,7 +82,7 @@ function App() {
         }}
       >
         <div className="App">
-          {userData.token ? <Navbar /> : <Header />}
+          {userData.token ? <Navbar /> : null}
 
           <Switch>
             <Route path="/myProfile/:id" component={MyProfile} exact />
