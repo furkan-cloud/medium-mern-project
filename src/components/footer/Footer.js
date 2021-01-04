@@ -1,15 +1,19 @@
+import MediumFooter from "../icons/MediumFooter";
+import "./Footer.css";
 
-// import "./Footer.css";
+const Footer = () => {
+    return(
+        <div className="footer_container">
+            <div className="footer_left_container">
+                <MediumFooter/>
+            </div>
+            <div className="footer_right_container">
+                <p>About</p>
+                <p>Help</p>
+                <p>Legal</p>
+            </div>
+        </div>
+    )
+}
 
-// const Footer = () => {
-//     return(
-//         <div className="footer_container">
-//             <div className="footer_left_container">
-//                 <img className="footer_img" src="https://miro.medium.com/max/8978/1*s986xIGqhfsN8U--09_AdA.png"/>
-//             </div>
-//             <div className="footer_right_container"></div>
-//         </div>
-//     )
-// }
-
-// export default Footer;
+export default Footer;

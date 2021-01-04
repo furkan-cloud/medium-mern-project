@@ -1,3 +1,6 @@
+.profileContainer{
+  margin: ;
+}
 .myProfileHeader {
   margin-top: 5%;
   display: flex;
@@ -41,6 +44,8 @@
 
 .myProfileContent {
   margin-top: 8%;
+  margin-left: 8vw;
+  margin-right: 8vw;
   display: flex;
   justify-content: space-between;
   width: 100%;
