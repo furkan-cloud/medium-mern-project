@@ -38,7 +38,7 @@ const SectionThree = () => {
                         />)}
                 </div>
                 <div className='footerContainer'>
-                    <FooterList />
+                    <FooterList id="footer-list" />
                 </div>
             </div>
         </div>

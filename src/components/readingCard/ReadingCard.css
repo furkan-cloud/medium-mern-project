@@ -2,10 +2,11 @@
     background-color: #fafafa;
     display: flex;
     flex-direction: row;
-    width: 20vw;
+    width: 21vw;
     /* border: 1px solid yellowgreen; */
     padding: 24px;
-}
+    /* border-bottom: 1px solid rgba(0,0,0,0.2); */
+} 
 
 .readingtext-container{
     text-align: left;
