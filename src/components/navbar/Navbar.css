@@ -56,3 +56,23 @@
     cursor: pointer;
     position: relative;
 }
+
+@media only screen and (max-width: 658px){
+    #navbar-icons{
+        display: none;
+    }
+    .containerRight{
+        width:130px
+    }
+
+    .navbar-button{
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 540px){
+    .headerLeft{
+        display: none;
+    }
+}
+

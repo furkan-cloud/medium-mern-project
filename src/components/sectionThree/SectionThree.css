@@ -18,6 +18,10 @@
     flex-direction: column;
 }
 
+.sectionThree-right{
+    background-color:#FAFAFA ;
+}
+
 .reading_list{
     color: rgba(41, 41, 41, 1);
     font-weight: 700;
@@ -52,6 +56,9 @@
     .bigCard-container{
         display: flex;
         width: 100%;
+    }
+    #footer-list{
+        margin-bottom: 5vh;
     }
   }
 
