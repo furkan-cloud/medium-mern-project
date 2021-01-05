@@ -6,7 +6,6 @@ import RegisterForm from "../registerForm/RegisterForm";
 function SignUp({ modalIsOpen, closeModal }) {
   return (
     <div style={{ display: "flex" }}>
-      {/* <button onClick={openModal}>Open Modal</button> */}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
