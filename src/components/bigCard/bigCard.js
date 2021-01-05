@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import "./BigCard.css";
+import "./bigCard.css";
 import axios from "axios";
 import Bookmark from "../icons/Bookmark";
 import BookmarkFill from "../icons/BookmarkFill";

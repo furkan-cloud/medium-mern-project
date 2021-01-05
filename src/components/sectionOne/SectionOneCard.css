@@ -6,21 +6,37 @@
     
 }
 
+.mainSection{
+    display: flex;
+    width: 58%;
+    border: 1px solid black;
+}
+
 .cardListSection{
-    width: 25%;
+    width: 48%;
     /* border: 1px solid purple; */
     padding: 16px;
+    border: 1px solid blue;
 }
 
 .mainCardSection{
-    width: 28%;
+    width: 52%;
     padding: 16px;
-    /* border: 1px solid orange; */
+    border: 1px solid orange;
 }
 .followTopicSection{
     display: flex;
     width: 24%;
     flex-direction: column;
     padding: 16px;
-    /* border: 1px solid cyan; */
+    border: 1px solid cyan;
 }
+
+
+@media only screen and (max-width: 900px) {
+    .followTopicSection {
+      display: flex;
+      justify-content: column;
+      margin: 5vh 4vw;
+    }
+  }

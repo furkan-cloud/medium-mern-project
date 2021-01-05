@@ -1,58 +1,94 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    margin: 5vh 7vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 5vh 7vw;
 }
 
 .containerLeft {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .headerLeft {
-    border-left: 1px solid grey;
-    padding-left: 20px;
-    font-size: 1.3rem;
+  border-left: 1px solid grey;
+  padding-left: 20px;
+  font-size: 1.3rem;
 }
 
 .containerRight {
-    display: flex;
-    width: 300px;
-    justify-content: space-around;
-    align-items: center;
-    /* border: 1px solid green; */
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid red;
+  /* border: 1px solid green; */
 }
 
 .navbarImage {
-    height: 55px;
+  height: 55px;
 }
 
 .search {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 .navbar-button {
-    height: 30px;
-    color: #1a8917;
-    background-color: white;
-    border-radius: 5px;
-    font-size: 15px;
-    border: 1px solid #1a8917;
-    cursor: pointer;
+  height: 30px;
+  color: #1a8917;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid #1a8917;
+  cursor: pointer;
 }
 
 .navbar-button:hover {
-    color: white;
-    background-color: #1a8917;
+  color: white;
+  background-color: #1a8917;
 }
 
 .navbar-profileImage {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
 }
 
 .navbarProfileImageContainer {
-    cursor: pointer;
-    position: relative;
+  cursor: pointer;
+  position: relative;
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5vh 4vw;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #search,
+  #alarm,
+  #doubleBookmark {
+    display: none;
+  }
+
+  .containerRight {
+    width: 150px;
+    border: 1px solid red;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5vh 3vw;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .headerLeft {
+    display: none;
+  }
 }

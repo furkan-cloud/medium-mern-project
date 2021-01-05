@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import UserContext from "../../context/UserContext";
-import BigCard from "../bigCard/BigCard";
+import BigCard from "../bigCard/bigCard";
 
 const BigCardList = () => {
   const { articles } = useContext(UserContext);
