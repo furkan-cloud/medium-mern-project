@@ -16,7 +16,6 @@ const MyProfile = () => {
   const [showProfileModal, setShowProfileModal] = useState(false);
   const handleAvatarChange = (e) => {
     if (e.target.files[0]) {
-      console.log(e.target.files[0]);
       setImgAvatar(e.target.files[0]);
       setDisabled(true);
     }
@@ -31,7 +30,6 @@ const MyProfile = () => {
           { headers: { "x-auth-token": token } }
         );
         setUserProfile(userResponse.data.user);
-        console.log(userResponse.data.user);
       }
     };
     fechProfilInfo();
@@ -127,7 +125,7 @@ const MyProfile = () => {
               Following {userProfile?.followingCount}
             </div>
             <div className="myProfileHeaderContent">
-              Articles {userProfile?.postCount}
+              Articles {userProfile?.posts?.length}
             </div>
           </div>
           <div>
