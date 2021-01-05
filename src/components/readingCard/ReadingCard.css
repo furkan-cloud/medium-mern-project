@@ -1,4 +1,5 @@
 .readingcard-container{
+    background-color: #fafafa;
     display: flex;
     flex-direction: row;
     width: 20vw;
