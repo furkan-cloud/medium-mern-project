@@ -12,7 +12,7 @@ const CardList = () => {
                 <Card
                     id={article?._id}
                     authorId={article?.author._id}
-                    username={article?.author.firstName + article?.author.lastName}
+                    username={article?.author.firstName + " "+ article?.author.lastName}
                     title={article?.title}
                     profileImage={article?.author.avatar_img}
                     date={article?.formatDate}
