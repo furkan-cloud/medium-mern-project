@@ -1,6 +1,5 @@
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import ReactHtmlParser from "react-html-parser";
 import UserContext from "../../context/UserContext";
 import "./PostEditor.css";
 import { useContext, useState } from "react";

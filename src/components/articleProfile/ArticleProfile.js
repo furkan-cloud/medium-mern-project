@@ -13,7 +13,11 @@ const ArticleProfile = ({ author, formatDate }) => {
     <div className="articleProfileContainer">
       <div onClick={handleOnClick} className="articleProfileLink">
         <div>
-          <img className="articleProfileImage" src={author?.avatar_img} />
+          <img
+            className="articleProfileImage"
+            src={author?.avatar_img}
+            alt=""
+          />
         </div>
         <div className="articleProfileUsername">
           <span>{author?.firstName}</span>

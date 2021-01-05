@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import UserContext from "../../context/UserContext";
 import axios from "axios";
-import Media from "../icons/Media";
 import "./MyProfileUpdateForm.css";
 
 const MyProfileUpdateForm = ({ handleOnUpdateClose = () => {} }) => {
@@ -46,7 +45,11 @@ const MyProfileUpdateForm = ({ handleOnUpdateClose = () => {} }) => {
   };
   return (
     <div className="profileFormContainer">
-      <img className="profileFormAvatar" src={userData?.user?.avatar_img}></img>
+      <img
+        className="profileFormAvatar"
+        src={userData?.user?.avatar_img}
+        alt=""
+      ></img>
       <form className="profileForm">
         {/* <div className="profileFormInputContainer">
           <label className="imageUpload" htmlFor="avatar_img">

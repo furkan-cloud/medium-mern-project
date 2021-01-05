@@ -1,13 +1,10 @@
 import "./DetailSectionLeft.css";
 import React, { useContext } from "react";
 import Claps from "../icons/Claps";
-import Comment from "../icons/Comment"
-import Bookmark from "../icons/Bookmark";
+import Comment from "../icons/Comment";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import { useLayoutEffect, useEffect, useState } from "react";
 import UserContext from "../../context/UserContext";
-
 
 const DetailSectionLeft = ({ singleArticleLeft }) => {
   // const { id } = useParams();
@@ -15,7 +12,7 @@ const DetailSectionLeft = ({ singleArticleLeft }) => {
   const [userProfile, setUserProfile] = useState(null);
   const { userData, setUserData } = useContext(UserContext);
 
-  console.log('singleArticleLeft',singleArticleLeft)
+  console.log("singleArticleLeft", singleArticleLeft);
 
   async function removeFollow() {
     let token = localStorage.getItem("token");
@@ -77,15 +74,21 @@ const DetailSectionLeft = ({ singleArticleLeft }) => {
               " " +
               singleArticleLeft?.author?.lastName}
           </div>
-          {userData?.user?.following?.filter((fol) => fol._id == singleArticleLeft?.author?._id).length > 0 ? (
+          {userData?.user?.following?.filter(
+            (fol) => fol._id == singleArticleLeft?.author?._id
+          ).length > 0 ? (
             <div className="left-button-container">
-              <button onClick={removeFollow} className="left-button-following">Following</button>
+              <button onClick={removeFollow} className="left-button-following">
+                Following
+              </button>
             </div>
           ) : (
-              <div className="left-button-container">
-                <button onClick={addFollow} className="left-button-follow">Follow</button>
-              </div>
-            )}
+            <div className="left-button-container">
+              <button onClick={addFollow} className="left-button-follow">
+                Follow
+              </button>
+            </div>
+          )}
         </div>
         <hr />
         <div className="icons-container">
@@ -103,4 +106,3 @@ const DetailSectionLeft = ({ singleArticleLeft }) => {
 };
 
 export default DetailSectionLeft;
-

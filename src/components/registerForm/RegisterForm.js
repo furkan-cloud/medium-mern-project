@@ -3,7 +3,7 @@ import axios from "axios";
 import UserContext from "../../context/UserContext";
 import "./RegisterForm.css";
 import Modal from "react-modal";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import SignIn from "../signIn/SignIn";
@@ -38,10 +38,10 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
     signInModalIsOpen,
     openSignInModal,
   } = useContext(UserContext);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setlastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setlastName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState(null);
   const handleSignInClick = () => {
     closeModal();
