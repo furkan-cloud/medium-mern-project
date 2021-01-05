@@ -27,6 +27,7 @@ const TrendingCardList = () => {
           id={article?._id}
           authorId={article?.author._id}
           firstName={article?.author.firstName}
+          lastName={article?.author.lastName}
           title={article?.title}
           profileImage={article?.author.avatar_img}
           date={article?.formatDate}

@@ -1,8 +1,9 @@
 .readingcard-container{
+    background-color: #fafafa;
     display: flex;
     flex-direction: row;
     width: 20vw;
-    border: 1px solid yellowgreen;
+    /* border: 1px solid yellowgreen; */
     padding: 24px;
 }
 

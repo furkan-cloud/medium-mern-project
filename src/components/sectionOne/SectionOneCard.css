@@ -1,9 +1,6 @@
 .sectionOneContainer{
     display: flex;
     width: 100%;
-    /* justify-content: center; */
-    /* gap: 20; */
-    /* border: 3px solid red; */
     padding: 0px 0px 40px;
     margin: 2vh 8vw;
     
@@ -11,19 +8,19 @@
 
 .cardListSection{
     width: 25%;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     padding: 16px;
 }
 
 .mainCardSection{
     width: 28%;
     padding: 16px;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 }
 .followTopicSection{
     display: flex;
     width: 24%;
     flex-direction: column;
     padding: 16px;
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
 }

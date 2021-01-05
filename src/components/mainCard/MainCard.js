@@ -7,7 +7,6 @@ import UserContext from '../../context/UserContext';
 
 const MainCard = () => {
     const { articles } = useContext(UserContext);
-    console.log(articles);
     return (
         <div className="maincard-container">
             <div className="main-image-container">
@@ -17,7 +16,7 @@ const MainCard = () => {
             <Link to={`/profileDetail/${articles && articles[0]?.author._id}`}>
                 <div className="main-username">
                     <img className = 'mainCardProfileImage' src = {articles && articles[0]?.author.avatar_img}  width="20" height="20"></img>
-                    {articles && articles[0]?.author?.firstName + " " + articles && articles[0]?.author.lastName}
+                    <span>{(articles && articles[0]?.author?.firstName) + ' ' + (articles && articles[0]?.author?.lastName) }</span>
                 </div>
             </Link>
             <Link to={`/articleDetail/${articles && articles[0]?._id}`} className="big-link">

@@ -37,14 +37,30 @@
     padding-top: 10px;
 }
 
-.left-button {
+.left-button-following {
     border: 1px solid #1a8917;
-    color: #1a8917;
+    color: #f1f1f1;
     border-radius: 5px;
-    padding: 10px 20px;
-    background-color: white;
-    font-size: 15px;
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    background:#1a8917;
     cursor: pointer;
+    outline: none;
+}
+
+.left-button-follow{
+    color: #1a8917;
+    background-color: white;
+    border: 1px solid  #1a8917 ;
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    align-items: flex-start;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
 }
 
 .left-button-container {

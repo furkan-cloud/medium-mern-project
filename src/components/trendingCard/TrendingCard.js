@@ -37,7 +37,7 @@ const TrendingCard = (props) => {
       <div className="trendingtext-container">
         <div onClick={handleOnClick} className="trendingusername">
           <img className="trendingProfileImage" src={props.profileImage}></img>
-          <div>{props.firstName}</div>
+          <div>{props.firstName + ' ' + props.lastName}</div>
         </div>
         <div onClick={handleOnClickArticle} className="trendingtitle">
           {props.title}

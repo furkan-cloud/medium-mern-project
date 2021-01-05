@@ -1,6 +1,6 @@
 .bigcard-container{
     display: flex;
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
     text-align: left;
     align-items: center;
     margin-bottom: 48px;
@@ -58,21 +58,21 @@
 .big-card-date{
     color: rgba(117, 117, 117, 1);
     font-size: 0.8rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .date-icons{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding-top:8px;
 }
 
 .big-card-icons{
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* padding:0px 10px; */
 }
 

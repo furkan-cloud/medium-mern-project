@@ -69,7 +69,11 @@ const ArticleDetailCard = ({ singleArticle }) => {
 
       <img className="articleDetailImage" src={singleArticle?.post_image} />
       <p>{ReactHtmlParser(singleArticle?.content.slice(0, 500))}</p>
-      {/* <a href="/articleDetails">{singleArticle?.readTime}</a> */}
+      <Link
+        to={`/articleDetail/${singleArticle._id}`}
+      >
+        <p className = 'readMore'>Read more...</p>
+      </Link>
       <div className="all-icons">
         <div className="all-icons-left">
           <Claps onClick={handleClaps} /> {claps}
@@ -86,7 +90,9 @@ const ArticleDetailCard = ({ singleArticle }) => {
                 <Bookmark />
               </div>)
           }
-          <Upload />
+          <div>
+            <Upload />
+          </div>
         </div>
       </div>
     </div>

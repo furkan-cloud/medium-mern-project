@@ -1,10 +1,8 @@
 .profil__card__container {
-  /* background-color: #f6f6f6; */
   max-width: 1270px;
   margin: 2vh 7vw;
 }
 .profil__card__header {
-  /* background-color: rgba(22, 133, 159, 1); */
   display: flex;
   align-items: center;
   border-bottom: 2px solid #ccc;
@@ -20,28 +18,17 @@
   text-transform: capitalize;
 }
 
-/* .profil__card__header h2 {
-  font-size: 34px;
-  color: #f1f1f1;
-  font-weight: 700;
-  text-align: left;
-  padding: 12px;
-  margin-bottom: 0;
-} */
 
 .profil__card__subheader {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* padding: 12px; */
   max-width: 1270px;
-  /* background-color: #f1f1f1; */
   box-sizing: border-box;
   margin-top: 0;
 }
 
 .profil__card__subheader__following__btn {
-  /* width:10px; */
   color: #f1f1f1;
   border: 1px solid #1a8917;
   border-radius: 5px;
@@ -108,5 +95,4 @@
 
 .profil__card__followers{
   padding: 0px 7px;
-  /* margin-left: 2% ; */
 }

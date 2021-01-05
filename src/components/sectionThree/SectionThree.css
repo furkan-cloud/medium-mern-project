@@ -3,7 +3,7 @@
     display: flex;
     padding: 56px 0px 0px ;
     justify-content: space-between;
-    border:1px solid purple;
+    /* border:1px solid purple; */
     margin: 5vh 8vw;
 }
 
@@ -12,9 +12,6 @@
     width: 60%;
 }
 
-/* .sectionThree-right{
-  
-} */
 .sectionThreeRightContainer{
     width: 30%;
     display: flex;

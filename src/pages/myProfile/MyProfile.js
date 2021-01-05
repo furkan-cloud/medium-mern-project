@@ -16,7 +16,6 @@ const MyProfile = () => {
   const [showProfileModal, setShowProfileModal] = useState(false);
   const handleAvatarChange = (e) => {
     if (e.target.files[0]) {
-      console.log(e.target.files[0]);
       setImgAvatar(e.target.files[0]);
       setDisabled(true);
     }
@@ -31,7 +30,6 @@ const MyProfile = () => {
           { headers: { "x-auth-token": token } }
         );
         setUserProfile(userResponse.data.user);
-        console.log(userResponse.data.user);
       }
     };
     fechProfilInfo();
@@ -109,7 +107,7 @@ const MyProfile = () => {
             {!disabled ? (
               <span style={{ fontWeight: "bold" }}>Select İmage</span>
             ) : (
-              <button className="edit_profile_btn" onClick={handleOnClick}>
+              <button className="edit_image_btn" onClick={handleOnClick}>
                 Edit Profile İmage
               </button>
             )}
@@ -119,12 +117,15 @@ const MyProfile = () => {
           <div className="myProfileHeaderContent">
             <span>{userProfile?.firstName + " " + userProfile?.lastName}</span>
           </div>
-          <div className="myProfileHeaderContent">
+          <div className="myProfileHeaderFollow">
             <div className="myProfileHeaderContent">
-              Followers: {userProfile?.followersCount}
+              Followers {userProfile?.followersCount}
             </div>
             <div className="myProfileHeaderContent">
-              Following: {userProfile?.followingCount}
+              Following {userProfile?.followingCount}
+            </div>
+            <div className="myProfileHeaderContent">
+              Articles {userProfile?.posts?.length}
             </div>
           </div>
           <div>

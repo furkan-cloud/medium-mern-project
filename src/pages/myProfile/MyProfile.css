@@ -1,10 +1,8 @@
-.profileContainer{
-  margin: ;
-}
 .myProfileHeader {
   margin-top: 5%;
   display: flex;
   justify-content: space-around;
+  /* border: 1px solid black; */
 }
 .myProfileHeaderAvatarContainer {
   display: flex;
@@ -29,22 +27,56 @@
 
 .myProfileHeaderFollowContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: auto;
   margin-bottom: auto;
-}
-.myProfileHeaderContent {
-  margin-bottom: 6%;
+  /* border: 1px solid red; */
+  width: 50%;
 }
 
-.edit_profile_btn {
+.myProfileHeaderFollow{
+  display: flex;
+  width: 100%;
+}
+
+.myProfileHeaderContent {
+  margin-bottom: 10%;
+  padding: 20px;
+  display: flex;
+  margin: 20px;
+  box-shadow: 3px 3px 5px gray
+}
+
+.edit_image_btn{
   height: 40px;
+  width: 90px;
   color: #1a8917;
   background-color: white;
   border-radius: 5px;
   font-size: 15px;
   border: 1px solid #1a8917;
   cursor: pointer;
+  position: relative;
+
+}
+
+.edit_image_btn:hover{
+  background-color: #1a8917;
+  color: white;
+}
+
+.edit_profile_btn {
+  height: 40px;
+  width: 80px;
+  color: #1a8917;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid #1a8917;
+  cursor: pointer;
+  position: relative;
+  top: 140px;
+  right: 300px;
 }
 
 .edit_profile_btn:hover {
@@ -53,12 +85,9 @@
 }
 
 .myProfileContent {
-  margin-top: 8%;
-  margin-left: 8vw;
-  margin-right: 8vw;
+  margin: 9vh 8vw ;
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
 .myProfileContentLeft {
   width: 45%;

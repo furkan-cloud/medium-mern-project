@@ -7,7 +7,7 @@ const ReadingCard = (props) => {
       <div className="readingtext-container">
       <div className="readingusername">
         <img className="readingProfileImage" src={props.profileImage}/>
-        <div>{props.firstName}</div>
+        <div>{props.firstName + ' ' + props.lastName}</div>
         </div>
         <div className="readingtitle">{props.title}</div>
         <div className="readingdate">{props.date}</div>

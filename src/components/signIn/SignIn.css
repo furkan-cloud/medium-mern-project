@@ -1,53 +1,56 @@
-/* .mainContainer{
-
-} */
-
-.signInForm{
-    /* display: flex;
-    flex-direction: column;
-    padding: 5vh; */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.signInForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.signInInput{
-    width: 50%;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    margin-top: 6px;
-    background: transparent;
-    border:none;
-    border-bottom: 2px solid #ccc;
-    transition:.3s ease-in-out;
-} 
-
-.signInContainer{
-    display: flex;
-    flex-direction: column;
-    margin: 1vh;
+.signInInput {
+  width: 100%;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  transition: 0.3s ease-in-out;
 }
 
-.modalSignIn{
-    width: 15%;
-    background-color: #FFC017;
-    padding: 1vh;
-    border-radius: 10px;
-    outline: none;
-    border-style:none ;
-    font-weight: 400;
-    font-size: 1rem;
-    margin-top: 1vh;
-} 
+.signInContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1vh;
+}
 
-.modalSignIn:hover{
-    background-color: white;
-    color: #FFC017 ;
-    font-weight: bold;
+.modalSignIn {
+  width: 40%;
+  background-color: #ffc017;
+  padding: 1vh;
+  border-radius: 10px;
+  outline: none;
+  border-style: none;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 2vh;
+  align-self: center;
+}
+
+.modalSignIn:hover {
+  background-color: white;
+  color: #ffc017;
+
+  border: 1px solid #ffc017;
 }
 
 .createOneBtn {
-    color:#1a8917,
+  color: #1a8917;
+}
+.error {
+  margin-top: 8px;
+  color: red;
+  text-align: left;
+  display: block;
+  font-weight: bold;
 }

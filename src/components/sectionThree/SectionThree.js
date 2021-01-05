@@ -30,6 +30,7 @@ const SectionThree = () => {
                             authorId={readingContent?.author?._id}
                             profileImage={readingContent?.author?.avatar_img}
                             firstName={readingContent?.author?.firstName}
+                            lastName={readingContent?.author?.lastName}
                             imageUrl={readingContent?.post_image}
                             title={readingContent?.title}
                             date={readingContent?.formatDate}
