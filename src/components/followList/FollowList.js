@@ -9,7 +9,7 @@ const FollowList = () => {
     const { userData } = useContext(UserContext)
     return (
         <div className='followListContainer'>
-            {userData?.user?.following.length > 0 ? (
+            {userData?.user?.following?.length > 0 ? (
                 <>
                     <h3 className='followingHeader'>LATEST FROM FOLLOWING</h3>
                     <div className='avatarContainer'>

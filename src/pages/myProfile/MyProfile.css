@@ -2,12 +2,11 @@
   margin-top: 5%;
   display: flex;
   justify-content: space-around;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .myProfileHeaderAvatarContainer {
   display: flex;
   flex-direction: column;
-  border: 1px solid greenyellow;
 }
 .myProfileAvatar {
   width: 200px;
@@ -31,12 +30,11 @@
   flex-direction: row;
   margin-top: auto;
   margin-bottom: auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 50%;
 }
 
 .myProfileHeaderFollow{
-  border: 1px solid purple;
   display: flex;
   width: 100%;
 }
@@ -44,7 +42,6 @@
 .myProfileHeaderContent {
   margin-bottom: 10%;
   padding: 20px;
-  border: 1px solid gray;
   display: flex;
   margin: 20px;
   box-shadow: 3px 3px 5px gray
@@ -91,7 +88,6 @@
   margin: 9vh 8vw ;
   display: flex;
   justify-content: space-between;
-  /* width: 100%; */
 }
 .myProfileContentLeft {
   width: 45%;

@@ -49,10 +49,6 @@ function Header(props) {
             >
               Sign In
             </Link>
-            {/* <a href="#">Our Story</a>
-                <a href="#">Membership</a>
-                <a href="#">Write</a>
-                <a href="#">Sign In</a> */}
             <button onClick={() => openModal()} className="buttonFirste01">
               Get Started
             </button>

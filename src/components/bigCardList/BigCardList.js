@@ -12,7 +12,7 @@ const BigCardList = () => {
           id={article._id}
           authorId={article.author._id}
           profileImage={article.author.avatar_img}
-          username={article.author.firstName + article.author.lastName}
+          username={article.author.firstName + ' ' + article.author.lastName}
           imageUrl={article.post_image}
           title={article.title}
           description={article.content}
