@@ -71,7 +71,7 @@
 }
 
 .info_text{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   position: relative;
   top: 8px;

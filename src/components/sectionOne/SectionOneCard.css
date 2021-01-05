@@ -24,3 +24,15 @@
     padding: 16px;
     /* border: 1px solid cyan; */
 }
+
+@media only screen and (max-width: 998px){
+    .sectionOneContainer{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .cardListSection, .mainCardSection, .followTopicSection{
+        width: 80%;
+    }
+}
