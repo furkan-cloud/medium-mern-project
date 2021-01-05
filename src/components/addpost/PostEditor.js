@@ -4,7 +4,7 @@ import ReactHtmlParser from "react-html-parser";
 import UserContext from "../../context/UserContext";
 import "./PostEditor.css";
 import { useContext, useState } from "react";
-import Axios from "axios";
+import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { topics } from "../../data/topicData";
 
@@ -13,8 +13,9 @@ const PostEditor = () => {
   const [content, setContent] = useState();
   const [title, setTitle] = useState();
   const [image, setImage] = useState(null);
-  const [topic, setTopic] = useState(null);
+  const [topic, setTopic] = useState("Self");
   const [post, setPost] = useState(null);
+  const [errMsg, setErrMsg] = useState(null);
   const history = useHistory();
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -22,45 +23,55 @@ const PostEditor = () => {
     }
   };
   const handleOnClick = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("content", content);
-    formData.append("post_image", image);
-    formData.append("subtitle", title);
-    formData.append("topic", topic);
-    formData.append("author", userData.user._id);
+    try {
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("content", content);
+      formData.append("post_image", image);
+      formData.append("subtitle", title);
+      formData.append("topic", topic);
+      formData.append("author", userData.user._id);
+      let token = localStorage.getItem("token");
+      const postResponse = await axios.post(
+        "http://localhost:5000/api/posts/add",
+        formData,
+        {
+          headers: {
+            "x-auth-token": token,
+          },
+        }
+      );
+      setPost(postResponse.data.post);
+      setContent("");
+      setTitle("");
+      setImage("");
 
-    console.log(formData);
-    let token = localStorage.getItem("token");
-
-    // const registerResponse = await Axios.post(
-    //   "http://localhost:5000/api/posts/add",
-    //   newPost
-    // );
-    const postResponse = await Axios.post(
-      "http://localhost:5000/api/posts/add",
-      formData,
-      {
-        headers: {
-          "x-auth-token": token,
-        },
+      history.push(`/profileDetail/${userData.user._id}`);
+    } catch (error) {
+      if (
+        error.response.data.errors[0].message ===
+        "Cannot read property 'path' of undefined"
+      ) {
+        setErrMsg("Please select an image for the article");
+      } else {
+        setErrMsg(error.response.data.errors[0].message);
       }
-    );
-    setPost(postResponse.data.post);
-    setContent("");
-    setTitle("");
-    setImage("");
 
-    history.push(`/profileDetail/${userData.user._id}`);
+      // console.log(error.response.data.errors);
+      setTimeout(() => setErrMsg(null), 4000);
+    }
   };
   return (
-    <div className = 'postEditorContainer'>
+    <div className="postEditorContainer">
       <form action="" enctype="multipart/form-data">
         <div className="input-grup">
-          <label className = 'profileUpdateLabel' htmlFor=""> Title </label>
+          <label className="profileUpdateLabel" htmlFor="">
+            {" "}
+            Title{" "}
+          </label>
           <input
-          className = 'postEditorInput'
+            className="postEditorInput"
             type="text"
             name="title"
             value={title}
@@ -68,7 +79,11 @@ const PostEditor = () => {
           />
         </div>
         <div className="input-grup">
-          <label className = 'profileUpdateLabel' htmlFor="file-input" style={{ cursor: "pointer" }}>
+          <label
+            className="profileUpdateLabel"
+            htmlFor="file-input"
+            style={{ cursor: "pointer" }}
+          >
             Image
           </label>
 
@@ -80,7 +95,7 @@ const PostEditor = () => {
             onChange={handleChange}
             // style={{ display: "none" }}
           />
-          <label className = 'profileUpdateLabel'>
+          <label className="profileUpdateLabel">
             Select Topics:
             <select value={topic} onChange={(e) => setTopic(e.target.value)}>
               {topics.map((topic, i) => (
@@ -106,8 +121,12 @@ const PostEditor = () => {
           }}
         />
         {/* <ReactEditor /> */}
-        <button className = 'addBtn' onClick={handleOnClick}> Add </button>
+        <button className="addBtn" onClick={handleOnClick}>
+          {" "}
+          Add{" "}
+        </button>
       </form>
+      {errMsg && <div className="error">{errMsg}</div>}
 
       {/* {post ? ReactHtmlParser(post.content) : null} */}
     </div>

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import "./BigCard.css";
+import "./bigCard.css";
 import axios from "axios";
 import Bookmark from "../icons/Bookmark";
 import BookmarkFill from "../icons/BookmarkFill";
@@ -22,7 +22,6 @@ const BigCard = (props) => {
     setIsOpen,
   } = useContext(UserContext);
 
-
   async function removeBookmark() {
     let token = localStorage.getItem("token");
     const undoLikeData = await axios.get(
@@ -35,7 +34,6 @@ const BigCard = (props) => {
     );
 
     setUserData({ user: undoLikeData.data.currentUser, token });
-
   }
 
   async function addBookmark() {
@@ -85,15 +83,15 @@ const BigCard = (props) => {
         <div className="date-icons">
           <div className="big-card-date">{props.date}</div>
           <div className="big-card-icons">
-            {
-              props.likes.includes(userData?.user?._id) ? 
-              (<div onClick={removeBookmark}>
+            {props.likes.includes(userData?.user?._id) ? (
+              <div onClick={removeBookmark}>
                 <BookmarkFill />
-              </div>) :
-                (<div onClick={addBookmark}>
-                  <Bookmark />
-                </div>)
-            }
+              </div>
+            ) : (
+              <div onClick={addBookmark}>
+                <Bookmark />
+              </div>
+            )}
             <ThreeDots />
           </div>
         </div>
