@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import "./Header.css";
-import { Link, Router, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SignIn from "../signIn/SignIn";
 import UserContext from "../../context/UserContext";
 import RegisterForm from "../registerForm/RegisterForm";
@@ -26,7 +26,7 @@ function Header(props) {
           <img
             className="imagee01"
             src="https://miro.medium.com/max/8978/1*s986xIGqhfsN8U--09_AdA.png"
-            alt="kırık"
+            alt=""
           />
         </div>
         <div className="contentRighte01">
@@ -42,17 +42,14 @@ function Header(props) {
             </Link>
           </div>
           <div className="contentRighte012">
-            <Link id="link4"
+            <Link
+              id="link4"
               onClick={() => openSignInModal()}
               type="button"
               className="sigInButton"
             >
               Sign In
             </Link>
-            {/* <a href="#">Our Story</a>
-                <a href="#">Membership</a>
-                <a href="#">Write</a>
-                <a href="#">Sign In</a> */}
             <button onClick={() => openModal()} className="buttonFirste01">
               Get Started
             </button>
@@ -84,6 +81,7 @@ function Header(props) {
           <img
             className="footerRighte01img"
             src="https://miro.medium.com/proxy/1*8rgW0Qvy2bSGSBMlORMhQA.png"
+            alt=""
           />
         </div>
       </div>

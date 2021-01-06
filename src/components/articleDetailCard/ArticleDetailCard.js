@@ -26,7 +26,6 @@ const ArticleDetailCard = ({ singleArticle }) => {
     );
 
     setUserData({ user: undoLikeData.data.currentUser, token });
-
   }
 
   async function addBookmark() {
@@ -56,37 +55,44 @@ const ArticleDetailCard = ({ singleArticle }) => {
     setClaps(singleArticle?.claps);
   }, [singleArticle?.claps]);
 
-  console.log('likes ', singleArticle?.likes);
+  // console.log('likes ', singleArticle?.likes);
 
   return (
     <div className="article-detail-container">
       <p>{singleArticle?.formatDate}</p>
-      <Link
-        to={`/articleDetail/${singleArticle._id}`}
-      >
+      <Link to={`/articleDetail/${singleArticle._id}`}>
         <h1>{singleArticle?.title}</h1>
       </Link>
 
-      <img className="articleDetailImage" src={singleArticle?.post_image} />
+      <img
+        className="articleDetailImage"
+        src={singleArticle?.post_image}
+        alt=""
+      />
       <p>{ReactHtmlParser(singleArticle?.content.slice(0, 500))}</p>
-      {/* <a href="/articleDetails">{singleArticle?.readTime}</a> */}
+      <Link to={`/articleDetail/${singleArticle._id}`}>
+        <p className="readMore">Read more...</p>
+      </Link>
       <div className="all-icons">
         <div className="all-icons-left">
           <Claps onClick={handleClaps} /> {claps}
           <Comment />
         </div>
         <div className="all-icons-right">
-          {
-            userData?.user?.readingList.filter((read) => read?._id == singleArticle?._id).length > 0
-              ?
-              (<div onClick={removeBookmark}>
-                <BookmarkFill />
-              </div>) :
-              (<div onClick={addBookmark}>
-                <Bookmark />
-              </div>)
-          }
-          <Upload />
+          {userData?.user?.readingList.filter(
+            (read) => read?._id == singleArticle?._id
+          ).length > 0 ? (
+            <div onClick={removeBookmark}>
+              <BookmarkFill />
+            </div>
+          ) : (
+            <div onClick={addBookmark}>
+              <Bookmark />
+            </div>
+          )}
+          <div>
+            <Upload />
+          </div>
         </div>
       </div>
     </div>

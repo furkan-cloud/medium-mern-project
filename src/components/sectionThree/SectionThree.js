@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
-import './SectionThree.css';
-import BigCardList from '../bigCardList/BigCardList'
-import ReadingCard from '../readingCard/ReadingCard';
-import { readingCardContent } from "../../data/readingData"
-import FooterList from '../footerList/FooterList';
-import UserContext from '../../context/UserContext';
-import DoubleBookmark from '../icons/DoubleBookmark';
-
+import React, { useContext } from "react";
+import "./SectionThree.css";
+import BigCardList from "../bigCardList/BigCardList";
+import ReadingCard from "../readingCard/ReadingCard";
+import FooterList from "../footerList/FooterList";
+import UserContext from "../../context/UserContext";
+import DoubleBookmark from "../icons/DoubleBookmark";
 
 const SectionThree = () => {
+
     const { userData, setUserData, signInModalIsOpen, openSignInModal } = useContext(UserContext)
     return (
         <div className='sectionThreeContainer'>
@@ -17,16 +16,20 @@ const SectionThree = () => {
             </div>
             <div className='sectionThreeRightContainer'>
                 <div className="sectionThree-right">
-                    <div className="reading_list-container">
-                        <DoubleBookmark className="double_bookmark" />
-                        <p className="reading_list"> READING LIST </p>
-                    </div>
+                    {userData?.user?.readingList?.length > 0 && 
+                         <div className="reading_list-container">
+                         <DoubleBookmark className="double_bookmark" />
+                         <p className="reading_list"> READING LIST </p>
+                     </div>
+                    }
+                   
                     {userData?.user?.readingList?.slice(0, 6).map((readingContent, index) =>
                         <ReadingCard
                             id={readingContent?._id}
                             authorId={readingContent?.author?._id}
                             profileImage={readingContent?.author?.avatar_img}
                             firstName={readingContent?.author?.firstName}
+                            lastName={readingContent?.author?.lastName}
                             imageUrl={readingContent?.post_image}
                             title={readingContent?.title}
                             date={readingContent?.formatDate}
@@ -34,11 +37,35 @@ const SectionThree = () => {
                         />)}
                 </div>
                 <div className='footerContainer'>
-                    <FooterList />
+                    <FooterList id="footer-list" />
                 </div>
             </div>
+          )}
+
+          {userData?.user?.readingList
+            ?.slice(0, 6)
+            .map((readingContent, index) => (
+              <ReadingCard
+                id={readingContent?._id}
+                authorId={readingContent?.author?._id}
+                profileImage={readingContent?.author?.avatar_img}
+                firstName={readingContent?.author?.firstName}
+                lastName={readingContent?.author?.lastName}
+                imageUrl={readingContent?.post_image}
+                title={readingContent?.title}
+                date={readingContent?.formatDate}
+                key={index}
+              />
+            ))}
         </div>
+        <div className="footerContainer">
+          <FooterList />
+        </div>
+      </div>
+    </div>
   );
 };
+
+
 
 export default SectionThree;

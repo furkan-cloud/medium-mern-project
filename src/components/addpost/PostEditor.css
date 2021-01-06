@@ -1,43 +1,50 @@
-.postEditorContainer{
-    margin-top: 7%;
+.postEditorContainer {
+  margin: 3vh 7vw;
+}
+
+.postEditorContainer form select {
+  font-size: 16px;
+  color: #1a8917;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 .input-grup {
-    margin-bottom: 4%;
+  margin-bottom: 4%;
 }
 
 .addBtn {
-    margin-top: 4%;
-    /* height: 40px; */
-    color: #1a8917;
-    background-color: white;
-    border-radius: 5px;
-    font-size: 15px;
-    border: 1px solid #1a8917;
-    cursor: pointer;
-    padding: 1% 4%;
+  margin-top: 4%;
+  /* height: 40px; */
+  color: #1a8917;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid #1a8917;
+  cursor: pointer;
+  padding: 1% 4%;
 }
 
 .addBtn:hover {
-    background-color: #1a8917;
-    color: white;
+  background-color: #1a8917;
+  color: white;
 }
 
-.postEditorInput{
-    width: 50%;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    margin-top: 6px;
-    background: transparent;
-    border:none;
-    border-bottom: 2px solid #ccc;
-    transition:.3s ease-in-out;
+.postEditorInput {
+  width: 50%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  margin-top: 6px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  transition: 0.3s ease-in-out;
 }
 
-.profileUpdateLabel{
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-right: 1%;
-    color: #1a8917;
+.profileUpdateLabel {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 1%;
+  color: #1a8917;
 }

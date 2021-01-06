@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
 import "./bigCard.css";
 import axios from "axios";
@@ -12,16 +12,12 @@ import RegisterForm from "../registerForm/RegisterForm";
 const BigCard = (props) => {
   const history = useHistory();
   const {
-    articles,
-    setArticles,
     userData,
     setUserData,
-    openModal,
     closeModal,
     modalIsOpen,
     setIsOpen,
   } = useContext(UserContext);
-
 
   async function removeBookmark() {
     let token = localStorage.getItem("token");
@@ -35,7 +31,6 @@ const BigCard = (props) => {
     );
 
     setUserData({ user: undoLikeData.data.currentUser, token });
-
   }
 
   async function addBookmark() {
@@ -73,7 +68,7 @@ const BigCard = (props) => {
       <div className="bigtext-container">
         <RegisterForm modalIsOpen={modalIsOpen} closeModal={closeModal} />
         <div onClick={handleOnClick} className="big-username">
-          <img className="big-profileImage" src={props.profileImage} />
+          <img className="big-profileImage" src={props.profileImage} alt="" />
           <div>{props.username}</div>
         </div>
         <div onClick={handleOnClickArticle} className="big-card-header">
@@ -85,15 +80,15 @@ const BigCard = (props) => {
         <div className="date-icons">
           <div className="big-card-date">{props.date}</div>
           <div className="big-card-icons">
-            {
-              props.likes.includes(userData?.user?._id) ? 
-              (<div onClick={removeBookmark}>
+            {props.likes.includes(userData?.user?._id) ? (
+              <div onClick={removeBookmark}>
                 <BookmarkFill />
-              </div>) :
-                (<div onClick={addBookmark}>
-                  <Bookmark />
-                </div>)
-            }
+              </div>
+            ) : (
+              <div onClick={addBookmark}>
+                <Bookmark />
+              </div>
+            )}
             <ThreeDots />
           </div>
         </div>
@@ -106,5 +101,3 @@ const BigCard = (props) => {
 };
 
 export default BigCard;
-
-// TODO: date fns ile date formatla

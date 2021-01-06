@@ -1,18 +1,14 @@
 import React, { useContext } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./TrendingCard.css";
 import UserContext from "../../context/UserContext";
 import RegisterForm from "../registerForm/RegisterForm";
 
 const TrendingCard = (props) => {
   const history = useHistory();
-  const {
-    userData,
-    openModal,
-    closeModal,
-    modalIsOpen,
-    setIsOpen,
-  } = useContext(UserContext);
+  const { userData, closeModal, modalIsOpen, setIsOpen } = useContext(
+    UserContext
+  );
   function modalOpen() {
     if (!userData?.user?._id) {
       setIsOpen(true);
@@ -36,8 +32,12 @@ const TrendingCard = (props) => {
 
       <div className="trendingtext-container">
         <div onClick={handleOnClick} className="trendingusername">
-          <img className="trendingProfileImage" src={props.profileImage}></img>
-          <div>{props.firstName}</div>
+          <img
+            className="trendingProfileImage"
+            src={props.profileImage}
+            alt=""
+          ></img>
+          <div>{props.firstName + " " + props.lastName}</div>
         </div>
         <div onClick={handleOnClickArticle} className="trendingtitle">
           {props.title}
@@ -49,10 +49,3 @@ const TrendingCard = (props) => {
 };
 
 export default TrendingCard;
-
-// id={article?._id}
-// firstName={article?.author.firstName}
-// title={article?.title}
-// profileImage = {article?.author.avatar_img}
-// date={article?.createdAt}
-// key={index}

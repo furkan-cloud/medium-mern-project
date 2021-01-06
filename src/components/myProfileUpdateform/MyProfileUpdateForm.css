@@ -2,19 +2,21 @@
   /* width: 10%; */
 }
 
-.profileFormInputContainer{
+.profileFormInputContainer {
   margin-bottom: 3%;
+  display: flex;
+  flex-direction: column;
 }
-.profileUpdateInput{
+.profileUpdateInput {
   width: 50%;
   border: none;
   outline: none;
   font-size: 15px;
   margin-top: 6px;
   background: transparent;
-  border:none;
+  border: none;
   border-bottom: 2px solid #ccc;
-  transition:.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .profileFormAvatar {
   width: 100px;
@@ -30,19 +32,18 @@
   z-index: 999;
 }
 
-.update-btn{
+.update-btn {
   height: 40px;
-    color: #1a8917;
-    background-color:white;
-    border-radius: 5px;
-    font-size: 15px;
-    border: 1px solid #1a8917;
-    cursor: pointer;
-    padding: 2% 4%;
+  color: #1a8917;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid #1a8917;
+  cursor: pointer;
+  padding: 2% 4%;
 }
 
-.update-btn:hover{
-    background-color:  #1a8917;
-    color: white;
+.update-btn:hover {
+  background-color: #1a8917;
+  color: white;
 }
-

@@ -11,7 +11,6 @@ import Alarm from "../icons/Alarm";
 import ProfileListModal from "../profileListModal/ProfileListModal";
 
 const Navbar = () => {
-  
   function greeting() {
     var today = new Date();
     var curHr = today.getHours();
@@ -39,6 +38,7 @@ const Navbar = () => {
           <img
             className="navbarImage"
             src="https://miro.medium.com/max/8978/1*s986xIGqhfsN8U--09_AdA.png"
+            alt=""
           />
         </Link>
         <h1 className="headerLeft">{greeting()}</h1>
@@ -48,9 +48,9 @@ const Navbar = () => {
         {/* <h1>Good Afternoon</h1> */}
         {/* <FontAwesomeIcon icon={fa-search} /> */}
         {/* <i style={{fontSize:15}} className="fas fa-search"></i> */}
-        <Search />
-        <DoubleBookmark />
-        <Alarm />
+        <Search id="navbar-icons" />
+        <DoubleBookmark  id="navbar-icons" />
+        <Alarm id="navbar-icons"  />
         <Link to={"/posts/add"}>
           <button className="navbar-button">Add Article</button>
         </Link>
@@ -58,6 +58,7 @@ const Navbar = () => {
           <img
             className="navbar-profileImage"
             src={userData?.user?.avatar_img}
+            alt=""
           />
           {showModal && <ProfileListModal />}
         </div>

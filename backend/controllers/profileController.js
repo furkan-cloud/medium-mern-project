@@ -28,10 +28,10 @@ const updateProfileInfo = asyncErrorWrapper(async (req, res, next) => {
   const editInfo = req.body;
   // console.log(req.file.path);
   // console.log(req.body);
-  const imageurl = req.file.path;
+  // const imageurl = req.file.path;
   const user = await User.findByIdAndUpdate(
     req.user.id,
-    { ...editInfo, avatar_img: imageurl },
+    { ...editInfo },
     {
       new: true,
       runValidators: true,
@@ -44,7 +44,7 @@ const updateProfileInfo = asyncErrorWrapper(async (req, res, next) => {
 });
 
 const imageUpload = asyncErrorWrapper(async (req, res, next) => {
-  const imageurl = req?.file?.path;
+  const imageurl = req.file.path;
   //console.log(req.file.path);
   const user = await User.findByIdAndUpdate(
     req.user.id,
@@ -59,7 +59,7 @@ const imageUpload = asyncErrorWrapper(async (req, res, next) => {
   res.json({
     success: true,
     message: "Upload Successfull",
-    data: user,
+    user,
   });
 });
 
