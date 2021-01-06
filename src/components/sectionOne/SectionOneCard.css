@@ -34,6 +34,7 @@
     }
     .cardListSection, .mainCardSection, .followTopicSection{
         width: 100%;
+        padding: 16px 0;
     }
 }
 
@@ -41,10 +42,6 @@
     .sectionOneContainer{
         margin: 2vh 4vw;
         width: 92%;
-    }
-    .cardListSection, .mainCardSection, .followTopicSection{
-        /* width: 92%; */
-        padding: 16px 0;
     }
 }
 
