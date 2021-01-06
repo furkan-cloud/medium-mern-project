@@ -27,7 +27,8 @@ app.use("/api", router);
 //Error Handler
 app.use(customErrorHandler);
 //Static Files
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static('../build'));
+
 
 app.listen(PORT, () => {
   console.log(`App started on ${PORT} - ${NODE_ENV}`);
