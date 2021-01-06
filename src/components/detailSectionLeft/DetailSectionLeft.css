@@ -92,20 +92,11 @@
     padding-left: 10px;
 }
 
-@media only screen and (max-width: 575px){
-    .line{
-        display:none
-    }
-}
-
 @media only screen and (max-width: 700px){
     .left-button-container {
        width: 15%;
     }
-}
-
-@media only screen and (max-width: 500px){
-    .icons-container {
-       display: none;
+    .articleDetailLeft{
+        display:none
     }
 }
