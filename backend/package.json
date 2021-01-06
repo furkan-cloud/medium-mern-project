@@ -7,7 +7,10 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "start-client": "cd .. && npm start",
+    "heroku-postbuild": "cd .. && npm install && npm run build"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
