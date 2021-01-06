@@ -1,14 +1,16 @@
 
 .profileListModalContainer {
   text-align: left;
+  background-color: white;
   border: 1px solid rgb(248, 245, 245);
   position: absolute;
-  width: 300%;
-  top: 48px;
+  width: 270%;
+  top: 42px;
   border-radius: 3px;
   right: 2px;
-  box-shadow: 4px 4px 2px 2px rgb(174, 175, 175);
-  z-index: 10;
-  padding: 10px;
+  box-shadow: 2px 2px 1px 1px rgb(174, 175, 175);
+  /* z-index: 10; */
+  padding-left: 5px;
+  padding-top: 10px;
 
 }
