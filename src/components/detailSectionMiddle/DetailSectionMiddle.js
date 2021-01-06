@@ -69,9 +69,9 @@ const DetailSectionMiddle = ({ singleArticle }) => {
         src={singleArticle?.post_image}
         alt=""
       />
-      <p className="articleDetailMiddleContent">
+      <div className="articleDetailMiddleContent">
         {ReactHtmlParser(singleArticle?.content)}
-      </p>
+      </div>
     </div>
   );
 };

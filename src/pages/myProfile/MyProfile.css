@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-around;
   /* border: 1px solid black; */
+  width: 86%;
+  margin: 0 7vw;
 }
 .myProfileHeaderAvatarContainer {
   display: flex;
@@ -31,7 +33,7 @@
   margin-top: auto;
   margin-bottom: auto;
   /* border: 1px solid red; */
-  width: 50%;
+  /* width: 50%; */
 }
 
 .myProfileHeaderFollow{

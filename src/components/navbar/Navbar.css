@@ -3,6 +3,7 @@
   justify-content: space-between;
   margin: 5vh 8vw;
   border: 1px solid black;
+  position: relative;
 }
 
 .containerLeft {
