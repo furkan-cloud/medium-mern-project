@@ -8,15 +8,16 @@
   flex-direction: column;
 }
 .profileUpdateInput {
-  width: 50%;
+  width: 100%;
   border: none;
   outline: none;
-  font-size: 15px;
-  margin-top: 6px;
+  font-size: 20px;
+  margin-top: 15px;
   background: transparent;
   border: none;
   border-bottom: 2px solid #ccc;
   transition: 0.3s ease-in-out;
+  padding-bottom: 3px ;
 }
 .profileFormAvatar {
   width: 100px;
