@@ -29,12 +29,12 @@ const SignInForm = ({ openSignInModal, signInModalIsOpen }) => {
   const {
     setUserData,
     openModal,
-    userData,
-    setAuthToken,
-    authToken,
+    // userData,
+    // setAuthToken,
+    // authToken,
   } = useContext(UserContext);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState(null);
 
   const onSubmit = async (values) => {

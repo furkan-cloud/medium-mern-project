@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar.js";
@@ -8,7 +8,7 @@ import ArticleDetails from "./pages/articleDetail/ArticleDetails";
 import PostEditor from "./components/addpost/PostEditor";
 import UserContext from "./context/UserContext";
 import Main from "./pages/mainPage/Main";
-import Header from "./components/headers/Header";
+
 import ProfilDetail from "./components/profil/ProfilDetail";
 import MyProfile from "./pages/myProfile/MyProfile";
 
@@ -48,18 +48,16 @@ function App() {
     userData?.user?.claps,
   ]);
 
-
   useEffect(() => {
     const fetchArticles = async () => {
       const articleData = await axios.get("http://localhost:5000/api/posts");
       setArticles(articleData?.data?.data);
     };
     fetchArticles();
-  }, 
-  [
+  }, [
     userData?.user?.readingListCount,
     userData?.user?.email,
-    articles?.likeCount
+    articles?.likeCount,
   ]);
 
   return (
