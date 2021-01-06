@@ -114,10 +114,13 @@ const MyProfile = () => {
           </form>
         </div>
         <div className="myProfileHeaderFollowContainer">
-          <div className="myProfileHeaderContent">
-            <span>{userProfile?.firstName + " " + userProfile?.lastName}</span>
-          </div>
           <div className="myProfileHeaderFollow">
+            <div className="myProfileHeaderContent">
+              <span>
+                {userProfile?.firstName + " " + userProfile?.lastName}
+              </span>
+            </div>
+
             <div className="myProfileHeaderContent">
               Followers {userProfile?.followersCount}
             </div>

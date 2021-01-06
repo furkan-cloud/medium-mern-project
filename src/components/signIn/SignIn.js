@@ -186,4 +186,5 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     borderRadius: "10px",
   },
+  
 };
