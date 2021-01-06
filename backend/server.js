@@ -30,6 +30,13 @@ app.use(customErrorHandler);
 app.use(express.static('../build'));
 
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("../build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "build", "index.html"));
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`App started on ${PORT} - ${NODE_ENV}`);
 });
