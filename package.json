@@ -31,12 +31,12 @@
     "yup": "^0.32.8"
   },
   "scripts": {
-    "start": "cd backend && npm install && npm start",
+    "start": "cd backend && npm install && node server.js",
     "start-react": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm install && react-scripts build"
   },
   "eslintConfig": {
     "extends": [
