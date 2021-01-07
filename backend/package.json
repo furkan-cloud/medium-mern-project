@@ -8,9 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "server": "nodemon server.js",
-    "start-client": "cd .. && npm start",
-    "heroku-postbuild": "cd .. && npm install && npm run build"
+    "server": "nodemon server.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
