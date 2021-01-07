@@ -26,3 +26,11 @@
 .articleDetailMiddleContent img{
     width: 100% ;
 }
+
+@media only screen and (max-width: 700px){
+    .articleDetailMiddle{
+        width: 94%;
+        margin: 0 3vw;
+        /* border: 1px  solid green */
+    }
+}
