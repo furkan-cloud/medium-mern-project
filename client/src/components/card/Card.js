@@ -12,7 +12,7 @@ const Card = (props) => {
     let token = localStorage.getItem("token");
     if (token) {
       const articleDeleteResponse = await axios.delete(
-        `http://localhost:5000/api/posts/${props.id}/delete`,
+        `/api/posts/${props.id}/delete`,
         {
           headers: {
             "x-auth-token": token,
