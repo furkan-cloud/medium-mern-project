@@ -64,6 +64,6 @@
 
   @media only screen and (max-width: 768px) {
     .sectionThreeContainer{
-        margin: 5vh 3vw;
+        /* margin: 5vh 3vw; */
     }
   }
