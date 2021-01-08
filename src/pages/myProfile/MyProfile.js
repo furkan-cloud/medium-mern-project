@@ -168,6 +168,7 @@ const MyProfile = () => {
               date={post?.formatDate}
               imageUrl={post?.post_image}
               key={index}
+              delete = {true}
             />
           ))}
         </div>

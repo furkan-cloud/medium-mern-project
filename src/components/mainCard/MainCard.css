@@ -16,6 +16,8 @@
 .main-username{
     font-size: smaller;
     padding-bottom: 8px;
+    display: flex;
+    align-items: center;
 }
 .mainCardProfileImage{
     width: 20px;
