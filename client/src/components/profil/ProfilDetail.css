@@ -96,3 +96,33 @@
 .profil__card__followers{
   padding: 0px 7px;
 }
+
+@media only screen and (max-width: 900px) {
+  .profil__card__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .profil__card__content__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* flex-direction: column; */
+  }
+  .profil__card__content__right{
+    max-width: 700px;
+    margin-left: 3vw;
+  }
+  .profil__card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #ccc;
+    }
+}
+
+/* @media only screen and (max-width: 400px) {
+  .profil__card__header {
+    display: flex;
+    flex-direction: column;
+    }
+} */
