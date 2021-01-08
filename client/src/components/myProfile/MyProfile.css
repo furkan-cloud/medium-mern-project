@@ -1,0 +1,199 @@
+.profileContainer {
+  margin: 0 7vw;
+  border: 1px solid blue;
+}
+
+.myProfileHeader {
+  margin-top: 2%;
+  display: flex;
+  border: 1px solid pink;
+  justify-content: space-around;
+  /* border: 1px solid black; */
+  width: 100%;
+  /* margin: 0 7vw; */
+}
+.myProfileHeaderAvatarContainer {
+  display: flex;
+  flex-direction: column;
+}
+.myProfileAvatar {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 5%;
+  border-radius: 50%;
+}
+
+.avatarUploadBtn {
+  position: relative;
+  cursor: pointer;
+}
+.avatarUploadBtn svg {
+  font-size: 32px;
+  color: gray;
+  cursor: pointer;
+}
+
+.myProfileHeaderFollowContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: 1px solid red;
+  width: 75%;
+  /* height: 40%; */
+}
+
+.myProfileHeaderFollow{
+  display: flex;
+  width: 100%;
+}
+
+.myProfileHeaderContent {
+  /* margin-bottom: 10%; */
+  width: 100px;
+  height: 30px;
+  padding: 40px 20px;
+  display: flex;
+  margin: 20px 30px;
+  box-shadow: 3px 3px 5px gray;
+  border: 1px solid blue;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit_image_btn{
+  height: 40px;
+  width: 90px;
+  color: #1a8917;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid #1a8917;
+  cursor: pointer;
+  position: relative;
+
+}
+
+.edit_image_btn:hover{
+  background-color: #1a8917;
+  color: white;
+}
+
+.edit_profile_btn {
+  height: 40px;
+  width: 80px;
+  color: #1a8917;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid #1a8917;
+  cursor: pointer;
+  position: relative;
+  top: 180px;
+  right: 500px;
+}
+
+.edit_profile_btn:hover {
+  background-color: #1a8917;
+  color: white;
+}
+
+.myProfileContent {
+  margin: 9vh 0;
+  display: flex;
+  justify-content: space-between;
+}
+.myProfileContentLeft {
+  width: 47%;
+  border: 1px solid brown;
+}
+
+.myProfileContentRight {
+  width: 47%;
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 1200px) {
+  .myProfileHeaderContent {
+    /* padding: 10px 10px; */
+    margin: 20px 10px;
+  }
+  .edit_profile_btn {
+    right: 350px;
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .profileContainer {
+    margin: 0 4vw;
+  }
+  .myProfileContent {
+    margin: 5vh 0;
+  }
+  .myProfileAvatar {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .myProfileHeaderFollowContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 1px solid red;
+    /* width: 50%; */
+  }
+  .myProfileHeaderFollow{
+    display: flex;
+    width: 100%;
+  }
+
+  .myProfileHeaderContent {
+    margin-bottom: 10%;
+    padding: 15px 15px;
+    display: flex;
+    margin: 20px 5px;
+    box-shadow: 3px 3px 5px gray;
+    border: 1px solid blue;
+  }
+  .edit_profile_btn {
+    right: 270px;
+    top: 140px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .profileContainer {
+    margin: 0 3vw;
+  }
+  .myProfileContent {
+    margin: 5vh 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .myProfileContentLeft {
+    width: 100%;
+  }
+  .myProfileAvatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  
+  .myProfileContentRight {
+    width: 100%;
+  }
+
+  .myProfileHeaderContent {
+    padding: 2vh 0.5vw;
+    display: flex;
+    margin: 20px 0.2vw;
+    box-shadow: 3px 3px 5px gray;
+    border: 1px solid blue;
+  }
+  .edit_profile_btn {
+    right: 200px;
+    top: 110px;
+  }
+}

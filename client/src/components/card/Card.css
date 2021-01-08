@@ -17,8 +17,10 @@
 }
 
 .username{
+    display: flex;
     font-size: smaller;
     padding-bottom: 8px;
+    align-items: center;
 }
 .card-profileImage{
     width: 20px;
@@ -40,3 +42,20 @@
     width: 30%;
     align-self: center;
 }
+
+.articleDeleteButton{
+    /* border: 1px solid red; */
+    margin-top: 3px;
+    color: red;
+    /* border-radius: 5px;
+    padding: 5px 10px;
+    background-color: white; */
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* .articleDeleteButton:hover {
+    background-color: red;
+    color: white;
+} */
