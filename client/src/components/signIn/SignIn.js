@@ -6,6 +6,7 @@ import Modal from "react-modal";
 import "./SignIn.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const initialValues = {
   email: "",
@@ -25,6 +26,7 @@ const validationSchema = Yup.object({
 });
 
 const SignInForm = ({ openSignInModal, signInModalIsOpen }) => {
+  const size = useWindowSize();
   const history = useHistory();
   const {
     setUserData,
@@ -100,6 +102,20 @@ const SignInForm = ({ openSignInModal, signInModalIsOpen }) => {
   //     console.log(error);
   //   }
   // };
+
+  const customStyles = {
+    content: {
+      width: size.width > 768 && "35%",
+      height: "auto",
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-40%",
+      transform: "translate(-50%, -50%)",
+      borderRadius: "10px",
+    },
+  };
 
   return (
     <div>

@@ -6,8 +6,10 @@ import Card from "../../components/card/Card";
 import "./MyProfile.css";
 import MyProfileUpdateForm from "../../components/myProfileUpdateform/MyProfile";
 import Media from "../../components/icons/Media";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const MyProfile = () => {
+  const size = useWindowSize();
   const [userProfile, setUserProfile] = useState(null);
   const [imgAvatar, setImgAvatar] = useState(null);
   const [disabled, setDisabled] = useState(null);
@@ -59,6 +61,20 @@ const MyProfile = () => {
       }
     );
     setUserData({ ...userData, user: registerResponse.data.user });
+  };
+
+  const customStyles = {
+    content: {
+      width: size.width > 768 && "35%",
+      height: "auto",
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      borderRadius: "10px",
+    },
   };
 
   return (
@@ -167,7 +183,7 @@ const MyProfile = () => {
               date={post?.formatDate}
               imageUrl={post?.post_image}
               key={index}
-              delete = {true}
+              delete={true}
             />
           ))}
         </div>
