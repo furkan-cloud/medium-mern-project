@@ -19,11 +19,12 @@
     padding: 8px 0px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .readingtitle{
     font-weight:bolder;
     padding-bottom: 8px;
-
+    cursor: pointer;
 }
 .readingdate{
     font-size: 13px;
