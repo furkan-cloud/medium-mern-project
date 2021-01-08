@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import SignIn from "../signIn/SignIn";
+import useWindowSize from "../../hooks/useWindowSize";
 const initialValues = {
   firstName: "",
   lastName: "",
@@ -32,6 +33,7 @@ const validationSchema = Yup.object({
 });
 
 const RegisterForm = ({ modalIsOpen, closeModal }) => {
+  const size = useWindowSize();
   const {
     userData,
     setUserData,
@@ -105,6 +107,19 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
   //   closeModal();
   //   history.push("/");
   // };
+  const customStyles = {
+    content: {
+      width: size.width > 768 && "35%",
+      height: "auto",
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      borderRadius: "10px",
+    },
+  };
   return (
     <div className="registerFormContainer">
       <SignIn openSignInModal={signInModalIsOpen} />
@@ -206,17 +221,3 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
 };
 
 export default RegisterForm;
-
-const customStyles = {
-  content: {
-    width: "30%",
-    height: "auto",
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    borderRadius: "10px",
-  },
-};
