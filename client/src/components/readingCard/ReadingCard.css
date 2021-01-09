@@ -1,0 +1,57 @@
+.readingcard-container{
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: row;
+    width: 21vw;
+    /* border: 1px solid yellowgreen; */
+    padding: 24px;
+    /* border-bottom: 1px solid rgba(0,0,0,0.2); */
+} 
+
+.readingtext-container{
+    text-align: left;
+    margin-bottom: 24px;
+    padding:10px 20px;
+}
+
+.readingusername{
+    font-size: smaller;
+    padding: 8px 0px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.readingtitle{
+    font-weight:bolder;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+.readingdate{
+    font-size: 13px;
+    color: rgba(117, 117, 117, 1);
+}
+
+.readingProfileImage{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    .readingcard-container{
+        width: 85vw;
+    }
+  }
+
+  @media only screen and (max-width: 820px) {
+    .readingcard-container{
+        width: 82vw;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .readingcard-container{
+        width: 79vw;
+    }
+  }

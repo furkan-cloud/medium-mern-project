@@ -1,0 +1,69 @@
+.sectionThreeContainer{
+    width: 84%;
+    display: flex;
+    padding: 56px 0px 0px ;
+    justify-content: space-between;
+    /* border:1px solid purple; */
+    margin: 5vh 8vw;
+}
+
+.bigCard-container{
+    display: flex;
+    width: 60%;
+}
+
+.sectionThreeRightContainer{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionThree-right{
+    background-color:#FAFAFA ;
+}
+
+.reading_list{
+    color: rgba(41, 41, 41, 1);
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 30px;
+    top: 5px;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.083em;
+    line-height: 16px;
+}
+
+.double_bookmark{
+    display: flex;
+    position: absolute;
+}
+
+@media only screen and (max-width: 900px) {
+    .sectionThreeContainer{
+        flex-direction: column-reverse;
+        width: 92%;
+        margin: 5vh 4vw;
+    }
+    .sectionThreeRightContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2vh;
+    }
+    .bigCard-container{
+        display: flex;
+        width: 100%;
+    }
+    #footer-list{
+        margin-bottom: 5vh;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .sectionThreeContainer{
+        /* margin: 5vh 3vw; */
+    }
+  }

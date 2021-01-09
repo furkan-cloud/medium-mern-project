@@ -1,0 +1,61 @@
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 1px solid pink; */
+    padding-bottom: 32px;
+}
+
+.card-image{
+    width: 100%
+}
+
+.text-container{
+    width: 60%;
+    margin-right: 20px;
+    text-align: left;
+}
+
+.username{
+    display: flex;
+    font-size: smaller;
+    padding-bottom: 8px;
+    align-items: center;
+}
+.card-profileImage{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.title{
+    font-weight:bolder;
+    padding-bottom: 8px;
+
+}
+.date{
+    font-size: 13px;
+    color: rgba(117, 117, 117, 1);
+}
+
+.image-container {
+    width: 30%;
+    align-self: center;
+}
+
+.articleDeleteButton{
+    /* border: 1px solid red; */
+    margin-top: 3px;
+    color: red;
+    /* border-radius: 5px;
+    padding: 5px 10px;
+    background-color: white; */
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* .articleDeleteButton:hover {
+    background-color: red;
+    color: white;
+} */
