@@ -1,1 +1,3 @@
-# medium-clone
+## Here is the view of my project...
+
+![Medium Clone](MediumClone.gif)
