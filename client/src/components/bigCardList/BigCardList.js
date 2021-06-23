@@ -4,7 +4,6 @@ import BigCard from "../bigCard/bigCard";
 
 const BigCardList = () => {
   const { articles } = useContext(UserContext);
-  //console.log(articles)
   return (
     <div className="bigCardListContainer">
       {articles?.slice(0, 10).map((article, index) => (

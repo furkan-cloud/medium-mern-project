@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   margin: 5vh 8vw;
-  /* border: 1px solid black; */
   position: relative;
 }
 
@@ -22,7 +21,6 @@
   width: 300px;
   justify-content: space-around;
   align-items: center;
-  /* border: 1px solid green; */
 }
 
 .navbarImage {

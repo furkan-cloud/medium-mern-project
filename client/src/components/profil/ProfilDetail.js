@@ -47,7 +47,7 @@ const ProfilDetail = () => {
 
         <div>
           {userData?.user?.following?.filter((fol) => fol._id == id).length >
-          0 ? (
+            0 ? (
             <button
               onClick={removeFollow}
               className="profil__card__subheader__following__btn"
@@ -92,11 +92,6 @@ const ProfilDetail = () => {
           {userProfile?.posts.map((post, index) => (
             <ArticleDetailCard
               singleArticle={post}
-              // id={content._id}
-              //   date={content.formatDate}
-              //   title={content.title}
-              //   articleText={content.content}
-              //   imageUrl={content.post_image}
             />
           ))}
         </div>

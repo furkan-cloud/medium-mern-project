@@ -51,8 +51,6 @@ const ArticleDetailCard = ({ singleArticle }) => {
     setClaps(singleArticle?.claps);
   }, [singleArticle?.claps]);
 
-  // console.log('likes ', singleArticle?.likes);
-
   return (
     <div className="article-detail-container">
       <p>{singleArticle?.formatDate}</p>

@@ -45,12 +45,9 @@ const Navbar = () => {
       </div>
 
       <div className="containerRight">
-        {/* <h1>Good Afternoon</h1> */}
-        {/* <FontAwesomeIcon icon={fa-search} /> */}
-        {/* <i style={{fontSize:15}} className="fas fa-search"></i> */}
         <Search id="navbar-icons" />
-        <DoubleBookmark  id="navbar-icons" />
-        <Alarm id="navbar-icons"  />
+        <DoubleBookmark id="navbar-icons" />
+        <Alarm id="navbar-icons" />
         <Link to={"/posts/add"}>
           <button className="navbar-button">Add Article</button>
         </Link>

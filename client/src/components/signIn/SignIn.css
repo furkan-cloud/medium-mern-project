@@ -54,17 +54,3 @@
   display: block;
   font-weight: bold;
 }
-
-/* 
-@media only screen and (max-width: 700px){
-  .modalSignIn {
-    width: 80%;
-  }
-  .signInContainer {
-    display: flex;
-    flex-direction: column;
-    margin: 1vh;
-    width: 80%;
-  }
-  
-} */

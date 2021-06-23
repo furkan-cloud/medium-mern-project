@@ -40,10 +40,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
     signInModalIsOpen,
     openSignInModal,
   } = useContext(UserContext);
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setlastName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+
   const [errMsg, setErrMsg] = useState(null);
   const handleSignInClick = () => {
     closeModal();
@@ -73,7 +70,6 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
       history.push("/");
     } catch (error) {
       setErrMsg(error.response.data.errors[0].message);
-      // console.log(error.response.data.errors[0].message);
       setTimeout(() => setErrMsg(null), 3000);
     }
   };
@@ -82,31 +78,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
     onSubmit,
     validationSchema,
   });
-  // const handleOnClick = async (e) => {
-  //   e.preventDefault();
-  //   const newUser = {
-  //     firstName,
-  //     lastName,
-  //     email,
-  //     password,
-  //   };
-  //   const registerResponse = await axios.post(
-  //     "http://localhost:5000/api/auth/register",
-  //     newUser
-  //   );
-  //   setUserData({ ...userData, token: registerResponse.data.access_token });
-  //   localStorage.setItem("token", registerResponse.data.access_token);
-  //   const userResponse = await axios.get(
-  //     "http://localhost:5000/api/auth/user",
-  //     { headers: { "x-auth-token": registerResponse.data.access_token } }
-  //   );
-  //   setUserData({
-  //     user: userResponse?.data?.user,
-  //     token: registerResponse.data.access_token,
-  //   });
-  //   closeModal();
-  //   history.push("/");
-  // };
+
   const customStyles = {
     content: {
       width: size.width > 768 && "35%",
@@ -136,12 +108,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
               className="registerFormInput"
               type="text"
               name="firstName"
-              // id="rfirstName"
-              //   onChange={formik.handleChange}
-              //   onBlur={formik.handleBlur}
-              //   value={formik.values.email}
               {...formik.getFieldProps("firstName")}
-              // onChange={(e) => setFirstName(e.target.value)}
             />
             {formik.touched.firstName && formik.errors.firstName ? (
               <div className="error">{formik.errors.firstName}</div>
@@ -153,12 +120,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
               className="registerFormInput"
               type="text"
               name="lastName"
-              // id="rlastName"
-              //   onChange={formik.handleChange}
-              //   onBlur={formik.handleBlur}
-              //   value={formik.values.lastName}
               {...formik.getFieldProps("lastName")}
-              // onChange={(e) => setlastName(e.target.value)}
             />
             {formik.touched.lastName && formik.errors.lastName ? (
               <div className="error">{formik.errors.lastName}</div>
@@ -170,12 +132,7 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
               className="registerFormInput"
               type="email"
               name="email"
-              // id="remail"
-              //   onChange={formik.handleChange}
-              //   onBlur={formik.handleBlur}
-              //   value={formik.values.email}
               {...formik.getFieldProps("email")}
-              // onChange={(e) => setEmail(e.target.value)}
             />
             {formik.touched.email && formik.errors.email ? (
               <div className="error">{formik.errors.email}</div>
@@ -187,21 +144,12 @@ const RegisterForm = ({ modalIsOpen, closeModal }) => {
               className="registerFormInput"
               type="password"
               name="password"
-              // id="rpassword"
-              //   onChange={formik.handleChange}
-              //   onBlur={formik.handleBlur}
-              //   value={formik.values.password}
               {...formik.getFieldProps("password")}
-              // onChange={(e) => setPassword(e.target.value)}
             />
             {formik.touched.password && formik.errors.password ? (
               <div className="error">{formik.errors.password}</div>
             ) : null}
           </div>
-
-          {/* <button onClick={handleOnClick} className="modalRegister">
-            Register
-          </button> */}
           <button type="submit" className="modalRegister">
             Register
           </button>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./ReadingCard.css";
 import { useHistory } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const ReadingCard = (props) => {
     history.push(`/articleDetail/${props.id}`)
   };
   const handleOnClick = () => {
-      history.push(`/profileDetail/${props.authorId}`)
+    history.push(`/profileDetail/${props.authorId}`)
   };
   return (
     <div className="readingcard-container">

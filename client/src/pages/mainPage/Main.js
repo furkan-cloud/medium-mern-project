@@ -7,12 +7,9 @@ import Header from "../../components/headers/Header";
 const Main = () => {
   return (
     <div>
-      {/* <SignInForm /> */}
-
       <Header />
       <SectionTwo />
       <SectionThree />
-      {/* <ProfilDetail /> */}
     </div>
   );
 };

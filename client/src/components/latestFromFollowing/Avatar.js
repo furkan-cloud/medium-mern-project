@@ -19,5 +19,3 @@ const Avatar = ({ firstName, lastName, profileImage, id, ...props }) => {
 };
 
 export default Avatar;
-
-// to={`/profileDetail/${id}`}

@@ -8,9 +8,7 @@
   display: flex;
   border: 1px solid pink;
   justify-content: space-around;
-  /* border: 1px solid black; */
   width: 100%;
-  /* margin: 0 7vw; */
 }
 .myProfileHeaderAvatarContainer {
   display: flex;
@@ -40,16 +38,14 @@
   margin-bottom: auto;
   border: 1px solid red;
   width: 75%;
-  /* height: 40%; */
 }
 
-.myProfileHeaderFollow{
+.myProfileHeaderFollow {
   display: flex;
   width: 100%;
 }
 
 .myProfileHeaderContent {
-  /* margin-bottom: 10%; */
   width: 100px;
   height: 30px;
   padding: 40px 20px;
@@ -61,7 +57,7 @@
   align-items: center;
 }
 
-.edit_image_btn{
+.edit_image_btn {
   height: 40px;
   width: 90px;
   color: #1a8917;
@@ -71,10 +67,9 @@
   border: 1px solid #1a8917;
   cursor: pointer;
   position: relative;
-
 }
 
-.edit_image_btn:hover{
+.edit_image_btn:hover {
   background-color: #1a8917;
   color: white;
 }
@@ -115,14 +110,12 @@
 
 @media only screen and (max-width: 1200px) {
   .myProfileHeaderContent {
-    /* padding: 10px 10px; */
     margin: 20px 10px;
   }
   .edit_profile_btn {
     right: 350px;
   }
 }
-
 
 @media only screen and (max-width: 900px) {
   .profileContainer {
@@ -135,16 +128,15 @@
     width: 150px;
     height: 150px;
   }
-  
+
   .myProfileHeaderFollowContainer {
     display: flex;
     flex-direction: row;
     margin-top: auto;
     margin-bottom: auto;
     border: 1px solid red;
-    /* width: 50%; */
   }
-  .myProfileHeaderFollow{
+  .myProfileHeaderFollow {
     display: flex;
     width: 100%;
   }
@@ -179,8 +171,7 @@
     width: 100px;
     height: 100px;
   }
-  
-  
+
   .myProfileContentRight {
     width: 100%;
   }

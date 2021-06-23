@@ -104,8 +104,6 @@ const MyProfile = () => {
             <label htmlFor="avatar_img">
               <div
                 className="avatarUploadBtn"
-                // style={{ pointerEvents: "none" }}
-                // onClick={() => alert("MEDİA ADD")}
               >
                 <Media />
               </div>
@@ -114,7 +112,6 @@ const MyProfile = () => {
                 accept="image/*"
                 type="file"
                 name="avatar_img"
-                // ref={hiddenFileInput}
                 onChange={handleAvatarChange}
                 style={{ display: "none" }}
               />
@@ -194,15 +191,3 @@ const MyProfile = () => {
 
 export default MyProfile;
 
-const customStyles = {
-  content: {
-    width: "35%",
-    height: "auto",
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};

@@ -3,26 +3,22 @@
   width: 84%;
   padding: 0px 0px 40px;
   margin: 2vh 8vw;
-  /* border: 1px solid blue; */
 }
 
 .cardListSection {
   width: 34%;
-  /* border: 1px solid purple; */
   padding: 16px;
 }
 
 .mainCardSection {
   width: 35%;
   padding: 16px;
-  /* border: 1px solid orange; */
 }
 .followTopicSection {
   display: flex;
   width: 31%;
   flex-direction: column;
   padding: 16px;
-  /* border: 1px solid cyan; */
 }
 
 @media only screen and (max-width: 998px) {

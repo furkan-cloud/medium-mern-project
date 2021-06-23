@@ -8,7 +8,6 @@ import "./ArticleDetails.css";
 import Footer from "../../components/footer/Footer";
 
 const ArticleDetails = () => {
-  //console.log(articleContent);
   const { id } = useParams();
   const [singleArticle, setSingleArticle] = useState(null);
 

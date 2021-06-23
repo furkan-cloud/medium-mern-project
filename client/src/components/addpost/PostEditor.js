@@ -53,7 +53,6 @@ const PostEditor = () => {
         setErrMsg(error.response.data.errors[0].message);
       }
 
-      // console.log(error.response.data.errors);
       setTimeout(() => setErrMsg(null), 4000);
     }
   };
@@ -86,9 +85,7 @@ const PostEditor = () => {
             id="file-input"
             accept="image/*"
             type="file"
-            // ref={hiddenFileInput}
             onChange={handleChange}
-            // style={{ display: "none" }}
           />
           <label className="profileUpdateLabel">
             Select Topics:
@@ -105,25 +102,17 @@ const PostEditor = () => {
           editor={ClassicEditor}
           data={content}
           name="content"
-          // onReady={(editor) => {
-          //   // You can store the "editor" and use when it is needed.
-          //   console.log("Editor is ready to use!", editor);
-          // }}
           onChange={(event, editor) => {
             const data = editor.getData();
             setContent(data);
-            //console.log({ event, editor, data });
           }}
         />
-        {/* <ReactEditor /> */}
         <button className="addBtn" onClick={handleOnClick}>
           {" "}
           Add{" "}
         </button>
       </form>
       {errMsg && <div className="error">{errMsg}</div>}
-
-      {/* {post ? ReactHtmlParser(post.content) : null} */}
     </div>
   );
 };

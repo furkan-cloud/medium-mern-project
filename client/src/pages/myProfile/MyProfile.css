@@ -1,16 +1,12 @@
 .profileContainer {
   margin: 0 7vw;
-  /* border: 1px solid blue; */
 }
 
 .myProfileHeader {
   margin-top: 2%;
   display: flex;
-  /* border: 1px solid pink; */
   justify-content: space-around;
-  /* border: 1px solid black; */
   width: 100%;
-  /* margin: 0 7vw; */
 }
 .myProfileHeaderAvatarContainer {
   display: flex;
@@ -38,9 +34,7 @@
   flex-direction: row;
   margin-top: auto;
   margin-bottom: auto;
-  /* border: 1px solid red; */
   width: 75%;
-  /* height: 40%; */
 }
 
 .myProfileHeaderFollow {
@@ -49,14 +43,12 @@
 }
 
 .myProfileHeaderContent {
-  /* margin-bottom: 10%; */
   width: 100px;
   height: 30px;
   padding: 40px 20px;
   display: flex;
   margin: 20px 30px;
   box-shadow: 3px 3px 5px gray;
-  /* border: 1px solid blue; */
   justify-content: center;
   align-items: center;
 }
@@ -104,17 +96,14 @@
 }
 .myProfileContentLeft {
   width: 47%;
-  /* border: 1px solid brown; */
 }
 
 .myProfileContentRight {
   width: 47%;
-  /* border: 1px solid black; */
 }
 
 @media only screen and (max-width: 1200px) {
   .myProfileHeaderContent {
-    /* padding: 10px 10px; */
     margin: 20px 10px;
   }
   .edit_profile_btn {
@@ -139,8 +128,6 @@
     flex-direction: row;
     margin-top: auto;
     margin-bottom: auto;
-    /* border: 1px solid red; */
-    /* width: 50%; */
   }
   .myProfileHeaderFollow {
     display: flex;
@@ -153,7 +140,6 @@
     display: flex;
     margin: 20px 5px;
     box-shadow: 3px 3px 5px gray;
-    /* border: 1px solid blue; */
   }
   .edit_profile_btn {
     right: 270px;
@@ -187,7 +173,6 @@
     display: flex;
     margin: 20px 0.2vw;
     box-shadow: 3px 3px 5px gray;
-    /* border: 1px solid blue; */
   }
   .edit_profile_btn {
     right: 200px;

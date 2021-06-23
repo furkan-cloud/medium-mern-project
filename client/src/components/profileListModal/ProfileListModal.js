@@ -4,10 +4,6 @@ import { Link, useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import "./ProfileListModal.css";
 
-{
-  /* <Link to={`/profileDetail/${props.authorId}`}></Link> */
-}
-
 const ProfileListModal = () => {
   const { userData, setUserData, closeModal } = useContext(UserContext);
   const history = useHistory();

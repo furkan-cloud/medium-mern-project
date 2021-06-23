@@ -1,7 +1,3 @@
-.profileFormContainer {
-  /* width: 10%; */
-}
-
 .profileFormInputContainer {
   margin-bottom: 3%;
   display: flex;
@@ -17,7 +13,7 @@
   border: none;
   border-bottom: 2px solid #ccc;
   transition: 0.3s ease-in-out;
-  padding-bottom: 3px ;
+  padding-bottom: 3px;
 }
 .profileFormAvatar {
   width: 100px;

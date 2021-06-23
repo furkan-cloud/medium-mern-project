@@ -7,7 +7,6 @@ import { useLayoutEffect, useEffect, useState } from "react";
 import UserContext from "../../context/UserContext";
 
 const DetailSectionLeft = ({ singleArticleLeft }) => {
-  // const { id } = useParams();
   const [claps, setClaps] = useState(singleArticleLeft?.claps);
   const [userProfile, setUserProfile] = useState(null);
   const { userData, setUserData } = useContext(UserContext);

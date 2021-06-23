@@ -89,8 +89,6 @@ const MyProfile = () => {
             <label htmlFor="avatar_img">
               <div
                 className="avatarUploadBtn"
-                // style={{ pointerEvents: "none" }}
-                // onClick={() => alert("MEDİA ADD")}
               >
                 <Media />
               </div>
@@ -99,7 +97,6 @@ const MyProfile = () => {
                 accept="image/*"
                 type="file"
                 name="avatar_img"
-                // ref={hiddenFileInput}
                 onChange={handleAvatarChange}
                 style={{ display: "none" }}
               />
@@ -168,7 +165,7 @@ const MyProfile = () => {
               date={post?.formatDate}
               imageUrl={post?.post_image}
               key={index}
-              delete = {true}
+              delete={true}
             />
           ))}
         </div>

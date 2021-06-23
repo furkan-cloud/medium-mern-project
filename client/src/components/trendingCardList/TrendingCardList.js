@@ -6,7 +6,6 @@ import axios from "axios";
 
 const TrendingCardList = () => {
   const [trends, setTrends] = useState(null);
-  //   console.log(cardContent)
   const { articles } = useContext(UserContext);
 
   useEffect(() => {
@@ -14,7 +13,6 @@ const TrendingCardList = () => {
       const articleData = await axios.get(
         "/api/posts?limit=6&sortBy=most-claps"
       );
-      //console.log(articleData.data.data);
       setTrends(articleData.data.data);
     };
     fetchArticles();

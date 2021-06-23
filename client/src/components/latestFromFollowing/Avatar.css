@@ -1,11 +1,10 @@
 .avatarContainer {
-    /* border: 1px solid blue; */
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .avatarImage {
-    height: 65px;
-    width: 65px;
-    border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
 }
